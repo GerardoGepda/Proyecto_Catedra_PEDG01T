@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto_Catedra_PEDG01T
 {
-    public partial class Login : Form
+    public partial class Inicio : Form
     {
-        public Login()
+        public Inicio()
         {
             InitializeComponent();
         }
