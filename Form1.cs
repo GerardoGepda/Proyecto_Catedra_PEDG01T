@@ -16,5 +16,10 @@ namespace Proyecto_Catedra_PEDG01T
         {
             InitializeComponent();
         }
+
+        private void btntypeuser_Click(object sender, EventArgs e)
+        {
+            cbxtypeuser.DroppedDown = !cbxtypeuser.DroppedDown;
+        }
     }
 }
