@@ -21,5 +21,10 @@ namespace Proyecto_Catedra_PEDG01T
         {
             cbxtypeuser.DroppedDown = !cbxtypeuser.DroppedDown;
         }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

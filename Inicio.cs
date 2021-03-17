@@ -29,12 +29,12 @@ namespace Proyecto_Catedra_PEDG01T
             if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
-                btnWState.BackgroundImage = Properties.Resources.Restaurar;
+                btnWState.BackgroundImage = Properties.Resources.Round_Resturar;
             }
             else
             {
                 WindowState = FormWindowState.Normal;
-                btnWState.BackgroundImage = Properties.Resources.Max;
+                btnWState.BackgroundImage = Properties.Resources.Round_Max;
             }
         }
 

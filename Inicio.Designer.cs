@@ -241,9 +241,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(100)))), ((int)(((byte)(15)))));
-            this.panel5.Location = new System.Drawing.Point(0, 39);
+            this.panel5.Location = new System.Drawing.Point(0, 43);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(900, 20);
+            this.panel5.Size = new System.Drawing.Size(900, 16);
             this.panel5.TabIndex = 1;
             // 
             // panel4
@@ -254,47 +254,47 @@
             this.panel4.Controls.Add(this.btnclose);
             this.panel4.Location = new System.Drawing.Point(696, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 33);
+            this.panel4.Size = new System.Drawing.Size(200, 39);
             this.panel4.TabIndex = 0;
             // 
             // btnminimize
             // 
-            this.btnminimize.BackgroundImage = global::Proyecto_Catedra_PEDG01T.Properties.Resources.Min;
+            this.btnminimize.BackgroundImage = global::Proyecto_Catedra_PEDG01T.Properties.Resources.Round_Min;
             this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnminimize.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
             this.btnminimize.FlatAppearance.BorderSize = 0;
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnminimize.Location = new System.Drawing.Point(101, 8);
+            this.btnminimize.Location = new System.Drawing.Point(98, 4);
             this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(16, 16);
+            this.btnminimize.Size = new System.Drawing.Size(30, 30);
             this.btnminimize.TabIndex = 2;
             this.btnminimize.UseVisualStyleBackColor = true;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // btnWState
             // 
-            this.btnWState.BackgroundImage = global::Proyecto_Catedra_PEDG01T.Properties.Resources.Max;
+            this.btnWState.BackgroundImage = global::Proyecto_Catedra_PEDG01T.Properties.Resources.Round_Max;
             this.btnWState.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnWState.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
             this.btnWState.FlatAppearance.BorderSize = 0;
             this.btnWState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWState.Location = new System.Drawing.Point(133, 8);
+            this.btnWState.Location = new System.Drawing.Point(130, 4);
             this.btnWState.Name = "btnWState";
-            this.btnWState.Size = new System.Drawing.Size(16, 16);
+            this.btnWState.Size = new System.Drawing.Size(30, 30);
             this.btnWState.TabIndex = 1;
             this.btnWState.UseVisualStyleBackColor = true;
             this.btnWState.Click += new System.EventHandler(this.btnWState_Click);
             // 
             // btnclose
             // 
-            this.btnclose.BackgroundImage = global::Proyecto_Catedra_PEDG01T.Properties.Resources.Close;
+            this.btnclose.BackgroundImage = global::Proyecto_Catedra_PEDG01T.Properties.Resources.Round_Close;
             this.btnclose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnclose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
             this.btnclose.FlatAppearance.BorderSize = 0;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnclose.Location = new System.Drawing.Point(169, 8);
+            this.btnclose.Location = new System.Drawing.Point(166, 4);
             this.btnclose.Name = "btnclose";
-            this.btnclose.Size = new System.Drawing.Size(16, 16);
+            this.btnclose.Size = new System.Drawing.Size(30, 30);
             this.btnclose.TabIndex = 0;
             this.btnclose.UseVisualStyleBackColor = true;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);

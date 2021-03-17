@@ -30,7 +30,6 @@
         {
             this.pnllogologin = new System.Windows.Forms.Panel();
             this.lblderechos = new System.Windows.Forms.Label();
-            this.pbxlogo = new System.Windows.Forms.PictureBox();
             this.lblrestaurante = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
             this.txtuser = new System.Windows.Forms.TextBox();
@@ -45,9 +44,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnlogin = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
+            this.pbxlogo = new System.Windows.Forms.PictureBox();
+            this.btnclose = new System.Windows.Forms.Button();
             this.pnllogologin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxlogo)).BeginInit();
             this.pnltypeuser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxlogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnllogologin
@@ -72,16 +73,6 @@
             this.lblderechos.Size = new System.Drawing.Size(276, 18);
             this.lblderechos.TabIndex = 2;
             this.lblderechos.Text = "Copyright © Derechos reservados 2021";
-            // 
-            // pbxlogo
-            // 
-            this.pbxlogo.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.Logo;
-            this.pbxlogo.Location = new System.Drawing.Point(145, 247);
-            this.pbxlogo.Name = "pbxlogo";
-            this.pbxlogo.Size = new System.Drawing.Size(235, 223);
-            this.pbxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxlogo.TabIndex = 1;
-            this.pbxlogo.TabStop = false;
             // 
             // lblrestaurante
             // 
@@ -252,12 +243,37 @@
             this.btnsalir.Text = "Salir";
             this.btnsalir.UseVisualStyleBackColor = false;
             // 
+            // pbxlogo
+            // 
+            this.pbxlogo.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.Logo;
+            this.pbxlogo.Location = new System.Drawing.Point(145, 247);
+            this.pbxlogo.Name = "pbxlogo";
+            this.pbxlogo.Size = new System.Drawing.Size(235, 223);
+            this.pbxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxlogo.TabIndex = 1;
+            this.pbxlogo.TabStop = false;
+            // 
+            // btnclose
+            // 
+            this.btnclose.BackgroundImage = global::Proyecto_Catedra_PEDG01T.Properties.Resources.Round_Close;
+            this.btnclose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnclose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
+            this.btnclose.FlatAppearance.BorderSize = 0;
+            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Location = new System.Drawing.Point(1058, 12);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(30, 30);
+            this.btnclose.TabIndex = 20;
+            this.btnclose.UseVisualStyleBackColor = true;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1100, 640);
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.btnsalir);
             this.Controls.Add(this.btnlogin);
             this.Controls.Add(this.textBox1);
@@ -276,8 +292,8 @@
             this.Text = "Form1";
             this.pnllogologin.ResumeLayout(false);
             this.pnllogologin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxlogo)).EndInit();
             this.pnltypeuser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxlogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,6 +318,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnlogin;
         private System.Windows.Forms.Button btnsalir;
+        private System.Windows.Forms.Button btnclose;
     }
 }
 
