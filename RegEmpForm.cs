@@ -16,5 +16,23 @@ namespace Proyecto_Catedra_PEDG01T
         {
             InitializeComponent();
         }
+
+        private void btnregistrarse_Click(object sender, EventArgs e)
+        {
+            if(txtcontraseña.Text==txtverificar.Text)
+            {
+                if (RegEmpleado.CrearCuenta(txtusuario.Text, txtcontraseña.Text) > 0)
+                {
+                    MessageBox.Show("Cuenta creada con exito");
+                }
+                else
+                    MessageBox.Show("No se pudo crear la cuenta");
+            }
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

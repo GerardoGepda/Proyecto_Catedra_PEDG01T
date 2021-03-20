@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factura.cs" />
     <Compile Include="FacturaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +85,7 @@
     <Compile Include="RegEmpForm.Designer.cs">
       <DependentUpon>RegEmpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegEmpleado.cs" />
     <EmbeddedResource Include="FacturaForm.resx">
       <DependentUpon>FacturaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Round_Resturar_40px%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\producto.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
