@@ -56,7 +56,6 @@
             this.btnimprimir = new System.Windows.Forms.Button();
             this.lbproduc = new System.Windows.Forms.Label();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.txtfecha = new System.Windows.Forms.TextBox();
             this.lbfecha = new System.Windows.Forms.Label();
             this.txtcantidad = new System.Windows.Forms.TextBox();
             this.lbcantidad = new System.Windows.Forms.Label();
@@ -67,6 +66,7 @@
             this.txtnofactura = new System.Windows.Forms.TextBox();
             this.lbno = new System.Windows.Forms.Label();
             this.lbfactura = new System.Windows.Forms.Label();
+            this.txtfecha = new System.Windows.Forms.TextBox();
             this.pnlbarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -471,13 +471,6 @@
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             this.dgv.DoubleClick += new System.EventHandler(this.dgv_DoubleClick);
             // 
-            // txtfecha
-            // 
-            this.txtfecha.Location = new System.Drawing.Point(386, 245);
-            this.txtfecha.Name = "txtfecha";
-            this.txtfecha.Size = new System.Drawing.Size(100, 22);
-            this.txtfecha.TabIndex = 10;
-            // 
             // lbfecha
             // 
             this.lbfecha.AutoSize = true;
@@ -566,6 +559,13 @@
             this.lbfactura.TabIndex = 0;
             this.lbfactura.Text = "Factura";
             // 
+            // txtfecha
+            // 
+            this.txtfecha.Location = new System.Drawing.Point(386, 245);
+            this.txtfecha.Name = "txtfecha";
+            this.txtfecha.Size = new System.Drawing.Size(100, 22);
+            this.txtfecha.TabIndex = 10;
+            // 
             // FacturaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -623,7 +623,6 @@
         private System.Windows.Forms.Panel pnlcontent;
         private System.Windows.Forms.Label lbproduc;
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.TextBox txtfecha;
         private System.Windows.Forms.Label lbfecha;
         private System.Windows.Forms.TextBox txtcantidad;
         private System.Windows.Forms.Label lbcantidad;
@@ -640,5 +639,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbus;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtfecha;
     }
 }
