@@ -69,7 +69,10 @@ namespace Proyecto_Catedra_PEDG01T
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
+
             MessageBox.Show("Se agregara el producto al pedido");
+            PedidosForm n = new PedidosForm();
+            n.Show();
         }
 
         private void btncancelar_Click(object sender, EventArgs e)

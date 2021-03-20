@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Proyecto_Catedra_PEDG01T
 {
@@ -17,17 +18,25 @@ namespace Proyecto_Catedra_PEDG01T
             InitializeComponent();
         }
 
+        private string nombre;
+        private string apellido;
+        private string codigo;
+        private string direccion;
+        private int telefono;
+        private string correo;
+        private string tipo;
+        private string clave;
+        public SqlDataAdapter dataAdapter;
+        public SqlDataReader dataReader;
+        public SqlCommand sqlCommand;
+
+
         private void btnregistrarse_Click(object sender, EventArgs e)
         {
-            if(txtcontraseña.Text==txtverificar.Text)
-            {
-                if (RegEmpleado.CrearCuenta(txtusuario.Text, txtcontraseña.Text) > 0)
-                {
-                    MessageBox.Show("Cuenta creada con exito");
-                }
-                else
-                    MessageBox.Show("No se pudo crear la cuenta");
-            }
+            string sqlinsert = "INSERT INTO Usuarios(idusuario, nombre, apellido,fechaNacimiento, email, Telefono,idTipoUsuario)" +
+                        "VALUES (@codigo, @nombre, @apellido, @correo, @dir, @tel, @clave, @tipo)";
+
+           
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
