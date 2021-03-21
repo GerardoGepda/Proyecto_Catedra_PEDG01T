@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddProductoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProductoForm.Designer.cs">
+      <DependentUpon>AddProductoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmProductoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmProductoForm.Designer.cs">
+      <DependentUpon>AdmProductoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="Factura.cs" />
     <Compile Include="FacturaForm.cs">
@@ -93,6 +105,12 @@
       <DependentUpon>RegEmpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <EmbeddedResource Include="AddProductoForm.resx">
+      <DependentUpon>AddProductoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmProductoForm.resx">
+      <DependentUpon>AdmProductoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FacturaForm.resx">
       <DependentUpon>FacturaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +196,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_a_photo_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_a_photo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

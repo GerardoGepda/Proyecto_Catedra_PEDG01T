@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace Proyecto_Catedra_PEDG01T
 {
-    public partial class RegEmpForm : Form
+    public partial class AddProductoForm : Form
     {
-        public RegEmpForm()
+        public AddProductoForm()
         {
             InitializeComponent();
         }
