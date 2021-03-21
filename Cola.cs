@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace Proyecto_Catedra_PEDG01T
 {
+    //Clase Cola 
     class Cola
     {
         private Nodo primero { get; set; }
@@ -17,6 +18,7 @@ namespace Proyecto_Catedra_PEDG01T
             primero = ultimo = null;
         }
 
+        //Metodo para ingresar elementos a la Cola
         public void Encolar(int idPedido, string fechaPedido, int estadoPedido)
         {
             Nodo entrada = new Nodo();
@@ -41,6 +43,7 @@ namespace Proyecto_Catedra_PEDG01T
             }
         }
 
+        //Metodo para desencolar elementos de la Cola
         public void Desencolar()
         {
             if(primero == null)
