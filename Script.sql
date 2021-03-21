@@ -16,17 +16,17 @@ idDetalle int,
 idProducto int,
 cantidadProducto int,
 precioDetalle float,
-constraint pk_Detalle_pedidio primary key (idDetalle),
-constraint fk_Productos foreign key (idProducto) references Productos(idProducto)
+idPedido int
+constraint pk_Detalle_pedido primary key (idDetalle),
+constraint fk_Productos foreign key (idProducto) references Productos(idProducto),
+constraint fk_idPedido foreign key (idPedido) references Pedido(idPedido)
 )
 
 create table Pedido(
 idPedido int,
 fechaPedido datetime,
 estadoPedido int,
-constraint pk_idPedidio primary key (idPedido),
-idDetalle int,
-constraint fk_TDetallePedido foreign key (idDetalle) references Detalle_pedido(idDetalle)
+constraint pk_idPedidio primary key (idPedido)
 )
 
 create table Tipo_usuario(
