@@ -58,6 +58,7 @@
     <Compile Include="AdmProductoForm.Designer.cs">
       <DependentUpon>AdmProductoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cola.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Factura.cs" />
     <Compile Include="FacturaForm.cs">
@@ -84,6 +85,8 @@
     <Compile Include="MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nodo.cs" />
+    <Compile Include="Pedido.cs" />
     <Compile Include="PedidosForm.cs">
       <SubType>Form</SubType>
     </Compile>
