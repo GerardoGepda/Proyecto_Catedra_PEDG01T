@@ -1,5 +1,5 @@
 create database Proyecto
-use Proyecto
+
 
 create table Productos(
 idProducto int,
