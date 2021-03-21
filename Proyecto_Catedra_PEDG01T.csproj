@@ -92,6 +92,7 @@
     <Compile Include="RegEmpForm.Designer.cs">
       <DependentUpon>RegEmpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="FacturaForm.resx">
       <DependentUpon>FacturaForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -17,26 +17,42 @@ namespace Proyecto_Catedra_PEDG01T
         {
             InitializeComponent();
         }
-
-        private string nombre;
-        private string apellido;
-        private string codigo;
-        private string direccion;
-        private int telefono;
-        private string correo;
-        private string tipo;
-        private string clave;
-        public SqlDataAdapter dataAdapter;
-        public SqlDataReader dataReader;
-        public SqlCommand sqlCommand;
+   
 
 
         private void btnregistrarse_Click(object sender, EventArgs e)
         {
-            string sqlinsert = "INSERT INTO Usuarios(idusuario, nombre, apellido,fechaNacimiento, email, Telefono,idTipoUsuario)" +
-                        "VALUES (@codigo, @nombre, @apellido, @correo, @dir, @tel, @clave, @tipo)";
+            Usuario usuario = new Usuario();
 
-           
+            try
+            {
+                usuario.Nombre = txtnombre.Text;
+                usuario.Email = txtemail.Text;
+                usuario.Uusuario = txtusuario.Text;
+                usuario.Telefono = int.Parse(txttelefono.Text);
+                if (usuario.VerficarContra == txtcontraseña.Text) 
+                {
+                    MessageBox.Show("Contrasena creada con exito");
+                }
+                else
+                {
+                    MessageBox.Show("Error", "Intentelo de nuevo");
+                }
+                
+   
+                if (usuario.claveEsfuerte(txtcontraseña.Text))
+                    usuario.Contrasena = txtcontraseña.Text;
+                else
+                    throw new Exception("La clave no es fuerte");
+                usuario.generarCod();
+
+                usuario.guardarusuario();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
