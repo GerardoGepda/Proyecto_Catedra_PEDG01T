@@ -7,8 +7,7 @@ nombreProducto varchar,
 codigoProducto varchar,
 precioProducto float,
 Descripcion varchar(255),
-constraint pk_Productos primary key (idProducto),
-constraint ck_codigoProducto check(codigoProducto like '[P][R][D][0-9][0-9][0-9]')
+constraint pk_Productos primary key (idProducto)
 )
 
 create table Detalle_pedido(
