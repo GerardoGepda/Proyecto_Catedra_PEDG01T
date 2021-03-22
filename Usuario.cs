@@ -14,27 +14,35 @@ namespace Proyecto_Catedra_PEDG01T
     class Usuario
     {
         Conexion cone = new Conexion();
-        private SqlCommand cmnd;
 
+        private string idUsuario;
         private string nombre;
         private string apellido;
-        private string idUsuario;
         private string fechanacimiento;
-        private int telefono;
-        private string email;
-        private string tipousuario;
+        private string user;
         private string contrasena;
-        private string usuario;
-        private string idtipoUsuario;
+        private string email;
+        private string telefono;
+        private string idtypeUser;
+        private string tipousuario;
         private string verificarcontra;
-        public SqlDataAdapter dataAdapter;
-        public SqlDataReader dataReader;
-        public SqlCommand sqlCommand;
+
+        private SqlDataAdapter dataAdapter;
+        private SqlDataReader dataReader;
+        private SqlCommand command;
 
 
-
-
-
+        public string IdUsuario
+        {
+            get { return idUsuario; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new Exception("El campo IdUsuario no puede estar vació.");
+                else
+                    idUsuario = value;
+            }
+        }
 
         public string Nombre
         {
@@ -60,17 +68,43 @@ namespace Proyecto_Catedra_PEDG01T
                 }
             }
         }
-        public string Email
+
+        public string FechaNacimiento
         {
-            get { return email; }
+            get { return fechanacimiento; }
             set
             {
-                email = value;
-                if (string.IsNullOrEmpty(Email))
+                fechanacimiento = value;
+                if (string.IsNullOrEmpty(FechaNacimiento))
                 {
-                    throw new Exception("El campo Email no puede estar vació.");
+                    throw new Exception("El campo Fecha de Nacimiento no puede estar vació.");
                 }
+            }
+        }
 
+        public string User
+        {
+            get { return user; }
+            set
+            {
+                user = value;
+                if (string.IsNullOrEmpty(User))
+                {
+                    throw new Exception("El campo Usuario no puede estar vació.");
+                }
+            }
+        }
+
+        public string Contrasena
+        {
+            get { return contrasena; }
+            set
+            {
+                contrasena = value;
+                if (string.IsNullOrEmpty(Contrasena))
+                {
+                    throw new Exception("El campo Contraseña no puede estar vació.");
+                }
             }
         }
 
@@ -87,19 +121,21 @@ namespace Proyecto_Catedra_PEDG01T
             }
         }
 
-        public string FechaNacimiento
+        public string Email
         {
-            get { return fechanacimiento; }
+            get { return email; }
             set
             {
-                fechanacimiento = value;
-                if (string.IsNullOrEmpty(FechaNacimiento))
+                email = value;
+                if (string.IsNullOrEmpty(Email))
                 {
-                    throw new Exception("El campo Fecha de Nacimiento no puede estar vació.");
+                    throw new Exception("El campo Email no puede estar vació.");
                 }
+
             }
         }
-        public int Telefono
+
+        public string Telefono
         {
             get { return telefono; }
             set
@@ -111,18 +147,7 @@ namespace Proyecto_Catedra_PEDG01T
                 }
             }
         }
-        public string IdUsuario
-        {
-            get { return idUsuario; }
-            set
-            {
-                idUsuario = value;
-                if (string.IsNullOrEmpty(IdUsuario))
-                {
-                    throw new Exception("El campo IdUsuario no puede estar vació.");
-                }
-            }
-        }
+
         public string TipoUsuario
         {
             get { return tipousuario; }
@@ -135,81 +160,41 @@ namespace Proyecto_Catedra_PEDG01T
                 }
             }
         }
-        public string Contrasena
-        {
-            get { return contrasena; }
-            set
-            {
-                contrasena = value;
-                if (string.IsNullOrEmpty(Contrasena))
-                {
-                    throw new Exception("El campo Contraseña no puede estar vació.");
-                }
-            }
+
+        public string IdtypeUser { 
+            get => idtypeUser;
+            set {
+                if (string.IsNullOrEmpty(value))
+                    throw new Exception("El campo IDTipoUsuario no puede estar vació.");
+                else
+                    idtypeUser = value;
+            } 
         }
 
-        public string Uusuario
-        {
-            get { return usuario; }
-            set
-            {
-                usuario = value;
-                if (string.IsNullOrEmpty(Uusuario))
-                {
-                    throw new Exception("El campo Usuario no puede estar vació.");
-                }
-            }
-        }
-        public string IdTipoUsuario
-        {
-            get { return idtipoUsuario; }
-            set
-            {
-                idtipoUsuario = value;
-                if (string.IsNullOrEmpty(IdTipoUsuario))
-                {
-                    throw new Exception("El campo IdTTipousuario no puede estar vació.");
-                }
-            }
-        }
-        public void guardarusuario()
-        {
-            string sqlinsert = "INSERT INTO Usuarios(idUsuario,nombre, apellido,fechaNacimiento, usuario, contrasena, email, Telefono ,idTipoUsuario)" +
-                        "VALUES (@codigo, @nombre, @apellido, @fechanaci, @Usuario, @Clave, @correo, @tel, @codigotusu)";
 
+        //----- Métodos de la clase -----//
+
+        //Método que guarda un usuario en la BD
+        public void SaveUserInDB()
+        {
+            int idTipoUsuario;
+            string sqlinsert = "INSERT INTO Usuarios(nombre, apellido, fechaNacimiento, usuario, contrasena, email, Telefono , idTipoUsuario)" +
+                        "VALUES (@nombre, @apellido, @fechanaci, @usuario, @clave, @correo, @tel, @idTypeoUser)";
             try
             {
                 cone.Conectar();
+                idTipoUsuario = SaveTypeUserDB();
+                command = new SqlCommand(sqlinsert, cone.Conn);
 
-                sqlCommand = new SqlCommand(sqlinsert, cone.Conn);
-                sqlCommand.Parameters.Add
-                                (new SqlParameter("@codigo", SqlDbType.VarChar));
-                sqlCommand.Parameters["@codigo"].Value = IdUsuario;
-                sqlCommand.Parameters.Add
-                    (new SqlParameter("@nombre", SqlDbType.NChar));
-                sqlCommand.Parameters["@nombre"].Value = Nombre;
-                sqlCommand.Parameters.Add
-                    (new SqlParameter("@apellido", SqlDbType.VarChar));
-                sqlCommand.Parameters["@apellido"].Value = Apellido;
-                sqlCommand.Parameters.Add
-                    (new SqlParameter("@fechanaci", SqlDbType.VarChar));
-                sqlCommand.Parameters["@fechanaci"].Value = FechaNacimiento;
-                sqlCommand.Parameters.Add
-                    (new SqlParameter("@Usuario", SqlDbType.VarChar));
-                sqlCommand.Parameters["@Usuario"].Value = Uusuario;
-                sqlCommand.Parameters.Add
-                    (new SqlParameter("@Clave", SqlDbType.Int));
-                sqlCommand.Parameters["@Clave"].Value = Contrasena;
-                sqlCommand.Parameters.Add
-                    (new SqlParameter("@correo", SqlDbType.VarChar));
-                sqlCommand.Parameters["@correo"].Value = Email;
-                sqlCommand.Parameters.Add
-                   (new SqlParameter("@tel", SqlDbType.VarChar));
-                sqlCommand.Parameters["@tel"].Value = Telefono;
-                sqlCommand.Parameters.Add
-                   (new SqlParameter("@codigotusu", SqlDbType.VarChar));
-                sqlCommand.Parameters["@codigotusu"].Value = IdTipoUsuario;
-                sqlCommand.ExecuteNonQuery();
+                command.Parameters.AddWithValue("@nombre", Nombre);
+                command.Parameters.AddWithValue("@apellido", Apellido);
+                command.Parameters.AddWithValue("@fechanaci", FechaNacimiento);
+                command.Parameters.AddWithValue("@usuario", User);
+                command.Parameters.AddWithValue("@clave", Contrasena);
+                command.Parameters.AddWithValue("@correo", Email);
+                command.Parameters.AddWithValue("@tel", Telefono);
+                command.Parameters.AddWithValue("@idTypeoUser", idTipoUsuario);
+                command.ExecuteNonQuery();
 
                 MessageBox.Show("Usuario creado exitosamente, ahora inicie sesión", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -223,61 +208,66 @@ namespace Proyecto_Catedra_PEDG01T
             }
         }
 
-        public void generarCod()
+        //guarda registro en la tabla Tipo_usuario y retorna el Id del registro
+        private int SaveTypeUserDB()
         {
-            string codigo = "USR";
-            int aleatorio;
-            DateTime dateTime = DateTime.Now;
-            Random random = new Random();
+            string sqlinsert = "INSER INTO Tipo_usuario (TipoUsuario) VALUES (@typeUser)";
+            command = new SqlCommand(sqlinsert, cone.Conn);
+            command.Parameters.AddWithValue("@typeUser", TipoUsuario);
+            command.ExecuteNonQuery();
 
-            aleatorio = random.Next(0, 99);
-            codigo += dateTime.Second.ToString().Length == 1 ? "0" + dateTime.Second.ToString() : dateTime.Second.ToString();
-            codigo += aleatorio.ToString().Length == 1 ? "0" + aleatorio.ToString() : aleatorio.ToString();
-            codigo += dateTime.Day.ToString().Length == 1 ? "0" + dateTime.Day.ToString() : dateTime.Day.ToString();
-
-            idUsuario = codigo;
+            dataAdapter = new SqlDataAdapter("SELECT TOP 1 * FROM Tipo_Usuario ORDER BY idTipoUsuario DESC", cone.Conn);
+            dataReader = dataAdapter.SelectCommand.ExecuteReader();
+            dataReader.Read();
+            return Convert.ToInt32(dataReader["idTipoUsuario"]);
         }
 
-        public bool extraerUsuario(string nombre, string contrasena, string tipoUsuario)
+        //método encargadod de extraer un usuario desde la BD
+        public bool GetUserFormDB(string usuario, string contrasena, string tipoUsuario)
         {
-            cone.Conectar();
-
-            string seleccionar = "Select * FROM Usuarios Where nombre='" + nombre + "' AND contrasena='" + contrasena + "' AND Tipo='" + tipousuario + "'";
-            dataAdapter = new SqlDataAdapter(seleccionar, cone.Conn);
-            SqlParameter prm = new SqlParameter("nombre", SqlDbType.VarChar);
-            SqlParameter prm2 = new SqlParameter("contrasena", SqlDbType.VarChar);
-            SqlParameter prm3 = new SqlParameter("Tipo", SqlDbType.VarChar);
-            prm.Value = nombre;
-            prm2.Value = contrasena;
-            prm3.Value = tipoUsuario;
-            dataAdapter.SelectCommand.Parameters.Add(prm);
-            dataAdapter.SelectCommand.Parameters.Add(prm2);
-            dataAdapter.SelectCommand.Parameters.Add(prm3);
-
-            dataReader = dataAdapter.SelectCommand.ExecuteReader();
-
-            if (dataReader.HasRows)
+            bool userExists = false;
+            string seleccionar = "SELECT idUsuario, nombre, apellido, fechaNacimiento, usuario, contrasena, " + 
+                "email, Telefono, usu.idTipoUsuario, TipoUsuario FROM Usuarios usu " +
+                "INNER JOIN Tipo_usuario tpuser" +
+                "ON usu.idTipoUsuario = tpuser.idTipoUsuario " +
+                "WHERE nombre='@user' AND contrasena='@contra' AND Tipo='@typeusu'";
+            try
             {
-                dataReader.Read();
-                IdUsuario = dataReader["idUsuario"].ToString();
-                Nombre = dataReader["nombre"].ToString();
-                Apellido = dataReader["apellido"].ToString();
-                FechaNacimiento = dataReader["fechaNacimiento"].ToString();
-                Uusuario = dataReader["usuario"].ToString();
-                Contrasena = dataReader["contrasena"].ToString();
-                Email = dataReader["email"].ToString();
-                Telefono = Convert.ToInt32(dataReader["Telefono"].ToString());
-                IdTipoUsuario = dataReader["idTipoUsuario"].ToString();              
+                cone.Conectar();
+                dataAdapter = new SqlDataAdapter(seleccionar, cone.Conn);
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@user", usuario);
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@contra", contrasena);
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@typeusu", tipoUsuario);
+                dataReader = dataAdapter.SelectCommand.ExecuteReader();
+
+                //evalua si existe el registro de este usuario
+                if (dataReader.HasRows)
+                {
+                    dataReader.Read();
+                    IdUsuario = dataReader["idUsuario"].ToString();
+                    Nombre = dataReader["nombre"].ToString();
+                    Apellido = dataReader["apellido"].ToString();
+                    FechaNacimiento = dataReader["fechaNacimiento"].ToString();
+                    User = dataReader["usuario"].ToString();
+                    Contrasena = dataReader["contrasena"].ToString();
+                    Email = dataReader["email"].ToString();
+                    Telefono = dataReader["Telefono"].ToString();
+                    IdtypeUser = dataReader[8].ToString();
+                    TipoUsuario = dataReader["TipoUsuario"].ToString();
+                    userExists = true;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Ha ocurrido un error al extraer el usuario desde la BD. Contacte con el Administrador: "
+                    + err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
                 dataReader.Close();
                 cone.Cerrar();
-                return true;
             }
-            else
-            {
-                dataReader.Close();
-                cone.Cerrar();
-                return false;
-            }
+            return userExists;
         }
 
         public bool claveEsfuerte(string password)
@@ -315,31 +305,30 @@ namespace Proyecto_Catedra_PEDG01T
                 return false;
         }
 
-        private bool actualizarUsuario()
+        //método encargado de actualizar un usuario en la BD
+        public bool UpdateUser()
         {
             int rowsAffected = 0;
+            string sqlupdate = "UPDATE Usuarios SET nombre = @nombre, apellido = @apellido, fechaNacimiento = @fnacimiento, " +
+                "usuario = @user, contrasena = @clave, email = @correo, Telefono = @tel WHERE idUsuario = @idUser";
             try
             {
                 cone.Conectar();
 
-                string sqlupdate = "UPDATE Usuarios (Nombre, Apellido, Correo, Clave, Direccion, Telefono) " +
-                    "values (@nombre, @apellido, @correo, @clave, @direccion, @telefono)";
-
-                cmnd = new SqlCommand(sqlupdate, cone.Conn);
-                cmnd.Parameters.AddWithValue("@codigo", IdUsuario);
-                cmnd.Parameters.AddWithValue("@nombre", Nombre);
-                cmnd.Parameters.AddWithValue("@apellido", Apellido);
-                cmnd.Parameters.AddWithValue("@fechanaci", FechaNacimiento);
-                cmnd.Parameters.AddWithValue("@Usuario", Uusuario);
-                cmnd.Parameters.AddWithValue("@Clave", Contrasena);
-                cmnd.Parameters.AddWithValue("@correo", Email);
-                cmnd.Parameters.AddWithValue("@tel", Telefono);
-                cmnd.Parameters.AddWithValue("@codigotusu", IdTipoUsuario);
-                rowsAffected = cmnd.ExecuteNonQuery();
+                command = new SqlCommand(sqlupdate, cone.Conn);
+                command.Parameters.AddWithValue("@idUser", IdUsuario);
+                command.Parameters.AddWithValue("@nombre", Nombre);
+                command.Parameters.AddWithValue("@apellido", Apellido);
+                command.Parameters.AddWithValue("@fnacimiento", FechaNacimiento);
+                command.Parameters.AddWithValue("@user", User);
+                command.Parameters.AddWithValue("@clave", Contrasena);
+                command.Parameters.AddWithValue("@correo", Email);
+                command.Parameters.AddWithValue("@tel", Telefono);
+                rowsAffected = command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception err)
             {
-                MessageBox.Show("Error al actualizar Usuario de BD: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al actualizar usuario en la BD: " + err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 rowsAffected = 0;
             }
             finally
@@ -348,47 +337,9 @@ namespace Proyecto_Catedra_PEDG01T
             }
 
             if (rowsAffected != 0)
-            {
                 return true;
-            }
             else
-            {
                 return false;
-            }
-        }
-
-        public List<string> extraerMpagos()
-        {
-            string sqlSelect = "SELECT metodo FROM MetodoPago WHERE CodigoUsuario = @codUser";
-            List<string> metodos = new List<string>();
-
-            try
-            {
-                cone.Conectar();
-
-                dataAdapter = new SqlDataAdapter(sqlSelect, cone.Conn);
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@codUSer", cone);
-                dataReader = dataAdapter.SelectCommand.ExecuteReader();
-
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("Error al recibir métodos de pago: " + err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            if (dataReader.HasRows)
-            {
-                while (dataReader.Read())
-                {
-                    metodos.Add(dataReader["metodo"].ToString());
-                    Console.WriteLine();
-                }
-            }
-
-            cone.Cerrar();
-            dataReader.Close();
-
-            return metodos;
         }
 
     }
