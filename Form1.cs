@@ -26,5 +26,12 @@ namespace Proyecto_Catedra_PEDG01T
         {
             Application.Exit();
         }
+
+        private void btnlogin_Click(object sender, EventArgs e)
+        {
+            Inicio home = new Inicio(cbxtypeuser.Text);
+            home.ShowDialog();
+            //this.Hide();
+        }
     }
 }

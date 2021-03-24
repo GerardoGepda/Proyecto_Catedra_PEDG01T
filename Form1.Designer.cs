@@ -30,6 +30,7 @@
         {
             this.pnllogologin = new System.Windows.Forms.Panel();
             this.lblderechos = new System.Windows.Forms.Label();
+            this.pbxlogo = new System.Windows.Forms.PictureBox();
             this.lblrestaurante = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
             this.txtuser = new System.Windows.Forms.TextBox();
@@ -44,11 +45,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnlogin = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
-            this.pbxlogo = new System.Windows.Forms.PictureBox();
             this.btnclose = new System.Windows.Forms.Button();
             this.pnllogologin.SuspendLayout();
-            this.pnltypeuser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxlogo)).BeginInit();
+            this.pnltypeuser.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnllogologin
@@ -73,6 +73,16 @@
             this.lblderechos.Size = new System.Drawing.Size(276, 18);
             this.lblderechos.TabIndex = 2;
             this.lblderechos.Text = "Copyright © Derechos reservados 2021";
+            // 
+            // pbxlogo
+            // 
+            this.pbxlogo.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.Logo;
+            this.pbxlogo.Location = new System.Drawing.Point(145, 247);
+            this.pbxlogo.Name = "pbxlogo";
+            this.pbxlogo.Size = new System.Drawing.Size(235, 223);
+            this.pbxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxlogo.TabIndex = 1;
+            this.pbxlogo.TabStop = false;
             // 
             // lblrestaurante
             // 
@@ -228,6 +238,7 @@
             this.btnlogin.TabIndex = 18;
             this.btnlogin.Text = "Iniciar sesión";
             this.btnlogin.UseVisualStyleBackColor = false;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // btnsalir
             // 
@@ -242,16 +253,6 @@
             this.btnsalir.TabIndex = 19;
             this.btnsalir.Text = "Salir";
             this.btnsalir.UseVisualStyleBackColor = false;
-            // 
-            // pbxlogo
-            // 
-            this.pbxlogo.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.Logo;
-            this.pbxlogo.Location = new System.Drawing.Point(145, 247);
-            this.pbxlogo.Name = "pbxlogo";
-            this.pbxlogo.Size = new System.Drawing.Size(235, 223);
-            this.pbxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxlogo.TabIndex = 1;
-            this.pbxlogo.TabStop = false;
             // 
             // btnclose
             // 
@@ -292,8 +293,8 @@
             this.Text = "Form1";
             this.pnllogologin.ResumeLayout(false);
             this.pnllogologin.PerformLayout();
-            this.pnltypeuser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxlogo)).EndInit();
+            this.pnltypeuser.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -93,16 +93,6 @@ namespace Proyecto_Catedra_PEDG01T.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap producto {
-            get {
-                object obj = ResourceManager.GetObject("producto", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap profile_person {
             get {
                 object obj = ResourceManager.GetObject("profile_person", resourceCulture);
@@ -136,6 +126,16 @@ namespace Proyecto_Catedra_PEDG01T.Properties {
         internal static System.Drawing.Bitmap round_exit_to_app_white_48dp {
             get {
                 object obj = ResourceManager.GetObject("round_exit_to_app_white_48dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_fastfood_white_48dp {
+            get {
+                object obj = ResourceManager.GetObject("round_fastfood_white_48dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +186,16 @@ namespace Proyecto_Catedra_PEDG01T.Properties {
         internal static System.Drawing.Bitmap Round_Resturar {
             get {
                 object obj = ResourceManager.GetObject("Round_Resturar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_supervised_user_circle_white_48dp {
+            get {
+                object obj = ResourceManager.GetObject("round_supervised_user_circle_white_48dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
