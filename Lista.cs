@@ -96,7 +96,6 @@ namespace Proyecto_Catedra_PEDG01T
             if (!IsEmpty)
             {
                 firstNodo = lastNodo = null;
-                List<int> vs = new List<int>();
             }
         }
 
