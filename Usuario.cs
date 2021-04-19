@@ -13,7 +13,7 @@ namespace Proyecto_Catedra_PEDG01T
 {
     class Usuario
     {
-        Conexion cone = new Conexion();
+        Conexion conexion = new Conexion();
 
         private string idUsuario;
         private string nombre;
@@ -182,9 +182,9 @@ namespace Proyecto_Catedra_PEDG01T
                         "VALUES (@nombre, @apellido, @fechanaci, @usuario, @clave, @correo, @tel, @idTypeoUser)";
             try
             {
-                cone.Conectar();
+                conexion.Conectar();
                 idTipoUsuario = SaveTypeUserDB();
-                command = new SqlCommand(sqlinsert, cone.Conn);
+                command = new SqlCommand(sqlinsert, conexion.Conn);
 
                 command.Parameters.AddWithValue("@nombre", Nombre);
                 command.Parameters.AddWithValue("@apellido", Apellido);
@@ -204,7 +204,7 @@ namespace Proyecto_Catedra_PEDG01T
             }
             finally
             {
-                cone.Cerrar();
+                conexion.Cerrar();
             }
         }
 
@@ -212,11 +212,11 @@ namespace Proyecto_Catedra_PEDG01T
         private int SaveTypeUserDB()
         {
             string sqlinsert = "INSER INTO Tipo_usuario (TipoUsuario) VALUES (@typeUser)";
-            command = new SqlCommand(sqlinsert, cone.Conn);
+            command = new SqlCommand(sqlinsert, conexion.Conn);
             command.Parameters.AddWithValue("@typeUser", TipoUsuario);
             command.ExecuteNonQuery();
 
-            dataAdapter = new SqlDataAdapter("SELECT TOP 1 * FROM Tipo_Usuario ORDER BY idTipoUsuario DESC", cone.Conn);
+            dataAdapter = new SqlDataAdapter("SELECT TOP 1 * FROM Tipo_Usuario ORDER BY idTipoUsuario DESC", conexion.Conn);
             dataReader = dataAdapter.SelectCommand.ExecuteReader();
             dataReader.Read();
             return Convert.ToInt32(dataReader["idTipoUsuario"]);
@@ -233,8 +233,8 @@ namespace Proyecto_Catedra_PEDG01T
                 "WHERE nombre='@user' AND contrasena='@contra' AND Tipo='@typeusu'";
             try
             {
-                cone.Conectar();
-                dataAdapter = new SqlDataAdapter(seleccionar, cone.Conn);
+                conexion.Conectar();
+                dataAdapter = new SqlDataAdapter(seleccionar, conexion.Conn);
                 dataAdapter.SelectCommand.Parameters.AddWithValue("@user", usuario);
                 dataAdapter.SelectCommand.Parameters.AddWithValue("@contra", contrasena);
                 dataAdapter.SelectCommand.Parameters.AddWithValue("@typeusu", tipoUsuario);
@@ -265,7 +265,7 @@ namespace Proyecto_Catedra_PEDG01T
             finally
             {
                 dataReader.Close();
-                cone.Cerrar();
+                conexion.Cerrar();
             }
             return userExists;
         }
@@ -298,7 +298,7 @@ namespace Proyecto_Catedra_PEDG01T
                 }
             }
 
-            //Si la constraseña tiene mas de 5 numeros, mas de 1 minuscula y mas de 2 mayusculas
+            //Si la constraseña tiene mas de 3 numeros, mas de 2 minuscula y mas de 2 mayusculas
             if (cuentanum >= 5 && cuentaminusculas >= 1 && cuentamayusculas >= 2)
                 return true;
             else
@@ -313,9 +313,9 @@ namespace Proyecto_Catedra_PEDG01T
                 "usuario = @user, contrasena = @clave, email = @correo, Telefono = @tel WHERE idUsuario = @idUser";
             try
             {
-                cone.Conectar();
+                conexion.Conectar();
 
-                command = new SqlCommand(sqlupdate, cone.Conn);
+                command = new SqlCommand(sqlupdate, conexion.Conn);
                 command.Parameters.AddWithValue("@idUser", IdUsuario);
                 command.Parameters.AddWithValue("@nombre", Nombre);
                 command.Parameters.AddWithValue("@apellido", Apellido);
@@ -333,7 +333,7 @@ namespace Proyecto_Catedra_PEDG01T
             }
             finally
             {
-                cone.Cerrar();
+                conexion.Cerrar();
             }
 
             if (rowsAffected != 0)

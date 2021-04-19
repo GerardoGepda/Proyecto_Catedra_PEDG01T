@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Catedra_PEDG01T
 {
-    class Lista
+    public class Lista
     {
         private NodoLista firstNodo;
         private NodoLista lastNodo;
@@ -96,7 +96,6 @@ namespace Proyecto_Catedra_PEDG01T
             if (!IsEmpty)
             {
                 firstNodo = lastNodo = null;
-                List<int> vs = new List<int>();
             }
         }
 

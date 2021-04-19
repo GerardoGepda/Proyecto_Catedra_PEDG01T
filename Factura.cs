@@ -8,42 +8,19 @@ namespace Proyecto_Catedra_PEDG01T
 {
     class Factura
     {
-        //atributos
-        
+        //campos
         private string nMesa;
         private string monto;
         private string fecha;
         private string nFactura;
         private string cantidad;
 
-        //métodos
-       
-        public string Nmesa
-        {
-            get { return nMesa; }
-            set { nMesa = value; }
-        }
-        public string Monto
-        {
-            get { return monto; }
-            set { monto = value; }
-        }
-        public string Fecha
-        {
-            get { return fecha; }
-            set { fecha = value; }
-        }
+        //propiedades
+        public string NMesa { get => nMesa; set => nMesa = value; }
+        public string Monto { get => monto; set => monto = value; }
+        public string Fecha { get => fecha; set => fecha = value; }
+        public string NFactura { get => nFactura; set => nFactura = value; }
+        public string Cantidad { get => cantidad; set => cantidad = value; }
 
-        public string Nfactura
-        {
-            get { return nFactura; }
-            set { nFactura = value; }
-        }
-
-        public string Cantidad
-        {
-            get { return cantidad; }
-            set { cantidad = value; }
-        }
     }
 }

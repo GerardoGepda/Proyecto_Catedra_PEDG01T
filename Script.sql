@@ -12,10 +12,17 @@ constraint pk_Productos primary key (idProducto)
 
 create table Pedido(
 idPedido int identity(1,1),
+idUsuario int,
 fechaPedido datetime,
 estadoPedido int,
+totalPedido float,
 constraint pk_idPedidio primary key (idPedido)
 )
+
+ALTER TABLE Pedido
+ADD CONSTRAINT DF_Fecha 
+DEFAULT getdate() for fechaPedido
+
 create table Detalle_pedido(
 idDetalle int identity(1,1),
 idProducto int,

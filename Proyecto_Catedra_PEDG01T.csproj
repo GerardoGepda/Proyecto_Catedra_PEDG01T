@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Cola.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="DetallePedido.cs" />
     <Compile Include="Factura.cs" />
     <Compile Include="FacturaForm.cs">
       <SubType>Form</SubType>
