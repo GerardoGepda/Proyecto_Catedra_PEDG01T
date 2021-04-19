@@ -40,7 +40,7 @@
             this.cbxtypeuser = new System.Windows.Forms.ComboBox();
             this.btntypeuser = new System.Windows.Forms.Button();
             this.pnltypeuser = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtpassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnlogin = new System.Windows.Forms.Button();
@@ -190,18 +190,18 @@
             this.pnltypeuser.Size = new System.Drawing.Size(355, 21);
             this.pnltypeuser.TabIndex = 13;
             // 
-            // textBox1
+            // txtpassword
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(650, 364);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '•';
-            this.textBox1.Size = new System.Drawing.Size(343, 20);
-            this.textBox1.TabIndex = 16;
+            this.txtpassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.txtpassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtpassword.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpassword.ForeColor = System.Drawing.Color.White;
+            this.txtpassword.Location = new System.Drawing.Point(650, 364);
+            this.txtpassword.Multiline = true;
+            this.txtpassword.Name = "txtpassword";
+            this.txtpassword.PasswordChar = '•';
+            this.txtpassword.Size = new System.Drawing.Size(343, 20);
+            this.txtpassword.TabIndex = 16;
             // 
             // label3
             // 
@@ -253,6 +253,7 @@
             this.btnsalir.TabIndex = 19;
             this.btnsalir.Text = "Salir";
             this.btnsalir.UseVisualStyleBackColor = false;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
             // btnclose
             // 
@@ -277,7 +278,7 @@
             this.Controls.Add(this.btnclose);
             this.Controls.Add(this.btnsalir);
             this.Controls.Add(this.btnlogin);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtpassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pnltypeuser);
@@ -314,7 +315,7 @@
         private System.Windows.Forms.ComboBox cbxtypeuser;
         private System.Windows.Forms.Button btntypeuser;
         private System.Windows.Forms.Panel pnltypeuser;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtpassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnlogin;

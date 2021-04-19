@@ -17,6 +17,7 @@ namespace Proyecto_Catedra_PEDG01T
             InitializeComponent();
         }
 
+        //Eventos del formulario
         private void btntypeuser_Click(object sender, EventArgs e)
         {
             cbxtypeuser.DroppedDown = !cbxtypeuser.DroppedDown;
@@ -27,11 +28,42 @@ namespace Proyecto_Catedra_PEDG01T
             Application.Exit();
         }
 
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //--- Métodos del formulario ---//
+        public bool Validar()
+        {
+            bool validado = true;
+            if (string.IsNullOrEmpty(txtuser.Text) && string.IsNullOrEmpty(txtpassword.Text))
+            {
+                validado = false;
+                MessageBox.Show("No debe dejar campos vacíos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!(cbxtypeuser.SelectedIndex > -1))
+            {
+                validado = false;
+                MessageBox.Show("Debe seleccionar el tipo de usuario", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return validado;
+        }
+
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            Inicio home = new Inicio(cbxtypeuser.Text);
-            home.ShowDialog();
-            //this.Hide();
+            if (Validar())
+            {
+                Usuario user = new Usuario();
+                user.GetUserFromDB(txtuser.Text, txtpassword.Text, cbxtypeuser.SelectedItem.ToString());
+                Inicio home = new Inicio(user);
+                this.Hide();
+                home.ShowDialog();
+                this.Show();
+            }
         }
+
+        
     }
 }

@@ -12,10 +12,15 @@ namespace Proyecto_Catedra_PEDG01T
 {
     public partial class Inicio : Form
     {
-        public Inicio(string userType)
+        //Objeto de tipo Usuario con los datos del usuario actual
+        Usuario usuario;
+        public Inicio(Usuario usuario)
         {
             InitializeComponent();
-            if (userType == "Administrador")
+
+            this.usuario = usuario;
+
+            if (this.usuario.TipoUsuario == "Administrador")
             {
                 btnperfil.Location = new Point(0, 327);
                 pnladmin.Visible = true;

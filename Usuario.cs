@@ -11,7 +11,7 @@ using System.Data;
 
 namespace Proyecto_Catedra_PEDG01T
 {
-    class Usuario
+    public class Usuario
     {
         Conexion conexion = new Conexion();
 
@@ -208,7 +208,7 @@ namespace Proyecto_Catedra_PEDG01T
             }
         }
 
-        //guarda registro en la tabla Tipo_usuario y retorna el Id del registro
+        //guarda registro en la tabla Tipo_usuario y retorna el Id del registro (posiblemente se borre)
         private int SaveTypeUserDB()
         {
             string sqlinsert = "INSER INTO Tipo_usuario (TipoUsuario) VALUES (@typeUser)";
@@ -222,15 +222,15 @@ namespace Proyecto_Catedra_PEDG01T
             return Convert.ToInt32(dataReader["idTipoUsuario"]);
         }
 
-        //método encargadod de extraer un usuario desde la BD
-        public bool GetUserFormDB(string usuario, string contrasena, string tipoUsuario)
+        //método encargado de extraer un usuario desde la BD
+        public bool GetUserFromDB(string usuario, string contrasena, string tipoUsuario)
         {
             bool userExists = false;
             string seleccionar = "SELECT idUsuario, nombre, apellido, fechaNacimiento, usuario, contrasena, " + 
                 "email, Telefono, usu.idTipoUsuario, TipoUsuario FROM Usuarios usu " +
                 "INNER JOIN Tipo_usuario tpuser" +
                 "ON usu.idTipoUsuario = tpuser.idTipoUsuario " +
-                "WHERE nombre='@user' AND contrasena='@contra' AND Tipo='@typeusu'";
+                "WHERE nombre = @user AND contrasena = @contra AND TipoUsuario = @typeusu";
             try
             {
                 conexion.Conectar();
@@ -299,7 +299,7 @@ namespace Proyecto_Catedra_PEDG01T
             }
 
             //Si la constraseña tiene mas de 3 numeros, mas de 2 minuscula y mas de 2 mayusculas
-            if (cuentanum >= 5 && cuentaminusculas >= 1 && cuentamayusculas >= 2)
+            if (cuentanum >= 3 && cuentaminusculas >= 2 && cuentamayusculas >= 2)
                 return true;
             else
                 return false;
