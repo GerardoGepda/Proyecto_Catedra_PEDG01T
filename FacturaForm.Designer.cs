@@ -49,6 +49,7 @@
             // 
             // btncancelar
             // 
+            this.btncancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btncancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(71)))), ((int)(((byte)(61)))));
             this.btncancelar.FlatAppearance.BorderSize = 0;
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -63,6 +64,7 @@
             // 
             // btnagregar
             // 
+            this.btnagregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnagregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(190)))), ((int)(((byte)(30)))));
             this.btnagregar.FlatAppearance.BorderSize = 0;
             this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -77,6 +79,7 @@
             // 
             // btnimprimir
             // 
+            this.btnimprimir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnimprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
             this.btnimprimir.FlatAppearance.BorderSize = 0;
             this.btnimprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -91,6 +94,7 @@
             // 
             // lbproduc
             // 
+            this.lbproduc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbproduc.AutoSize = true;
             this.lbproduc.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbproduc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
@@ -103,6 +107,7 @@
             // 
             // dgv
             // 
+            this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Location = new System.Drawing.Point(169, 286);
             this.dgv.Margin = new System.Windows.Forms.Padding(2);
@@ -113,6 +118,8 @@
             // 
             // txtfecha
             // 
+            this.txtfecha.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtfecha.Enabled = false;
             this.txtfecha.Location = new System.Drawing.Point(447, 228);
             this.txtfecha.Margin = new System.Windows.Forms.Padding(2);
             this.txtfecha.Name = "txtfecha";
@@ -133,6 +140,8 @@
             // 
             // txtcantidad
             // 
+            this.txtcantidad.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtcantidad.Enabled = false;
             this.txtcantidad.Location = new System.Drawing.Point(585, 169);
             this.txtcantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtcantidad.Name = "txtcantidad";
@@ -153,6 +162,8 @@
             // 
             // txtnomesa
             // 
+            this.txtnomesa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtnomesa.Enabled = false;
             this.txtnomesa.Location = new System.Drawing.Point(585, 120);
             this.txtnomesa.Margin = new System.Windows.Forms.Padding(2);
             this.txtnomesa.Name = "txtnomesa";
@@ -173,6 +184,8 @@
             // 
             // txtmonto
             // 
+            this.txtmonto.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtmonto.Enabled = false;
             this.txtmonto.Location = new System.Drawing.Point(317, 169);
             this.txtmonto.Margin = new System.Windows.Forms.Padding(2);
             this.txtmonto.Name = "txtmonto";
@@ -193,6 +206,8 @@
             // 
             // txtnofactura
             // 
+            this.txtnofactura.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtnofactura.Enabled = false;
             this.txtnofactura.Location = new System.Drawing.Point(317, 120);
             this.txtnofactura.Margin = new System.Windows.Forms.Padding(2);
             this.txtnofactura.Name = "txtnofactura";

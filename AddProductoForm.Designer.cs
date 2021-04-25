@@ -43,6 +43,8 @@
             this.btnlimpiar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.lblimgproduct = new System.Windows.Forms.Label();
+            this.pnltxtboxs = new System.Windows.Forms.Panel();
+            this.pnltxtboxs.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbladdproducto
@@ -62,10 +64,10 @@
             this.txtnameproduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtnameproduct.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnameproduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtnameproduct.Location = new System.Drawing.Point(93, 299);
+            this.txtnameproduct.Location = new System.Drawing.Point(19, 36);
             this.txtnameproduct.Multiline = true;
             this.txtnameproduct.Name = "txtnameproduct";
-            this.txtnameproduct.Size = new System.Drawing.Size(343, 20);
+            this.txtnameproduct.Size = new System.Drawing.Size(315, 20);
             this.txtnameproduct.TabIndex = 5;
             // 
             // lblnameline
@@ -73,7 +75,7 @@
             this.lblnameline.AutoSize = true;
             this.lblnameline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnameline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.lblnameline.Location = new System.Drawing.Point(88, 308);
+            this.lblnameline.Location = new System.Drawing.Point(14, 45);
             this.lblnameline.Name = "lblnameline";
             this.lblnameline.Size = new System.Drawing.Size(320, 17);
             this.lblnameline.TabIndex = 6;
@@ -84,7 +86,7 @@
             this.lblnameproduct.AutoSize = true;
             this.lblnameproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnameproduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lblnameproduct.Location = new System.Drawing.Point(88, 271);
+            this.lblnameproduct.Location = new System.Drawing.Point(14, 8);
             this.lblnameproduct.Name = "lblnameproduct";
             this.lblnameproduct.Size = new System.Drawing.Size(148, 18);
             this.lblnameproduct.TabIndex = 4;
@@ -96,18 +98,19 @@
             this.txtpriceproduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpriceproduct.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpriceproduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtpriceproduct.Location = new System.Drawing.Point(490, 299);
+            this.txtpriceproduct.Location = new System.Drawing.Point(416, 36);
             this.txtpriceproduct.Multiline = true;
             this.txtpriceproduct.Name = "txtpriceproduct";
-            this.txtpriceproduct.Size = new System.Drawing.Size(343, 20);
+            this.txtpriceproduct.Size = new System.Drawing.Size(315, 20);
             this.txtpriceproduct.TabIndex = 8;
+            this.txtpriceproduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpriceproduct_KeyPress);
             // 
             // lblpriceline
             // 
             this.lblpriceline.AutoSize = true;
             this.lblpriceline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblpriceline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.lblpriceline.Location = new System.Drawing.Point(485, 308);
+            this.lblpriceline.Location = new System.Drawing.Point(411, 45);
             this.lblpriceline.Name = "lblpriceline";
             this.lblpriceline.Size = new System.Drawing.Size(320, 17);
             this.lblpriceline.TabIndex = 9;
@@ -118,7 +121,7 @@
             this.lblpriceproduct.AutoSize = true;
             this.lblpriceproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblpriceproduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lblpriceproduct.Location = new System.Drawing.Point(485, 271);
+            this.lblpriceproduct.Location = new System.Drawing.Point(411, 8);
             this.lblpriceproduct.Name = "lblpriceproduct";
             this.lblpriceproduct.Size = new System.Drawing.Size(137, 18);
             this.lblpriceproduct.TabIndex = 7;
@@ -130,10 +133,10 @@
             this.txtdescrproduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdescrproduct.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdescrproduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtdescrproduct.Location = new System.Drawing.Point(304, 395);
+            this.txtdescrproduct.Location = new System.Drawing.Point(230, 132);
             this.txtdescrproduct.Multiline = true;
             this.txtdescrproduct.Name = "txtdescrproduct";
-            this.txtdescrproduct.Size = new System.Drawing.Size(343, 20);
+            this.txtdescrproduct.Size = new System.Drawing.Size(315, 20);
             this.txtdescrproduct.TabIndex = 11;
             // 
             // lbldescline
@@ -141,7 +144,7 @@
             this.lbldescline.AutoSize = true;
             this.lbldescline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldescline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.lbldescline.Location = new System.Drawing.Point(299, 404);
+            this.lbldescline.Location = new System.Drawing.Point(225, 141);
             this.lbldescline.Name = "lbldescline";
             this.lbldescline.Size = new System.Drawing.Size(320, 17);
             this.lbldescline.TabIndex = 12;
@@ -152,7 +155,7 @@
             this.lbldescrproduct.AutoSize = true;
             this.lbldescrproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldescrproduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbldescrproduct.Location = new System.Drawing.Point(299, 367);
+            this.lbldescrproduct.Location = new System.Drawing.Point(225, 104);
             this.lbldescrproduct.Name = "lbldescrproduct";
             this.lbldescrproduct.Size = new System.Drawing.Size(173, 18);
             this.lbldescrproduct.TabIndex = 10;
@@ -160,6 +163,7 @@
             // 
             // btnaddphoto
             // 
+            this.btnaddphoto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnaddphoto.BackgroundImage = global::Proyecto_Catedra_PEDG01T.Properties.Resources.add_a_photo;
             this.btnaddphoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnaddphoto.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -170,9 +174,11 @@
             this.btnaddphoto.Size = new System.Drawing.Size(105, 105);
             this.btnaddphoto.TabIndex = 13;
             this.btnaddphoto.UseVisualStyleBackColor = true;
+            this.btnaddphoto.Click += new System.EventHandler(this.btnaddphoto_Click);
             // 
             // btnaddproduct
             // 
+            this.btnaddproduct.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnaddproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
             this.btnaddproduct.FlatAppearance.BorderSize = 0;
             this.btnaddproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -184,9 +190,11 @@
             this.btnaddproduct.TabIndex = 14;
             this.btnaddproduct.Text = "Agregar producto";
             this.btnaddproduct.UseVisualStyleBackColor = false;
+            this.btnaddproduct.Click += new System.EventHandler(this.btnaddproduct_Click);
             // 
             // btnlimpiar
             // 
+            this.btnlimpiar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnlimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.btnlimpiar.FlatAppearance.BorderSize = 0;
             this.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -198,9 +206,11 @@
             this.btnlimpiar.TabIndex = 15;
             this.btnlimpiar.Text = "Limpiar";
             this.btnlimpiar.UseVisualStyleBackColor = false;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
             // 
             // btncancelar
             // 
+            this.btncancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btncancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(71)))), ((int)(((byte)(61)))));
             this.btncancelar.FlatAppearance.BorderSize = 0;
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -212,9 +222,12 @@
             this.btncancelar.TabIndex = 16;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = false;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // lblimgproduct
             // 
+            this.lblimgproduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblimgproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblimgproduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.lblimgproduct.Location = new System.Drawing.Point(24, 220);
@@ -224,30 +237,42 @@
             this.lblimgproduct.Text = "Imagen del producto";
             this.lblimgproduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnltxtboxs
+            // 
+            this.pnltxtboxs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnltxtboxs.BackColor = System.Drawing.Color.White;
+            this.pnltxtboxs.Controls.Add(this.txtpriceproduct);
+            this.pnltxtboxs.Controls.Add(this.txtnameproduct);
+            this.pnltxtboxs.Controls.Add(this.lblnameproduct);
+            this.pnltxtboxs.Controls.Add(this.lblnameline);
+            this.pnltxtboxs.Controls.Add(this.lblpriceproduct);
+            this.pnltxtboxs.Controls.Add(this.lblpriceline);
+            this.pnltxtboxs.Controls.Add(this.txtdescrproduct);
+            this.pnltxtboxs.Controls.Add(this.lbldescrproduct);
+            this.pnltxtboxs.Controls.Add(this.lbldescline);
+            this.pnltxtboxs.Location = new System.Drawing.Point(83, 265);
+            this.pnltxtboxs.Name = "pnltxtboxs";
+            this.pnltxtboxs.Size = new System.Drawing.Size(741, 176);
+            this.pnltxtboxs.TabIndex = 18;
+            // 
             // AddProductoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 580);
+            this.Controls.Add(this.pnltxtboxs);
             this.Controls.Add(this.lblimgproduct);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnlimpiar);
             this.Controls.Add(this.btnaddproduct);
             this.Controls.Add(this.btnaddphoto);
-            this.Controls.Add(this.txtdescrproduct);
-            this.Controls.Add(this.lbldescline);
-            this.Controls.Add(this.lbldescrproduct);
-            this.Controls.Add(this.txtpriceproduct);
-            this.Controls.Add(this.lblpriceline);
-            this.Controls.Add(this.lblpriceproduct);
-            this.Controls.Add(this.txtnameproduct);
-            this.Controls.Add(this.lblnameline);
-            this.Controls.Add(this.lblnameproduct);
             this.Controls.Add(this.lbladdproducto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddProductoForm";
             this.Text = "AddProductoForm";
+            this.pnltxtboxs.ResumeLayout(false);
+            this.pnltxtboxs.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,5 +295,6 @@
         private System.Windows.Forms.Button btnlimpiar;
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Label lblimgproduct;
+        private System.Windows.Forms.Panel pnltxtboxs;
     }
 }

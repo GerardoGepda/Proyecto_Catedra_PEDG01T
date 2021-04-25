@@ -29,46 +29,46 @@
         private void InitializeComponent()
         {
             this.pnlmenu = new System.Windows.Forms.Panel();
+            this.pnladmin = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnadmuser = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnadmproduct = new System.Windows.Forms.Button();
+            this.btnaddproduct = new System.Windows.Forms.Button();
+            this.pbxperfil = new System.Windows.Forms.PictureBox();
             this.btnperfil = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbxlogout = new System.Windows.Forms.PictureBox();
             this.btnlogout = new System.Windows.Forms.Button();
+            this.pbxpedidos = new System.Windows.Forms.PictureBox();
             this.btnpedidos = new System.Windows.Forms.Button();
+            this.pbxmenu = new System.Windows.Forms.PictureBox();
             this.btnmenu = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbltitulo = new System.Windows.Forms.Label();
+            this.pbxlogo = new System.Windows.Forms.PictureBox();
             this.pnlbarra = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pnlcontent = new System.Windows.Forms.Panel();
-            this.pnladmin = new System.Windows.Forms.Panel();
-            this.btnadmuser = new System.Windows.Forms.Button();
-            this.btnadmproduct = new System.Windows.Forms.Button();
-            this.btnaddproduct = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnminimize = new System.Windows.Forms.Button();
             this.btnWState = new System.Windows.Forms.Button();
             this.btnclose = new System.Windows.Forms.Button();
-            this.pbxperfil = new System.Windows.Forms.PictureBox();
-            this.pbxlogout = new System.Windows.Forms.PictureBox();
-            this.pbxpedidos = new System.Windows.Forms.PictureBox();
-            this.pbxmenu = new System.Windows.Forms.PictureBox();
-            this.pbxlogo = new System.Windows.Forms.PictureBox();
+            this.pnlcontent = new System.Windows.Forms.Panel();
             this.pnlmenu.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.pnlbarra.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.pnladmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxperfil)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxlogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxpedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxmenu)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxlogo)).BeginInit();
+            this.pnlbarra.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlmenu
@@ -88,6 +88,116 @@
             this.pnlmenu.Name = "pnlmenu";
             this.pnlmenu.Size = new System.Drawing.Size(200, 640);
             this.pnlmenu.TabIndex = 0;
+            // 
+            // pnladmin
+            // 
+            this.pnladmin.Controls.Add(this.pictureBox1);
+            this.pnladmin.Controls.Add(this.btnadmuser);
+            this.pnladmin.Controls.Add(this.pictureBox2);
+            this.pnladmin.Controls.Add(this.pictureBox3);
+            this.pnladmin.Controls.Add(this.btnadmproduct);
+            this.pnladmin.Controls.Add(this.btnaddproduct);
+            this.pnladmin.Enabled = false;
+            this.pnladmin.Location = new System.Drawing.Point(2, 83);
+            this.pnladmin.Name = "pnladmin";
+            this.pnladmin.Size = new System.Drawing.Size(203, 211);
+            this.pnladmin.TabIndex = 0;
+            this.pnladmin.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.pictureBox1.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_supervised_user_circle_white_48dp;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 171);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnadmuser
+            // 
+            this.btnadmuser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btnadmuser.FlatAppearance.BorderSize = 0;
+            this.btnadmuser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
+            this.btnadmuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnadmuser.ForeColor = System.Drawing.Color.White;
+            this.btnadmuser.Location = new System.Drawing.Point(1, 164);
+            this.btnadmuser.Name = "btnadmuser";
+            this.btnadmuser.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnadmuser.Size = new System.Drawing.Size(200, 40);
+            this.btnadmuser.TabIndex = 12;
+            this.btnadmuser.Text = "Administrar usuarios";
+            this.btnadmuser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnadmuser.UseVisualStyleBackColor = false;
+            this.btnadmuser.Click += new System.EventHandler(this.btnadmuser_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.pictureBox2.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_restaurant_menu_white_48dp;
+            this.pictureBox2.Location = new System.Drawing.Point(13, 90);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.pictureBox3.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_fastfood_white_48dp;
+            this.pictureBox3.Location = new System.Drawing.Point(13, 15);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btnadmproduct
+            // 
+            this.btnadmproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btnadmproduct.FlatAppearance.BorderSize = 0;
+            this.btnadmproduct.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
+            this.btnadmproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnadmproduct.ForeColor = System.Drawing.Color.White;
+            this.btnadmproduct.Location = new System.Drawing.Point(1, 83);
+            this.btnadmproduct.Name = "btnadmproduct";
+            this.btnadmproduct.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnadmproduct.Size = new System.Drawing.Size(200, 40);
+            this.btnadmproduct.TabIndex = 10;
+            this.btnadmproduct.Text = "Administrar producto";
+            this.btnadmproduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnadmproduct.UseVisualStyleBackColor = false;
+            this.btnadmproduct.Click += new System.EventHandler(this.btnadmproduct_Click);
+            // 
+            // btnaddproduct
+            // 
+            this.btnaddproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btnaddproduct.FlatAppearance.BorderSize = 0;
+            this.btnaddproduct.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
+            this.btnaddproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnaddproduct.ForeColor = System.Drawing.Color.White;
+            this.btnaddproduct.Location = new System.Drawing.Point(1, 8);
+            this.btnaddproduct.Name = "btnaddproduct";
+            this.btnaddproduct.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnaddproduct.Size = new System.Drawing.Size(200, 40);
+            this.btnaddproduct.TabIndex = 8;
+            this.btnaddproduct.Text = "Agregar producto";
+            this.btnaddproduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnaddproduct.UseVisualStyleBackColor = false;
+            this.btnaddproduct.Click += new System.EventHandler(this.btnaddproduct_Click);
+            // 
+            // pbxperfil
+            // 
+            this.pbxperfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.pbxperfil.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_person_white_48dp;
+            this.pbxperfil.Location = new System.Drawing.Point(12, 252);
+            this.pbxperfil.Name = "pbxperfil";
+            this.pbxperfil.Size = new System.Drawing.Size(25, 25);
+            this.pbxperfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxperfil.TabIndex = 7;
+            this.pbxperfil.TabStop = false;
             // 
             // btnperfil
             // 
@@ -118,6 +228,17 @@
             this.panel1.Size = new System.Drawing.Size(200, 69);
             this.panel1.TabIndex = 5;
             // 
+            // pbxlogout
+            // 
+            this.pbxlogout.BackColor = System.Drawing.Color.Gray;
+            this.pbxlogout.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_exit_to_app_white_48dp;
+            this.pbxlogout.Location = new System.Drawing.Point(19, 18);
+            this.pbxlogout.Name = "pbxlogout";
+            this.pbxlogout.Size = new System.Drawing.Size(35, 35);
+            this.pbxlogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxlogout.TabIndex = 8;
+            this.pbxlogout.TabStop = false;
+            // 
             // btnlogout
             // 
             this.btnlogout.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -135,6 +256,17 @@
             this.btnlogout.UseVisualStyleBackColor = true;
             this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
+            // pbxpedidos
+            // 
+            this.pbxpedidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.pbxpedidos.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_assignment_white_48dp;
+            this.pbxpedidos.Location = new System.Drawing.Point(12, 176);
+            this.pbxpedidos.Name = "pbxpedidos";
+            this.pbxpedidos.Size = new System.Drawing.Size(25, 25);
+            this.pbxpedidos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxpedidos.TabIndex = 4;
+            this.pbxpedidos.TabStop = false;
+            // 
             // btnpedidos
             // 
             this.btnpedidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
@@ -151,6 +283,17 @@
             this.btnpedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnpedidos.UseVisualStyleBackColor = false;
             this.btnpedidos.Click += new System.EventHandler(this.btnpedidos_Click);
+            // 
+            // pbxmenu
+            // 
+            this.pbxmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.pbxmenu.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_restaurant_menu_white_48dp;
+            this.pbxmenu.Location = new System.Drawing.Point(12, 101);
+            this.pbxmenu.Name = "pbxmenu";
+            this.pbxmenu.Size = new System.Drawing.Size(25, 25);
+            this.pbxmenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxmenu.TabIndex = 2;
+            this.pbxmenu.TabStop = false;
             // 
             // btnmenu
             // 
@@ -189,6 +332,16 @@
             this.lbltitulo.TabIndex = 1;
             this.lbltitulo.Text = "Resturante";
             // 
+            // pbxlogo
+            // 
+            this.pbxlogo.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.Logo;
+            this.pbxlogo.Location = new System.Drawing.Point(7, 7);
+            this.pbxlogo.Name = "pbxlogo";
+            this.pbxlogo.Size = new System.Drawing.Size(52, 47);
+            this.pbxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxlogo.TabIndex = 0;
+            this.pbxlogo.TabStop = false;
+            // 
             // pnlbarra
             // 
             this.pnlbarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
@@ -221,114 +374,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 39);
             this.panel4.TabIndex = 0;
-            // 
-            // pnlcontent
-            // 
-            this.pnlcontent.BackColor = System.Drawing.Color.Silver;
-            this.pnlcontent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlcontent.Location = new System.Drawing.Point(200, 60);
-            this.pnlcontent.Name = "pnlcontent";
-            this.pnlcontent.Size = new System.Drawing.Size(900, 580);
-            this.pnlcontent.TabIndex = 2;
-            // 
-            // pnladmin
-            // 
-            this.pnladmin.Controls.Add(this.pictureBox1);
-            this.pnladmin.Controls.Add(this.btnadmuser);
-            this.pnladmin.Controls.Add(this.pictureBox2);
-            this.pnladmin.Controls.Add(this.pictureBox3);
-            this.pnladmin.Controls.Add(this.btnadmproduct);
-            this.pnladmin.Controls.Add(this.btnaddproduct);
-            this.pnladmin.Enabled = false;
-            this.pnladmin.Location = new System.Drawing.Point(2, 83);
-            this.pnladmin.Name = "pnladmin";
-            this.pnladmin.Size = new System.Drawing.Size(203, 211);
-            this.pnladmin.TabIndex = 0;
-            this.pnladmin.Visible = false;
-            // 
-            // btnadmuser
-            // 
-            this.btnadmuser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.btnadmuser.FlatAppearance.BorderSize = 0;
-            this.btnadmuser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.btnadmuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnadmuser.ForeColor = System.Drawing.Color.White;
-            this.btnadmuser.Location = new System.Drawing.Point(1, 164);
-            this.btnadmuser.Name = "btnadmuser";
-            this.btnadmuser.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
-            this.btnadmuser.Size = new System.Drawing.Size(200, 40);
-            this.btnadmuser.TabIndex = 12;
-            this.btnadmuser.Text = "Administrar usuarios";
-            this.btnadmuser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnadmuser.UseVisualStyleBackColor = false;
-            this.btnadmuser.Click += new System.EventHandler(this.btnadmuser_Click);
-            // 
-            // btnadmproduct
-            // 
-            this.btnadmproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.btnadmproduct.FlatAppearance.BorderSize = 0;
-            this.btnadmproduct.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.btnadmproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnadmproduct.ForeColor = System.Drawing.Color.White;
-            this.btnadmproduct.Location = new System.Drawing.Point(1, 83);
-            this.btnadmproduct.Name = "btnadmproduct";
-            this.btnadmproduct.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
-            this.btnadmproduct.Size = new System.Drawing.Size(200, 40);
-            this.btnadmproduct.TabIndex = 10;
-            this.btnadmproduct.Text = "Administrar producto";
-            this.btnadmproduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnadmproduct.UseVisualStyleBackColor = false;
-            this.btnadmproduct.Click += new System.EventHandler(this.btnadmproduct_Click);
-            // 
-            // btnaddproduct
-            // 
-            this.btnaddproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.btnaddproduct.FlatAppearance.BorderSize = 0;
-            this.btnaddproduct.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.btnaddproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnaddproduct.ForeColor = System.Drawing.Color.White;
-            this.btnaddproduct.Location = new System.Drawing.Point(1, 8);
-            this.btnaddproduct.Name = "btnaddproduct";
-            this.btnaddproduct.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
-            this.btnaddproduct.Size = new System.Drawing.Size(200, 40);
-            this.btnaddproduct.TabIndex = 8;
-            this.btnaddproduct.Text = "Agregar producto";
-            this.btnaddproduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnaddproduct.UseVisualStyleBackColor = false;
-            this.btnaddproduct.Click += new System.EventHandler(this.btnaddproduct_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.pictureBox1.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_supervised_user_circle_white_48dp;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 171);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.pictureBox2.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_restaurant_menu_white_48dp;
-            this.pictureBox2.Location = new System.Drawing.Point(13, 90);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.pictureBox3.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_fastfood_white_48dp;
-            this.pictureBox3.Location = new System.Drawing.Point(13, 15);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
             // 
             // btnminimize
             // 
@@ -372,59 +417,15 @@
             this.btnclose.UseVisualStyleBackColor = true;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
-            // pbxperfil
+            // pnlcontent
             // 
-            this.pbxperfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.pbxperfil.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_person_white_48dp;
-            this.pbxperfil.Location = new System.Drawing.Point(12, 252);
-            this.pbxperfil.Name = "pbxperfil";
-            this.pbxperfil.Size = new System.Drawing.Size(25, 25);
-            this.pbxperfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxperfil.TabIndex = 7;
-            this.pbxperfil.TabStop = false;
-            // 
-            // pbxlogout
-            // 
-            this.pbxlogout.BackColor = System.Drawing.Color.Gray;
-            this.pbxlogout.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_exit_to_app_white_48dp;
-            this.pbxlogout.Location = new System.Drawing.Point(19, 18);
-            this.pbxlogout.Name = "pbxlogout";
-            this.pbxlogout.Size = new System.Drawing.Size(35, 35);
-            this.pbxlogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxlogout.TabIndex = 8;
-            this.pbxlogout.TabStop = false;
-            // 
-            // pbxpedidos
-            // 
-            this.pbxpedidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.pbxpedidos.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_assignment_white_48dp;
-            this.pbxpedidos.Location = new System.Drawing.Point(12, 176);
-            this.pbxpedidos.Name = "pbxpedidos";
-            this.pbxpedidos.Size = new System.Drawing.Size(25, 25);
-            this.pbxpedidos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxpedidos.TabIndex = 4;
-            this.pbxpedidos.TabStop = false;
-            // 
-            // pbxmenu
-            // 
-            this.pbxmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.pbxmenu.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.round_restaurant_menu_white_48dp;
-            this.pbxmenu.Location = new System.Drawing.Point(12, 101);
-            this.pbxmenu.Name = "pbxmenu";
-            this.pbxmenu.Size = new System.Drawing.Size(25, 25);
-            this.pbxmenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxmenu.TabIndex = 2;
-            this.pbxmenu.TabStop = false;
-            // 
-            // pbxlogo
-            // 
-            this.pbxlogo.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.Logo;
-            this.pbxlogo.Location = new System.Drawing.Point(7, 7);
-            this.pbxlogo.Name = "pbxlogo";
-            this.pbxlogo.Size = new System.Drawing.Size(52, 47);
-            this.pbxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxlogo.TabIndex = 0;
-            this.pbxlogo.TabStop = false;
+            this.pnlcontent.BackColor = System.Drawing.Color.Silver;
+            this.pnlcontent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlcontent.Location = new System.Drawing.Point(200, 60);
+            this.pnlcontent.Name = "pnlcontent";
+            this.pnlcontent.Size = new System.Drawing.Size(900, 580);
+            this.pnlcontent.TabIndex = 2;
+            this.pnlcontent.Resize += new System.EventHandler(this.pnlcontent_Resize);
             // 
             // Inicio
             // 
@@ -440,20 +441,20 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.pnlmenu.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.pnlbarra.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.pnladmin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxperfil)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxlogout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxpedidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxmenu)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxlogo)).EndInit();
+            this.pnlbarra.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

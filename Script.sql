@@ -3,10 +3,11 @@ use Proyecto
 
 create table Productos(
 idProducto int identity(1,1),
-nombreProducto varchar,
-codigoProducto varchar,
+nombreProducto varchar(25),
+codigoProducto varchar(5),
 precioProducto float,
 Descripcion varchar(255),
+imgProducto image,
 constraint pk_Productos primary key (idProducto)
 )
 
@@ -44,11 +45,11 @@ constraint pk_Tipo_usuario primary key (idTipoUsuario)
 
 create table Usuarios(
 idUsuario int identity(1,1),
-nombre varchar,
-apellido varchar,
+nombre varchar(50),
+apellido varchar(50),
 fechaNacimiento date ,
-usuario varchar, 
-contrasena varchar,
+usuario varchar(50), 
+contrasena varchar(30),
 email varchar(100),
 Telefono varchar(20),
 idTipoUsuario int,
@@ -58,4 +59,11 @@ constraint fk_TipoUsuario foreign key (idTipoUsuario) references Tipo_usuario (i
 )
 
 
+--Insertanto tipos de usuario
+INSERT INTO Tipo_usuario VALUES ('Administrador'),
+('Empleado');
 
+--Insertando usuarios de prueba
+INSERT INTO Usuarios (nombre, apellido, fechaNacimiento, usuario, contrasena, email, Telefono, idTipoUsuario) 
+VALUES ('Juan', 'Pérez', '2000-10-3', 'JuanP12', '123456', 'juan.perez@gmail.com', '7361839', 1),
+('Pedro', 'Hernández', '2001-6-12', 'Pedro11', '123456', 'pedro.hndz@gmail.com', '7810385', 2);

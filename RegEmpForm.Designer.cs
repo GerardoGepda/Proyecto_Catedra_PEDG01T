@@ -65,6 +65,7 @@
             // 
             // btncancelar
             // 
+            this.btncancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btncancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(71)))), ((int)(((byte)(61)))));
             this.btncancelar.FlatAppearance.BorderSize = 0;
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -79,6 +80,7 @@
             // 
             // btnregistrarse
             // 
+            this.btnregistrarse.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnregistrarse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
             this.btnregistrarse.FlatAppearance.BorderSize = 0;
             this.btnregistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -93,6 +95,7 @@
             // 
             // txttelefono
             // 
+            this.txttelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txttelefono.BackColor = System.Drawing.Color.White;
             this.txttelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txttelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -105,6 +108,7 @@
             // 
             // lbtelefonoline
             // 
+            this.lbtelefonoline.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbtelefonoline.AutoSize = true;
             this.lbtelefonoline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtelefonoline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
@@ -116,6 +120,7 @@
             // 
             // lbtelefono
             // 
+            this.lbtelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbtelefono.AutoSize = true;
             this.lbtelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
@@ -127,6 +132,7 @@
             // 
             // txtemail
             // 
+            this.txtemail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtemail.BackColor = System.Drawing.Color.White;
             this.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,6 +145,7 @@
             // 
             // lbemailline
             // 
+            this.lbemailline.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbemailline.AutoSize = true;
             this.lbemailline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbemailline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
@@ -150,6 +157,7 @@
             // 
             // lbemail
             // 
+            this.lbemail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbemail.AutoSize = true;
             this.lbemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbemail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
@@ -161,6 +169,7 @@
             // 
             // txtverificar
             // 
+            this.txtverificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtverificar.BackColor = System.Drawing.Color.White;
             this.txtverificar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtverificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -173,6 +182,7 @@
             // 
             // lblverificaline
             // 
+            this.lblverificaline.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblverificaline.AutoSize = true;
             this.lblverificaline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblverificaline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
@@ -184,6 +194,7 @@
             // 
             // lbveririficar
             // 
+            this.lbveririficar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbveririficar.AutoSize = true;
             this.lbveririficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbveririficar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
@@ -195,6 +206,7 @@
             // 
             // txtcontrasena
             // 
+            this.txtcontrasena.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtcontrasena.BackColor = System.Drawing.Color.White;
             this.txtcontrasena.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcontrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -207,6 +219,7 @@
             // 
             // lblcontraline
             // 
+            this.lblcontraline.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblcontraline.AutoSize = true;
             this.lblcontraline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcontraline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
@@ -218,6 +231,7 @@
             // 
             // lbcontraseña
             // 
+            this.lbcontraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbcontraseña.AutoSize = true;
             this.lbcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbcontraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
@@ -229,6 +243,7 @@
             // 
             // txtusuario
             // 
+            this.txtusuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtusuario.BackColor = System.Drawing.Color.White;
             this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -241,6 +256,7 @@
             // 
             // lblusuarioline
             // 
+            this.lblusuarioline.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblusuarioline.AutoSize = true;
             this.lblusuarioline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuarioline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
@@ -252,6 +268,7 @@
             // 
             // lbusuario
             // 
+            this.lbusuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbusuario.AutoSize = true;
             this.lbusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
@@ -263,6 +280,7 @@
             // 
             // txtnombre
             // 
+            this.txtnombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtnombre.BackColor = System.Drawing.Color.White;
             this.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -275,6 +293,7 @@
             // 
             // lblnombreline
             // 
+            this.lblnombreline.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblnombreline.AutoSize = true;
             this.lblnombreline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnombreline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
@@ -286,6 +305,7 @@
             // 
             // lbnombre
             // 
+            this.lbnombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbnombre.AutoSize = true;
             this.lbnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbnombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));

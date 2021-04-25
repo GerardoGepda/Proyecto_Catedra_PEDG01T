@@ -40,6 +40,7 @@
             // 
             // btnentregar
             // 
+            this.btnentregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnentregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnentregar.FlatAppearance.BorderSize = 0;
             this.btnentregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -55,18 +56,19 @@
             // lblpedidos
             // 
             this.lblpedidos.AutoSize = true;
-            this.lblpedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpedidos.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblpedidos.Location = new System.Drawing.Point(34, 27);
             this.lblpedidos.Name = "lblpedidos";
-            this.lblpedidos.Size = new System.Drawing.Size(83, 25);
+            this.lblpedidos.Size = new System.Drawing.Size(94, 27);
             this.lblpedidos.TabIndex = 4;
             this.lblpedidos.Text = "Pedidos";
             // 
             // lblencola
             // 
+            this.lblencola.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblencola.AutoSize = true;
             this.lblencola.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblencola.Location = new System.Drawing.Point(54, 86);
+            this.lblencola.Location = new System.Drawing.Point(54, 144);
             this.lblencola.Name = "lblencola";
             this.lblencola.Size = new System.Drawing.Size(105, 16);
             this.lblencola.TabIndex = 5;
@@ -74,6 +76,7 @@
             // 
             // btnfactura
             // 
+            this.btnfactura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnfactura.BackColor = System.Drawing.Color.Brown;
             this.btnfactura.FlatAppearance.BorderSize = 0;
             this.btnfactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -88,6 +91,7 @@
             // 
             // btneditar
             // 
+            this.btneditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btneditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btneditar.FlatAppearance.BorderSize = 0;
             this.btneditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -102,6 +106,7 @@
             // 
             // btncancelar
             // 
+            this.btncancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncancelar.BackColor = System.Drawing.Color.Red;
             this.btncancelar.FlatAppearance.BorderSize = 0;
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -116,6 +121,7 @@
             // 
             // dgvpedidos
             // 
+            this.dgvpedidos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dgvpedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvpedidos.Location = new System.Drawing.Point(57, 172);
             this.dgvpedidos.Name = "dgvpedidos";

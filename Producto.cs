@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Proyecto_Catedra_PEDG01T
 {
-    class Producto
+    public class Producto
     {
         //herramientas para la clase
         private static Conexion conexion = new Conexion();
@@ -22,6 +23,7 @@ namespace Proyecto_Catedra_PEDG01T
         private double precio;
         private string codigo;
         private string descripcion;
+        private byte[] photoProducto;
 
         //propiedades de la clase
         public int Id { get => id; set => id = value; }
@@ -29,6 +31,7 @@ namespace Proyecto_Catedra_PEDG01T
         public double Precio { get => precio; set => precio = value; }
         public string Codigo { get => codigo; set => codigo = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
+        public byte[] PhotoProducto { get => photoProducto; set => photoProducto = value; }
 
         //--- Métodos de la clase ---//
 
@@ -57,7 +60,8 @@ namespace Proyecto_Catedra_PEDG01T
                             Nombre = dataReader["nombreProducto"].ToString(),
                             Codigo = dataReader["codigoProducto"].ToString(),
                             Precio = float.Parse(dataReader["precioProducto"].ToString()),
-                            Descripcion = dataReader["Descripcion"].ToString()
+                            Descripcion = dataReader["Descripcion"].ToString(),
+                            PhotoProducto = (byte[])dataReader["imgProducto"]
                         };
                         //añadimos el producto a la lista
                         productos.Add(producto);
@@ -66,6 +70,8 @@ namespace Proyecto_Catedra_PEDG01T
                 }
                 else
                     MessageBox.Show("No hay productos en la BD", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                dataReader.Close();
             }
             catch (Exception err)
             {
@@ -74,8 +80,7 @@ namespace Proyecto_Catedra_PEDG01T
             }
             finally
             {
-                //cerramos el dataReader y la conexión
-                dataReader.Close();
+                //cerramos la conexión
                 conexion.Cerrar();
             }
           
@@ -86,8 +91,8 @@ namespace Proyecto_Catedra_PEDG01T
         public bool AddProducto()
         {
             bool agregado = false;
-            string sql = "INSERT INTO Productos (nombreProducto, codigoProducto, precioProducto ,Descripcion) ";
-            sql += "VALUES (@name, @code, @price, @description)";
+            string sql = "INSERT INTO Productos (nombreProducto, codigoProducto, precioProducto ,Descripcion, imgProducto) ";
+            sql += "VALUES (@name, @code, @price, @description, @img)";
 
             try
             {
@@ -101,6 +106,7 @@ namespace Proyecto_Catedra_PEDG01T
                 command.Parameters.AddWithValue("@code", cod);
                 command.Parameters.AddWithValue("@price", Precio);
                 command.Parameters.AddWithValue("@description", Descripcion);
+                command.Parameters.Add("@img", SqlDbType.Image).Value = PhotoProducto;
                 //evaluamos si se ingreso el producto
                 agregado = command.ExecuteNonQuery() > 0 ? true : false;
             }
@@ -139,7 +145,7 @@ namespace Proyecto_Catedra_PEDG01T
 
                 dataAdapter = null;
             }
-
+            dataReader.Close();
             return cod;
         }
 
@@ -148,17 +154,18 @@ namespace Proyecto_Catedra_PEDG01T
         {
             bool actualizado = false;
             string sql = "UPDATE Productos SET nombreProducto = @name, codigoProducto = @code, precioProducto = @price, " +
-                "Descripcion = @description WHERE idProducto = @id";
+                "Descripcion = @description, imgProducto = @img WHERE idProducto = @id";
 
             try
             {
-                conexion.Cerrar();
+                conexion.Conectar();
                 command = new SqlCommand(sql, conexion.Conn);
                 command.Parameters.AddWithValue("@id", Id);
                 command.Parameters.AddWithValue("@name", Nombre);
                 command.Parameters.AddWithValue("@code", Codigo);
                 command.Parameters.AddWithValue("@price", Precio);
                 command.Parameters.AddWithValue("@description", Descripcion);
+                command.Parameters.Add("@img", SqlDbType.Image).Value = PhotoProducto;
 
                 //evaluamos si se actualizo el producto
                 actualizado = command.ExecuteNonQuery() > 0 ? true : false;
@@ -184,7 +191,7 @@ namespace Proyecto_Catedra_PEDG01T
 
             try
             {
-                conexion.Cerrar();
+                conexion.Conectar();
                 command = new SqlCommand(sql, conexion.Conn);
                 command.Parameters.AddWithValue("@id", idProducto);
 

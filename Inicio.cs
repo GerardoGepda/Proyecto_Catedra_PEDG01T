@@ -26,6 +26,11 @@ namespace Proyecto_Catedra_PEDG01T
                 pnladmin.Visible = true;
                 pnladmin.Enabled = true;
                 pbxperfil.Location = new Point(12, 334);
+                OpenForm<AddProductoForm>();
+            }
+            else
+            {
+                OpenForm<MenuForm>();
             }
         }
 
@@ -34,6 +39,7 @@ namespace Proyecto_Catedra_PEDG01T
         private void btnclose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            DialogResult = DialogResult.Cancel;
         }
 
         private void btnWState_Click(object sender, EventArgs e)
@@ -110,6 +116,8 @@ namespace Proyecto_Catedra_PEDG01T
                 pnlcontent.Tag = form;
                 form.Show();
                 form.BringToFront();
+                //tamaño del form igual al tamaño del panel
+                form.Size = pnlcontent.Size;
             }
             else
             {
@@ -120,5 +128,12 @@ namespace Proyecto_Catedra_PEDG01T
 
         #endregion
 
+        private void pnlcontent_Resize(object sender, EventArgs e)
+        {
+            foreach (Form control in pnlcontent.Controls)
+            {
+                control.Size = pnlcontent.Size;
+            }
+        }
     }
 }

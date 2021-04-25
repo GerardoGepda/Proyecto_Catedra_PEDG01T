@@ -228,9 +228,9 @@ namespace Proyecto_Catedra_PEDG01T
             bool userExists = false;
             string seleccionar = "SELECT idUsuario, nombre, apellido, fechaNacimiento, usuario, contrasena, " + 
                 "email, Telefono, usu.idTipoUsuario, TipoUsuario FROM Usuarios usu " +
-                "INNER JOIN Tipo_usuario tpuser" +
+                "INNER JOIN Tipo_usuario tpuser " +
                 "ON usu.idTipoUsuario = tpuser.idTipoUsuario " +
-                "WHERE nombre = @user AND contrasena = @contra AND TipoUsuario = @typeusu";
+                "WHERE usuario = @user AND contrasena = @contra AND TipoUsuario = @typeusu";
             try
             {
                 conexion.Conectar();
@@ -256,6 +256,7 @@ namespace Proyecto_Catedra_PEDG01T
                     TipoUsuario = dataReader["TipoUsuario"].ToString();
                     userExists = true;
                 }
+                dataReader.Close();
             }
             catch (Exception err)
             {
@@ -264,7 +265,6 @@ namespace Proyecto_Catedra_PEDG01T
             }
             finally
             {
-                dataReader.Close();
                 conexion.Cerrar();
             }
             return userExists;

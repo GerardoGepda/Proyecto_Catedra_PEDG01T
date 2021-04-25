@@ -44,7 +44,7 @@ namespace Proyecto_Catedra_PEDG01T
                 }
                 else
                 {
-                    for (int j = 1; j < i; j++ )
+                    for (int j = 1; j <= i; j++ )
                     {
                         puntero = puntero.Siguiente;
                         if (puntero.Siguiente == null)
@@ -54,6 +54,31 @@ namespace Proyecto_Catedra_PEDG01T
                     next = puntero.Siguiente;
                     puntero.Siguiente = aux;
                     aux.Siguiente = next;
+                }
+            }
+        }
+
+        //selecciona un nodo en un indice especifico base 0
+        public object ElementAtIndex(int i)
+        {
+            if (IsEmpty)
+                return null;
+            else
+            {
+                NodoLista puntero = firstNodo;
+                if (i == 0)
+                {
+                    return firstNodo.Dato;
+                }
+                else
+                {
+                    for (int j = 1; j <= i; j++)
+                    {
+                        puntero = puntero.Siguiente;
+                        if (puntero.Siguiente == null)
+                            break;
+                    }
+                    return puntero.Dato;
                 }
             }
         }
@@ -109,13 +134,13 @@ namespace Proyecto_Catedra_PEDG01T
                 NodoLista puntero;
                 puntero = firstNodo;
 
-                items[0] = puntero;
+                items[0] = puntero.Dato;
                 int contador = 0;
                 while (puntero.Siguiente != null)
                 {
                     contador++;
                     puntero = puntero.Siguiente;
-                    items[contador] = puntero;
+                    items[contador] = puntero.Dato;
                 }
             }
             return items;

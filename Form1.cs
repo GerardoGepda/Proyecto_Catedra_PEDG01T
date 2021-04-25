@@ -55,12 +55,28 @@ namespace Proyecto_Catedra_PEDG01T
         {
             if (Validar())
             {
+                this.Cursor = Cursors.WaitCursor;
                 Usuario user = new Usuario();
-                user.GetUserFromDB(txtuser.Text, txtpassword.Text, cbxtypeuser.SelectedItem.ToString());
-                Inicio home = new Inicio(user);
-                this.Hide();
-                home.ShowDialog();
-                this.Show();
+                bool usuarioExist = user.GetUserFromDB(txtuser.Text, txtpassword.Text, cbxtypeuser.SelectedItem.ToString());
+                if (usuarioExist)
+                {
+                    Inicio home = new Inicio(user);
+                    this.Hide();
+                    home.ShowDialog();
+                    //si la app se cierra, no se muestra el Login, si se cierra sesión si
+                    try
+                    {
+                        this.Show();
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El usuario o contraseña es incorrectos o el usuario no existe.", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                this.Cursor = Cursors.Default;
             }
         }
 

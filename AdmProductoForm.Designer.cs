@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbladmproduct = new System.Windows.Forms.Label();
             this.cbxproductos = new System.Windows.Forms.ComboBox();
             this.lblselecproduct = new System.Windows.Forms.Label();
@@ -36,8 +37,15 @@
             this.btncancel = new System.Windows.Forms.Button();
             this.lblproductos = new System.Windows.Forms.Label();
             this.dgvproductos = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnleditproduct = new System.Windows.Forms.Panel();
+            this.btncancelupdate = new System.Windows.Forms.Button();
+            this.btnupdateproduct = new System.Windows.Forms.Button();
             this.txtdescrproduct = new System.Windows.Forms.TextBox();
             this.lbldescline = new System.Windows.Forms.Label();
             this.lbldescrproduct = new System.Windows.Forms.Label();
@@ -49,10 +57,11 @@
             this.lblnameproduct = new System.Windows.Forms.Label();
             this.lblimgproduct = new System.Windows.Forms.Label();
             this.btnaddphoto = new System.Windows.Forms.Button();
-            this.btnupdateproduct = new System.Windows.Forms.Button();
-            this.btncancelupdate = new System.Windows.Forms.Button();
+            this.btnupdateData = new System.Windows.Forms.Button();
+            this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvproductos)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.pnleditproduct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // lbladmproduct
@@ -68,6 +77,7 @@
             // 
             // cbxproductos
             // 
+            this.cbxproductos.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbxproductos.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbxproductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxproductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -79,6 +89,7 @@
             // 
             // lblselecproduct
             // 
+            this.lblselecproduct.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblselecproduct.AutoSize = true;
             this.lblselecproduct.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblselecproduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
@@ -90,6 +101,7 @@
             // 
             // btneditproduct
             // 
+            this.btneditproduct.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btneditproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
             this.btneditproduct.FlatAppearance.BorderSize = 0;
             this.btneditproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -101,9 +113,11 @@
             this.btneditproduct.TabIndex = 5;
             this.btneditproduct.Text = "Editar producto";
             this.btneditproduct.UseVisualStyleBackColor = false;
+            this.btneditproduct.Click += new System.EventHandler(this.btneditproduct_Click);
             // 
             // btndeleteproduct
             // 
+            this.btndeleteproduct.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btndeleteproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(71)))), ((int)(((byte)(61)))));
             this.btndeleteproduct.FlatAppearance.BorderSize = 0;
             this.btndeleteproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -115,9 +129,11 @@
             this.btndeleteproduct.TabIndex = 6;
             this.btndeleteproduct.Text = "Borrar producto";
             this.btndeleteproduct.UseVisualStyleBackColor = false;
+            this.btndeleteproduct.Click += new System.EventHandler(this.btndeleteproduct_Click);
             // 
             // btncancel
             // 
+            this.btncancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btncancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.btncancel.FlatAppearance.BorderSize = 0;
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -129,13 +145,15 @@
             this.btncancel.TabIndex = 7;
             this.btncancel.Text = "Cancelar";
             this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // lblproductos
             // 
+            this.lblproductos.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblproductos.AutoSize = true;
             this.lblproductos.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblproductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lblproductos.Location = new System.Drawing.Point(41, 281);
+            this.lblproductos.Location = new System.Drawing.Point(41, 290);
             this.lblproductos.Name = "lblproductos";
             this.lblproductos.Size = new System.Drawing.Size(69, 15);
             this.lblproductos.TabIndex = 8;
@@ -143,39 +161,105 @@
             // 
             // dgvproductos
             // 
+            this.dgvproductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvproductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.cod,
+            this.name,
+            this.price,
+            this.description});
             this.dgvproductos.Location = new System.Drawing.Point(44, 326);
             this.dgvproductos.Name = "dgvproductos";
             this.dgvproductos.Size = new System.Drawing.Size(433, 184);
             this.dgvproductos.TabIndex = 9;
             // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            // 
+            // cod
+            // 
+            this.cod.HeaderText = "Codigo";
+            this.cod.Name = "cod";
+            this.cod.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Nombre";
+            this.name.Name = "name";
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Precio";
+            this.price.Name = "price";
+            // 
+            // description
+            // 
+            this.description.HeaderText = "Descripción";
+            this.description.Name = "description";
+            // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
             this.panel1.Location = new System.Drawing.Point(511, 59);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(5, 475);
             this.panel1.TabIndex = 10;
             // 
-            // panel2
+            // pnleditproduct
             // 
-            this.panel2.Controls.Add(this.btncancelupdate);
-            this.panel2.Controls.Add(this.btnupdateproduct);
-            this.panel2.Controls.Add(this.txtdescrproduct);
-            this.panel2.Controls.Add(this.lbldescline);
-            this.panel2.Controls.Add(this.lbldescrproduct);
-            this.panel2.Controls.Add(this.txtpriceproduct);
-            this.panel2.Controls.Add(this.lblpriceline);
-            this.panel2.Controls.Add(this.lblpriceproduct);
-            this.panel2.Controls.Add(this.txtnameproduct);
-            this.panel2.Controls.Add(this.lblnameline);
-            this.panel2.Controls.Add(this.lblnameproduct);
-            this.panel2.Controls.Add(this.lblimgproduct);
-            this.panel2.Controls.Add(this.btnaddphoto);
-            this.panel2.Location = new System.Drawing.Point(522, 59);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(366, 475);
-            this.panel2.TabIndex = 29;
+            this.pnleditproduct.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnleditproduct.Controls.Add(this.btncancelupdate);
+            this.pnleditproduct.Controls.Add(this.btnupdateproduct);
+            this.pnleditproduct.Controls.Add(this.txtdescrproduct);
+            this.pnleditproduct.Controls.Add(this.lbldescline);
+            this.pnleditproduct.Controls.Add(this.lbldescrproduct);
+            this.pnleditproduct.Controls.Add(this.txtpriceproduct);
+            this.pnleditproduct.Controls.Add(this.lblpriceline);
+            this.pnleditproduct.Controls.Add(this.lblpriceproduct);
+            this.pnleditproduct.Controls.Add(this.txtnameproduct);
+            this.pnleditproduct.Controls.Add(this.lblnameline);
+            this.pnleditproduct.Controls.Add(this.lblnameproduct);
+            this.pnleditproduct.Controls.Add(this.lblimgproduct);
+            this.pnleditproduct.Controls.Add(this.btnaddphoto);
+            this.pnleditproduct.Enabled = false;
+            this.pnleditproduct.Location = new System.Drawing.Point(522, 59);
+            this.pnleditproduct.Name = "pnleditproduct";
+            this.pnleditproduct.Size = new System.Drawing.Size(366, 475);
+            this.pnleditproduct.TabIndex = 29;
+            // 
+            // btncancelupdate
+            // 
+            this.btncancelupdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(71)))), ((int)(((byte)(61)))));
+            this.btncancelupdate.FlatAppearance.BorderSize = 0;
+            this.btncancelupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelupdate.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelupdate.ForeColor = System.Drawing.Color.White;
+            this.btncancelupdate.Location = new System.Drawing.Point(223, 419);
+            this.btncancelupdate.Name = "btncancelupdate";
+            this.btncancelupdate.Size = new System.Drawing.Size(100, 30);
+            this.btncancelupdate.TabIndex = 30;
+            this.btncancelupdate.Text = "Cancelar edición";
+            this.btncancelupdate.UseVisualStyleBackColor = false;
+            this.btncancelupdate.Click += new System.EventHandler(this.btncancelupdate_Click);
+            // 
+            // btnupdateproduct
+            // 
+            this.btnupdateproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
+            this.btnupdateproduct.FlatAppearance.BorderSize = 0;
+            this.btnupdateproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnupdateproduct.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnupdateproduct.ForeColor = System.Drawing.Color.White;
+            this.btnupdateproduct.Location = new System.Drawing.Point(46, 419);
+            this.btnupdateproduct.Name = "btnupdateproduct";
+            this.btnupdateproduct.Size = new System.Drawing.Size(100, 30);
+            this.btnupdateproduct.TabIndex = 30;
+            this.btnupdateproduct.Text = "Actualizar";
+            this.btnupdateproduct.UseVisualStyleBackColor = false;
+            this.btnupdateproduct.Click += new System.EventHandler(this.btnupdateproduct_Click);
             // 
             // txtdescrproduct
             // 
@@ -222,6 +306,7 @@
             this.txtpriceproduct.Name = "txtpriceproduct";
             this.txtpriceproduct.Size = new System.Drawing.Size(297, 20);
             this.txtpriceproduct.TabIndex = 35;
+            this.txtpriceproduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpriceproduct_KeyPress);
             // 
             // lblpriceline
             // 
@@ -302,34 +387,27 @@
             this.btnaddphoto.Size = new System.Drawing.Size(105, 105);
             this.btnaddphoto.TabIndex = 29;
             this.btnaddphoto.UseVisualStyleBackColor = true;
+            this.btnaddphoto.Click += new System.EventHandler(this.btnaddphoto_Click);
             // 
-            // btnupdateproduct
+            // btnupdateData
             // 
-            this.btnupdateproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.btnupdateproduct.FlatAppearance.BorderSize = 0;
-            this.btnupdateproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnupdateproduct.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnupdateproduct.ForeColor = System.Drawing.Color.White;
-            this.btnupdateproduct.Location = new System.Drawing.Point(46, 419);
-            this.btnupdateproduct.Name = "btnupdateproduct";
-            this.btnupdateproduct.Size = new System.Drawing.Size(100, 30);
-            this.btnupdateproduct.TabIndex = 30;
-            this.btnupdateproduct.Text = "Actualizar";
-            this.btnupdateproduct.UseVisualStyleBackColor = false;
+            this.btnupdateData.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnupdateData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
+            this.btnupdateData.FlatAppearance.BorderSize = 0;
+            this.btnupdateData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnupdateData.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnupdateData.ForeColor = System.Drawing.Color.White;
+            this.btnupdateData.Location = new System.Drawing.Point(366, 290);
+            this.btnupdateData.Name = "btnupdateData";
+            this.btnupdateData.Size = new System.Drawing.Size(111, 30);
+            this.btnupdateData.TabIndex = 30;
+            this.btnupdateData.Text = "Refrescar datos";
+            this.btnupdateData.UseVisualStyleBackColor = false;
+            this.btnupdateData.Click += new System.EventHandler(this.btnupdateData_Click);
             // 
-            // btncancelupdate
+            // errProvider
             // 
-            this.btncancelupdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(71)))), ((int)(((byte)(61)))));
-            this.btncancelupdate.FlatAppearance.BorderSize = 0;
-            this.btncancelupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancelupdate.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelupdate.ForeColor = System.Drawing.Color.White;
-            this.btncancelupdate.Location = new System.Drawing.Point(223, 419);
-            this.btncancelupdate.Name = "btncancelupdate";
-            this.btncancelupdate.Size = new System.Drawing.Size(100, 30);
-            this.btncancelupdate.TabIndex = 30;
-            this.btncancelupdate.Text = "Cancelar edición";
-            this.btncancelupdate.UseVisualStyleBackColor = false;
+            this.errProvider.ContainerControl = this;
             // 
             // AdmProductoForm
             // 
@@ -337,7 +415,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 580);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnupdateData);
+            this.Controls.Add(this.pnleditproduct);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvproductos);
             this.Controls.Add(this.lblproductos);
@@ -351,8 +430,9 @@
             this.Name = "AdmProductoForm";
             this.Text = "AdmProductoForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvproductos)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnleditproduct.ResumeLayout(false);
+            this.pnleditproduct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,7 +449,7 @@
         private System.Windows.Forms.Label lblproductos;
         private System.Windows.Forms.DataGridView dgvproductos;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnleditproduct;
         private System.Windows.Forms.Button btncancelupdate;
         private System.Windows.Forms.Button btnupdateproduct;
         private System.Windows.Forms.TextBox txtdescrproduct;
@@ -383,5 +463,12 @@
         private System.Windows.Forms.Label lblnameproduct;
         private System.Windows.Forms.Label lblimgproduct;
         private System.Windows.Forms.Button btnaddphoto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.Button btnupdateData;
+        private System.Windows.Forms.ErrorProvider errProvider;
     }
 }
