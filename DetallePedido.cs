@@ -19,14 +19,14 @@ namespace Proyecto_Catedra_PEDG01T
         //campos de la clase
         private int idProducto;
         private int cantidad;
-        private float precioProducto;
-        private float precioTotalDetalle;
+        private double precioProducto;
+        private double precioTotalDetalle;
 
         //propiedades de la clase
         public int IdProducto { get => idProducto; set => idProducto = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
-        public float PrecioProducto { get => precioProducto; set => precioProducto = value; }
-        public float PrecioTotalDetalle { get => precioTotalDetalle; set => precioTotalDetalle = value; }
+        public double PrecioProducto { get => precioProducto; set => precioProducto = value; }
+        public double PrecioTotalDetalle { get => precioTotalDetalle; set => precioTotalDetalle = value; }
 
         //--- Métodos de la clase ---//
 

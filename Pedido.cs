@@ -21,7 +21,7 @@ namespace Proyecto_Catedra_PEDG01T
         private string fechaPedido;
         private int estadoPedido;
         private string idUsuario;
-        private float total;
+        private double total;
         private Lista detallePed = new Lista();
 
         //propiedades de la clase
@@ -29,7 +29,7 @@ namespace Proyecto_Catedra_PEDG01T
         public string FechaPedido { get => fechaPedido; set => fechaPedido = value; }
         public int EstadoPedido { get => estadoPedido; set => estadoPedido = value; }
         public string IdUsuario { get => idUsuario; set => idUsuario = value; }
-        public float Total { get => total; set => total = value; }
+        public double Total { get => total; set => total = value; }
         public Lista DetallePed { get => detallePed; set => detallePed = value; }
 
         //--- Métodos de clase ---//
@@ -37,7 +37,7 @@ namespace Proyecto_Catedra_PEDG01T
         //total de todos los productos
         public void calcularTotal()
         {
-            float total = 0;
+            double total = 0;
             DetallePedido[] dPedido = (DetallePedido[])DetallePed.ListToArray();
 
             foreach (DetallePedido item in dPedido)

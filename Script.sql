@@ -7,7 +7,7 @@ nombreProducto varchar(25),
 codigoProducto varchar(5),
 precioProducto float,
 Descripcion varchar(255),
-imgProducto image,
+imgProducto image NULL,
 constraint pk_Productos primary key (idProducto)
 )
 
@@ -67,3 +67,11 @@ INSERT INTO Tipo_usuario VALUES ('Administrador'),
 INSERT INTO Usuarios (nombre, apellido, fechaNacimiento, usuario, contrasena, email, Telefono, idTipoUsuario) 
 VALUES ('Juan', 'Pérez', '2000-10-3', 'JuanP12', '123456', 'juan.perez@gmail.com', '7361839', 1),
 ('Pedro', 'Hernández', '2001-6-12', 'Pedro11', '123456', 'pedro.hndz@gmail.com', '7810385', 2);
+
+--Insertando productos (No insertarlos deste aquí)
+INSERT INTO Productos (nombreProducto, codigoProducto, precioProducto, Descripcion) VALUES 
+('Pizza', 'PR775', '10', 'Aquí descripción'),
+('Hambuerguesa', 'PR662', '7.25', 'Aquí descripción'),
+('Ensalada', 'PR725', '5', 'Aquí descripción'),
+('Pollo Asado', 'PR687', '6.5', 'Aquí descripción'),
+('Paella', 'PR636', '7.25', 'Aquí descripción');
