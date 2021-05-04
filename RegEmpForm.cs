@@ -16,6 +16,7 @@ namespace Proyecto_Catedra_PEDG01T
         public RegEmpForm()
         {
             InitializeComponent();
+            dtpFechaNacimiento.CustomFormat = "yyyy-MM-dd";
         }
 
         private void btntypeuser_Click(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace Proyecto_Catedra_PEDG01T
                                                 objUsuario.Email = txtemail.Text;
                                                 objUsuario.Telefono = txttelefono.Text;
                                                 objUsuario.IdtypeUser = "1";
-                                                objUsuario.FechaNacimiento = "2000-10-3";
+                                                objUsuario.FechaNacimiento = dtpFechaNacimiento.Value.ToString();
                                                 objUsuario.SaveUserInDB();
                                                 MessageBox.Show("Se supone que ya guardo");
                                             }

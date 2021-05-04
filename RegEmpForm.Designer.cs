@@ -82,7 +82,7 @@
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.ForeColor = System.Drawing.Color.White;
-            this.btncancelar.Location = new System.Drawing.Point(693, 766);
+            this.btncancelar.Location = new System.Drawing.Point(635, 751);
             this.btncancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(160, 44);
@@ -98,7 +98,7 @@
             this.btnregistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnregistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnregistrarse.ForeColor = System.Drawing.Color.White;
-            this.btnregistrarse.Location = new System.Drawing.Point(385, 766);
+            this.btnregistrarse.Location = new System.Drawing.Point(349, 751);
             this.btnregistrarse.Margin = new System.Windows.Forms.Padding(4);
             this.btnregistrarse.Name = "btnregistrarse";
             this.btnregistrarse.Size = new System.Drawing.Size(160, 44);
@@ -114,7 +114,7 @@
             this.txttelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txttelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txttelefono.Location = new System.Drawing.Point(695, 588);
+            this.txttelefono.Location = new System.Drawing.Point(690, 546);
             this.txttelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txttelefono.Multiline = true;
             this.txttelefono.Name = "txttelefono";
@@ -127,7 +127,7 @@
             this.lbtelefonoline.AutoSize = true;
             this.lbtelefonoline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtelefonoline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.lbtelefonoline.Location = new System.Drawing.Point(689, 599);
+            this.lbtelefonoline.Location = new System.Drawing.Point(684, 557);
             this.lbtelefonoline.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbtelefonoline.Name = "lbtelefonoline";
             this.lbtelefonoline.Size = new System.Drawing.Size(380, 21);
@@ -140,7 +140,7 @@
             this.lbtelefono.AutoSize = true;
             this.lbtelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbtelefono.Location = new System.Drawing.Point(689, 548);
+            this.lbtelefono.Location = new System.Drawing.Point(684, 506);
             this.lbtelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbtelefono.Name = "lbtelefono";
             this.lbtelefono.Size = new System.Drawing.Size(85, 24);
@@ -154,7 +154,7 @@
             this.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtemail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtemail.Location = new System.Drawing.Point(123, 604);
+            this.txtemail.Location = new System.Drawing.Point(120, 546);
             this.txtemail.Margin = new System.Windows.Forms.Padding(4);
             this.txtemail.Multiline = true;
             this.txtemail.Name = "txtemail";
@@ -167,7 +167,7 @@
             this.lbemailline.AutoSize = true;
             this.lbemailline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbemailline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.lbemailline.Location = new System.Drawing.Point(115, 615);
+            this.lbemailline.Location = new System.Drawing.Point(112, 557);
             this.lbemailline.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbemailline.Name = "lbemailline";
             this.lbemailline.Size = new System.Drawing.Size(380, 21);
@@ -180,7 +180,7 @@
             this.lbemail.AutoSize = true;
             this.lbemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbemail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbemail.Location = new System.Drawing.Point(115, 564);
+            this.lbemail.Location = new System.Drawing.Point(112, 506);
             this.lbemail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbemail.Name = "lbemail";
             this.lbemail.Size = new System.Drawing.Size(63, 24);
@@ -194,7 +194,7 @@
             this.txtverificar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtverificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtverificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtverificar.Location = new System.Drawing.Point(696, 475);
+            this.txtverificar.Location = new System.Drawing.Point(693, 416);
             this.txtverificar.Margin = new System.Windows.Forms.Padding(4);
             this.txtverificar.Multiline = true;
             this.txtverificar.Name = "txtverificar";
@@ -207,7 +207,7 @@
             this.lblverificaline.AutoSize = true;
             this.lblverificaline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblverificaline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.lblverificaline.Location = new System.Drawing.Point(687, 486);
+            this.lblverificaline.Location = new System.Drawing.Point(684, 427);
             this.lblverificaline.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblverificaline.Name = "lblverificaline";
             this.lblverificaline.Size = new System.Drawing.Size(380, 21);
@@ -220,7 +220,7 @@
             this.lbveririficar.AutoSize = true;
             this.lbveririficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbveririficar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbveririficar.Location = new System.Drawing.Point(687, 435);
+            this.lbveririficar.Location = new System.Drawing.Point(684, 376);
             this.lbveririficar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbveririficar.Name = "lbveririficar";
             this.lbveririficar.Size = new System.Drawing.Size(176, 24);
@@ -234,7 +234,7 @@
             this.txtcontrasena.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcontrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcontrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtcontrasena.Location = new System.Drawing.Point(123, 476);
+            this.txtcontrasena.Location = new System.Drawing.Point(120, 417);
             this.txtcontrasena.Margin = new System.Windows.Forms.Padding(4);
             this.txtcontrasena.Multiline = true;
             this.txtcontrasena.Name = "txtcontrasena";
@@ -247,7 +247,7 @@
             this.lblcontraline.AutoSize = true;
             this.lblcontraline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcontraline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.lblcontraline.Location = new System.Drawing.Point(115, 487);
+            this.lblcontraline.Location = new System.Drawing.Point(112, 428);
             this.lblcontraline.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblcontraline.Name = "lblcontraline";
             this.lblcontraline.Size = new System.Drawing.Size(380, 21);
@@ -260,7 +260,7 @@
             this.lbcontraseña.AutoSize = true;
             this.lbcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbcontraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbcontraseña.Location = new System.Drawing.Point(115, 435);
+            this.lbcontraseña.Location = new System.Drawing.Point(112, 376);
             this.lbcontraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbcontraseña.Name = "lbcontraseña";
             this.lbcontraseña.Size = new System.Drawing.Size(106, 24);
@@ -274,7 +274,7 @@
             this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtusuario.Location = new System.Drawing.Point(121, 349);
+            this.txtusuario.Location = new System.Drawing.Point(118, 290);
             this.txtusuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtusuario.Multiline = true;
             this.txtusuario.Name = "txtusuario";
@@ -287,7 +287,7 @@
             this.lblusuarioline.AutoSize = true;
             this.lblusuarioline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuarioline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.lblusuarioline.Location = new System.Drawing.Point(115, 360);
+            this.lblusuarioline.Location = new System.Drawing.Point(112, 301);
             this.lblusuarioline.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblusuarioline.Name = "lblusuarioline";
             this.lblusuarioline.Size = new System.Drawing.Size(380, 21);
@@ -300,7 +300,7 @@
             this.lbusuario.AutoSize = true;
             this.lbusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbusuario.Location = new System.Drawing.Point(115, 310);
+            this.lbusuario.Location = new System.Drawing.Point(112, 251);
             this.lbusuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbusuario.Name = "lbusuario";
             this.lbusuario.Size = new System.Drawing.Size(74, 24);
@@ -314,7 +314,7 @@
             this.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtnombre.Location = new System.Drawing.Point(123, 237);
+            this.txtnombre.Location = new System.Drawing.Point(120, 178);
             this.txtnombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtnombre.Multiline = true;
             this.txtnombre.Name = "txtnombre";
@@ -327,7 +327,7 @@
             this.lblnombreline.AutoSize = true;
             this.lblnombreline.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnombreline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.lblnombreline.Location = new System.Drawing.Point(115, 248);
+            this.lblnombreline.Location = new System.Drawing.Point(112, 189);
             this.lblnombreline.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblnombreline.Name = "lblnombreline";
             this.lblnombreline.Size = new System.Drawing.Size(380, 21);
@@ -340,7 +340,7 @@
             this.lbnombre.AutoSize = true;
             this.lbnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbnombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbnombre.Location = new System.Drawing.Point(115, 198);
+            this.lbnombre.Location = new System.Drawing.Point(112, 139);
             this.lbnombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbnombre.Name = "lbnombre";
             this.lbnombre.Size = new System.Drawing.Size(79, 24);
@@ -353,10 +353,10 @@
             this.pnltypeuser.Controls.Add(this.btntypeuser);
             this.pnltypeuser.Controls.Add(this.cbxtypeuser);
             this.pnltypeuser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnltypeuser.Location = new System.Drawing.Point(409, 694);
+            this.pnltypeuser.Location = new System.Drawing.Point(349, 681);
             this.pnltypeuser.Margin = new System.Windows.Forms.Padding(4);
             this.pnltypeuser.Name = "pnltypeuser";
-            this.pnltypeuser.Size = new System.Drawing.Size(473, 26);
+            this.pnltypeuser.Size = new System.Drawing.Size(423, 26);
             this.pnltypeuser.TabIndex = 48;
             // 
             // btntypeuser
@@ -364,7 +364,7 @@
             this.btntypeuser.FlatAppearance.BorderSize = 0;
             this.btntypeuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btntypeuser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.btntypeuser.Location = new System.Drawing.Point(429, -1);
+            this.btntypeuser.Location = new System.Drawing.Point(385, 0);
             this.btntypeuser.Margin = new System.Windows.Forms.Padding(4);
             this.btntypeuser.Name = "btntypeuser";
             this.btntypeuser.Size = new System.Drawing.Size(44, 28);
@@ -385,7 +385,7 @@
             this.cbxtypeuser.Items.AddRange(new object[] {
             "Administrador",
             "Empleado"});
-            this.cbxtypeuser.Location = new System.Drawing.Point(-1, -1);
+            this.cbxtypeuser.Location = new System.Drawing.Point(-3, 0);
             this.cbxtypeuser.Margin = new System.Windows.Forms.Padding(4);
             this.cbxtypeuser.Name = "cbxtypeuser";
             this.cbxtypeuser.Size = new System.Drawing.Size(457, 28);
@@ -397,7 +397,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.label1.Location = new System.Drawing.Point(403, 705);
+            this.label1.Location = new System.Drawing.Point(342, 694);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(450, 21);
@@ -410,7 +410,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(403, 653);
+            this.label2.Location = new System.Drawing.Point(365, 637);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 24);
@@ -423,7 +423,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label3.Location = new System.Drawing.Point(696, 189);
+            this.label3.Location = new System.Drawing.Point(693, 130);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 24);
@@ -437,7 +437,7 @@
             this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtApellido.Location = new System.Drawing.Point(700, 237);
+            this.txtApellido.Location = new System.Drawing.Point(697, 178);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellido.Multiline = true;
             this.txtApellido.Name = "txtApellido";
@@ -450,7 +450,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.label4.Location = new System.Drawing.Point(696, 248);
+            this.label4.Location = new System.Drawing.Point(693, 189);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(380, 21);
@@ -463,7 +463,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label5.Location = new System.Drawing.Point(696, 314);
+            this.label5.Location = new System.Drawing.Point(689, 251);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(188, 24);
@@ -472,7 +472,7 @@
             // 
             // dtpFechaNacimiento
             // 
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(696, 352);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(690, 288);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(391, 22);
             this.dtpFechaNacimiento.TabIndex = 50;
@@ -482,11 +482,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1200, 823);
+            this.ClientSize = new System.Drawing.Size(1200, 808);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.pnltypeuser);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbregis);
             this.Controls.Add(this.btncancelar);
@@ -512,6 +511,7 @@
             this.Controls.Add(this.lblnombreline);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbnombre);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegEmpForm";
