@@ -177,13 +177,11 @@ namespace Proyecto_Catedra_PEDG01T
         //Método que guarda un usuario en la BD
         public void SaveUserInDB()
         {
-            int idTipoUsuario;
             string sqlinsert = "INSERT INTO Usuarios(nombre, apellido, fechaNacimiento, usuario, contrasena, email, Telefono , idTipoUsuario)" +
                 "VALUES(@nombre, @apellido, @fechanaci, @usuario, @clave, @correo, @tel, @idTypeoUser)";
             try
             {
                 conexion.Conectar();
-                idTipoUsuario = SaveTypeUserDB();
                 command = new SqlCommand(sqlinsert, conexion.Conn);
 
                 command.Parameters.AddWithValue("@nombre", Nombre);
@@ -193,7 +191,7 @@ namespace Proyecto_Catedra_PEDG01T
                 command.Parameters.AddWithValue("@clave", Contrasena);
                 command.Parameters.AddWithValue("@correo", Email);
                 command.Parameters.AddWithValue("@tel", Telefono);
-                command.Parameters.AddWithValue("@idTypeoUser", idTipoUsuario);
+                command.Parameters.AddWithValue("@idTypeoUser", IdtypeUser);
                 command.ExecuteNonQuery();
 
                 MessageBox.Show("Usuario creado exitosamente, ahora inicie sesión", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
