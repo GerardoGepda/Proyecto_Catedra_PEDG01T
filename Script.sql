@@ -75,3 +75,6 @@ INSERT INTO Productos (nombreProducto, codigoProducto, precioProducto, Descripci
 ('Ensalada', 'PR725', '5', 'Aquí descripción'),
 ('Pollo Asado', 'PR687', '6.5', 'Aquí descripción'),
 ('Paella', 'PR636', '7.25', 'Aquí descripción');
+
+--Consulta para obtener pedidos
+SELECT idPedido,fechaPedido,estadoPedido from Pedido

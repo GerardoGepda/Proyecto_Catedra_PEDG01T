@@ -77,5 +77,11 @@ namespace Proyecto_Catedra_PEDG01T
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
         }
+
+        private void FacturaForm_Load(object sender, EventArgs e)
+        {
+
+          
+        }
     }
 }
