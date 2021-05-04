@@ -33,7 +33,7 @@ namespace Proyecto_Catedra_PEDG01T
         public Lista DetallePed { get => detallePed; set => detallePed = value; }
 
         //--- Métodos de clase ---//
-
+       
         //total de todos los productos
         public void calcularTotal()
         {
@@ -124,5 +124,47 @@ namespace Proyecto_Catedra_PEDG01T
             return guardado;
         }
 
+        public void MostrarPedidio()
+        {
+            Cola pedido = new Cola();
+            String sql = "SELECT idPedido,fechaPedido,estadoPedido from Pedido";
+            try
+            {
+                dataAdapter = new SqlDataAdapter(sql, conexion.Conn);
+                dataReader = dataAdapter.SelectCommand.ExecuteReader();
+                if(dataReader.HasRows)
+                {
+
+                    while (dataReader.Read())
+                    {
+                        //Pedido ped = new Pedido
+                        //{
+                        IdPedido = int.Parse(dataReader["idPedido"].ToString());
+                        FechaPedido = dataReader["fechaPedido"].ToString();
+                        EstadoPedido = int.Parse(dataReader["estadoPedido"].ToString());
+                    //};
+                        pedido.Encolar(IdPedido,FechaPedido,EstadoPedido);
+                        pedido = null;
+                    }
+                    
+
+                }
+                else
+                {
+                    MessageBox.Show("No hay pedidos que mostrar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataReader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al mostrar los pedidos " +
+                    ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                //cerramos la conexión
+                conexion.Cerrar();
+            }
+        }
     }
 }
