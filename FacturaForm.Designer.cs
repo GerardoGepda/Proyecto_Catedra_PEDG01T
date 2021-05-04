@@ -55,9 +55,10 @@
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.ForeColor = System.Drawing.Color.White;
-            this.btncancelar.Location = new System.Drawing.Point(599, 487);
+            this.btncancelar.Location = new System.Drawing.Point(799, 599);
+            this.btncancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(140, 36);
+            this.btncancelar.Size = new System.Drawing.Size(187, 44);
             this.btncancelar.TabIndex = 37;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = false;
@@ -70,9 +71,10 @@
             this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnagregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnagregar.ForeColor = System.Drawing.Color.White;
-            this.btnagregar.Location = new System.Drawing.Point(383, 487);
+            this.btnagregar.Location = new System.Drawing.Point(511, 599);
+            this.btnagregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnagregar.Name = "btnagregar";
-            this.btnagregar.Size = new System.Drawing.Size(140, 36);
+            this.btnagregar.Size = new System.Drawing.Size(187, 44);
             this.btnagregar.TabIndex = 36;
             this.btnagregar.Text = "Agregar el pedido";
             this.btnagregar.UseVisualStyleBackColor = false;
@@ -85,9 +87,10 @@
             this.btnimprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnimprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnimprimir.ForeColor = System.Drawing.Color.White;
-            this.btnimprimir.Location = new System.Drawing.Point(169, 487);
+            this.btnimprimir.Location = new System.Drawing.Point(225, 599);
+            this.btnimprimir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnimprimir.Name = "btnimprimir";
-            this.btnimprimir.Size = new System.Drawing.Size(140, 36);
+            this.btnimprimir.Size = new System.Drawing.Size(187, 44);
             this.btnimprimir.TabIndex = 35;
             this.btnimprimir.Text = "Imprimir";
             this.btnimprimir.UseVisualStyleBackColor = false;
@@ -96,12 +99,11 @@
             // 
             this.lbproduc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbproduc.AutoSize = true;
-            this.lbproduc.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbproduc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbproduc.Location = new System.Drawing.Point(166, 266);
-            this.lbproduc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbproduc.Location = new System.Drawing.Point(221, 327);
             this.lbproduc.Name = "lbproduc";
-            this.lbproduc.Size = new System.Drawing.Size(84, 18);
+            this.lbproduc.Size = new System.Drawing.Size(100, 24);
             this.lbproduc.TabIndex = 34;
             this.lbproduc.Text = "Productos:";
             // 
@@ -109,32 +111,31 @@
             // 
             this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(169, 286);
-            this.dgv.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv.Location = new System.Drawing.Point(225, 352);
+            this.dgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv.Name = "dgv";
             this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(570, 168);
+            this.dgv.Size = new System.Drawing.Size(760, 207);
             this.dgv.TabIndex = 33;
             // 
             // txtfecha
             // 
             this.txtfecha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtfecha.Enabled = false;
-            this.txtfecha.Location = new System.Drawing.Point(447, 228);
-            this.txtfecha.Margin = new System.Windows.Forms.Padding(2);
+            this.txtfecha.Location = new System.Drawing.Point(596, 281);
+            this.txtfecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtfecha.Name = "txtfecha";
-            this.txtfecha.Size = new System.Drawing.Size(76, 20);
+            this.txtfecha.Size = new System.Drawing.Size(100, 22);
             this.txtfecha.TabIndex = 32;
             // 
             // lbfecha
             // 
             this.lbfecha.AutoSize = true;
-            this.lbfecha.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbfecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbfecha.Location = new System.Drawing.Point(380, 228);
-            this.lbfecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbfecha.Location = new System.Drawing.Point(507, 281);
             this.lbfecha.Name = "lbfecha";
-            this.lbfecha.Size = new System.Drawing.Size(53, 18);
+            this.lbfecha.Size = new System.Drawing.Size(69, 24);
             this.lbfecha.TabIndex = 31;
             this.lbfecha.Text = "Fecha:";
             // 
@@ -142,21 +143,20 @@
             // 
             this.txtcantidad.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtcantidad.Enabled = false;
-            this.txtcantidad.Location = new System.Drawing.Point(585, 169);
-            this.txtcantidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtcantidad.Location = new System.Drawing.Point(780, 208);
+            this.txtcantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtcantidad.Name = "txtcantidad";
-            this.txtcantidad.Size = new System.Drawing.Size(76, 20);
+            this.txtcantidad.Size = new System.Drawing.Size(100, 22);
             this.txtcantidad.TabIndex = 30;
             // 
             // lbcantidad
             // 
             this.lbcantidad.AutoSize = true;
-            this.lbcantidad.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbcantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbcantidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbcantidad.Location = new System.Drawing.Point(504, 169);
-            this.lbcantidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbcantidad.Location = new System.Drawing.Point(672, 208);
             this.lbcantidad.Name = "lbcantidad";
-            this.lbcantidad.Size = new System.Drawing.Size(73, 18);
+            this.lbcantidad.Size = new System.Drawing.Size(89, 24);
             this.lbcantidad.TabIndex = 29;
             this.lbcantidad.Text = "Cantidad:";
             // 
@@ -164,21 +164,20 @@
             // 
             this.txtnomesa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtnomesa.Enabled = false;
-            this.txtnomesa.Location = new System.Drawing.Point(585, 120);
-            this.txtnomesa.Margin = new System.Windows.Forms.Padding(2);
+            this.txtnomesa.Location = new System.Drawing.Point(780, 148);
+            this.txtnomesa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtnomesa.Name = "txtnomesa";
-            this.txtnomesa.Size = new System.Drawing.Size(76, 20);
+            this.txtnomesa.Size = new System.Drawing.Size(100, 22);
             this.txtnomesa.TabIndex = 28;
             // 
             // lbmesa
             // 
             this.lbmesa.AutoSize = true;
-            this.lbmesa.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbmesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbmesa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbmesa.Location = new System.Drawing.Point(504, 120);
-            this.lbmesa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbmesa.Location = new System.Drawing.Point(672, 148);
             this.lbmesa.Name = "lbmesa";
-            this.lbmesa.Size = new System.Drawing.Size(77, 18);
+            this.lbmesa.Size = new System.Drawing.Size(96, 24);
             this.lbmesa.TabIndex = 27;
             this.lbmesa.Text = "No. Mesa:";
             // 
@@ -186,21 +185,20 @@
             // 
             this.txtmonto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtmonto.Enabled = false;
-            this.txtmonto.Location = new System.Drawing.Point(317, 169);
-            this.txtmonto.Margin = new System.Windows.Forms.Padding(2);
+            this.txtmonto.Location = new System.Drawing.Point(423, 208);
+            this.txtmonto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtmonto.Name = "txtmonto";
-            this.txtmonto.Size = new System.Drawing.Size(76, 20);
+            this.txtmonto.Size = new System.Drawing.Size(100, 22);
             this.txtmonto.TabIndex = 26;
             // 
             // lbmonto
             // 
             this.lbmonto.AutoSize = true;
-            this.lbmonto.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbmonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbmonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbmonto.Location = new System.Drawing.Point(218, 169);
-            this.lbmonto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbmonto.Location = new System.Drawing.Point(291, 208);
             this.lbmonto.Name = "lbmonto";
-            this.lbmonto.Size = new System.Drawing.Size(57, 18);
+            this.lbmonto.Size = new System.Drawing.Size(68, 24);
             this.lbmonto.TabIndex = 25;
             this.lbmonto.Text = "Monto:";
             // 
@@ -208,42 +206,40 @@
             // 
             this.txtnofactura.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtnofactura.Enabled = false;
-            this.txtnofactura.Location = new System.Drawing.Point(317, 120);
-            this.txtnofactura.Margin = new System.Windows.Forms.Padding(2);
+            this.txtnofactura.Location = new System.Drawing.Point(423, 148);
+            this.txtnofactura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtnofactura.Name = "txtnofactura";
-            this.txtnofactura.Size = new System.Drawing.Size(76, 20);
+            this.txtnofactura.Size = new System.Drawing.Size(100, 22);
             this.txtnofactura.TabIndex = 24;
             // 
             // lbno
             // 
             this.lbno.AutoSize = true;
-            this.lbno.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbno.Location = new System.Drawing.Point(218, 120);
-            this.lbno.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbno.Location = new System.Drawing.Point(291, 148);
             this.lbno.Name = "lbno";
-            this.lbno.Size = new System.Drawing.Size(95, 18);
+            this.lbno.Size = new System.Drawing.Size(118, 24);
             this.lbno.TabIndex = 23;
             this.lbno.Text = "No.  Factura:";
             // 
             // lbfactura
             // 
             this.lbfactura.AutoSize = true;
-            this.lbfactura.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbfactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbfactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbfactura.Location = new System.Drawing.Point(39, 32);
-            this.lbfactura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbfactura.Location = new System.Drawing.Point(52, 39);
             this.lbfactura.Name = "lbfactura";
-            this.lbfactura.Size = new System.Drawing.Size(93, 29);
+            this.lbfactura.Size = new System.Drawing.Size(107, 31);
             this.lbfactura.TabIndex = 22;
             this.lbfactura.Text = "Factura";
             // 
             // FacturaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(900, 580);
+            this.ClientSize = new System.Drawing.Size(1200, 714);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnagregar);
             this.Controls.Add(this.btnimprimir);
@@ -261,8 +257,10 @@
             this.Controls.Add(this.lbno);
             this.Controls.Add(this.lbfactura);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FacturaForm";
             this.Text = "FacturaForm";
+            this.Load += new System.EventHandler(this.FacturaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
