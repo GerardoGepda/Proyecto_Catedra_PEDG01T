@@ -177,7 +177,6 @@
     <EmbeddedResource Include="RegEmpForm.resx">
       <DependentUpon>RegEmpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Conexion.datasource" />
     <None Include="Properties\DataSources\Factura.datasource" />
