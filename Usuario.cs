@@ -23,7 +23,7 @@ namespace Proyecto_Catedra_PEDG01T
         private string contrasena;
         private string email;
         private string telefono;
-        private string idtypeUser;
+        private string idtypeUser;       
         private string tipousuario;
         private string verificarcontra;
 
@@ -159,16 +159,18 @@ namespace Proyecto_Catedra_PEDG01T
                     throw new Exception("El campo TipoUsuario no puede estar vació.");
                 }
             }
-        }
+        }       
 
-        public string IdtypeUser { 
+        public string IdtypeUser
+        {
             get => idtypeUser;
-            set {
+            set
+            {
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("El campo IDTipoUsuario no puede estar vació.");
                 else
                     idtypeUser = value;
-            } 
+            }
         }
 
 

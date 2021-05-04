@@ -51,7 +51,7 @@ namespace Proyecto_Catedra_PEDG01T
                                                 objUsuario.Contrasena = txtcontrasena.Text;
                                                 objUsuario.Email = txtemail.Text;
                                                 objUsuario.Telefono = txttelefono.Text;
-                                                objUsuario.IdtypeUser = "1";
+                                                objUsuario.IdtypeUser = obtenerId();
                                                 objUsuario.FechaNacimiento = dtpFechaNacimiento.Value.ToString();
                                                 objUsuario.SaveUserInDB();
                                                 MessageBox.Show("Se supone que ya guardo");
@@ -100,6 +100,21 @@ namespace Proyecto_Catedra_PEDG01T
             {
                 MessageBox.Show("Debe de ingresar nombre", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        public string obtenerId()
+        {
+            if(cbxtypeuser.SelectedItem.ToString() == "Administrador")
+            {
+                return "1";
+            }
+            
+            if(cbxtypeuser.SelectedItem.ToString() == "Empleado")
+            {
+                return "2";
+            }
+
+            return "0";
         }
     }
 }
