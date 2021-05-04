@@ -20,31 +20,31 @@ namespace Proyecto_Catedra_PEDG01T
 
         //Metodo para ingresar elementos a la Cola
         public void Encolar(int idPedido, string fechaPedido, int estadoPedido)
-        {
-            Nodo entrada = new Nodo();
-            Pedido pedido = new Pedido();
-           
-            pedido.IdPedido = idPedido;
-            pedido.FechaPedido = fechaPedido;
-            pedido.EstadoPedido = estadoPedido;
-           
-            entrada.Info = pedido;
-            
-            if(primero == null)
-            {
-                primero = ultimo = entrada;
-                entrada.Siquiente = null;
-            }
-            else
-            {
-                ultimo.Siquiente = entrada;
-                entrada.Siquiente = null;
-                ultimo = entrada;
-            }
-        }
+         {
+             Nodo entrada = new Nodo();
+             Pedido pedido = new Pedido();
 
-        //Metodo para desencolar elementos de la Cola
-        public void Desencolar()
+             pedido.IdPedido = idPedido;
+             pedido.FechaPedido = fechaPedido;
+             pedido.EstadoPedido = estadoPedido;
+
+             entrada.Info = pedido;
+
+             if(primero == null)
+             {
+                 primero = ultimo = entrada;
+                 entrada.Siquiente = null;
+             }
+             else
+             {
+                 ultimo.Siquiente = entrada;
+                 entrada.Siquiente = null;
+                 ultimo = entrada;
+             }
+         }
+        
+            //Metodo para desencolar elementos de la Cola
+            public void Desencolar()
         {
             if(primero == null)
             {

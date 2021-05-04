@@ -179,7 +179,7 @@ namespace Proyecto_Catedra_PEDG01T
         {
             int idTipoUsuario;
             string sqlinsert = "INSERT INTO Usuarios(nombre, apellido, fechaNacimiento, usuario, contrasena, email, Telefono , idTipoUsuario)" +
-                        "VALUES (@nombre, @apellido, @fechanaci, @usuario, @clave, @correo, @tel, @idTypeoUser)";
+                "VALUES(@nombre, @apellido, @fechanaci, @usuario, @clave, @correo, @tel, @idTypeoUser)";
             try
             {
                 conexion.Conectar();
