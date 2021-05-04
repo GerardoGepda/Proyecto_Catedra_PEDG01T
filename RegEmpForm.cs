@@ -27,65 +27,73 @@ namespace Proyecto_Catedra_PEDG01T
         {
             if(txtnombre.Text != "")
             {
-                if(txtusuario.Text != "")
+                if(txtApellido.Text != "")
                 {
-
-                    if(txtcontrasena.Text != "")
+                    if (txtusuario.Text != "")
                     {
-                        if (txtverificar.Text != "")
+                        if (txtcontrasena.Text != "")
                         {
-                            if (txtcontrasena.Text == txtverificar.Text)
+                            if (txtverificar.Text != "")
                             {
-                                if (txtemail.Text != "")
+                                if (txtcontrasena.Text == txtverificar.Text)
                                 {
-                                    if(txttelefono.Text != "")
+                                    if (txtemail.Text != "")
                                     {
-                                        if(cbxtypeuser.SelectedIndex > -1)
+                                        if (txttelefono.Text != "")
                                         {
-                                            Usuario objUsuario = new Usuario();
-                                            objUsuario.Nombre = txtnombre.Text;
-                                            objUsuario.User = txtusuario.Text;
-                                            objUsuario.Contrasena = txtcontrasena.Text;
-                                            objUsuario.Email = txtemail.Text;
-                                            objUsuario.Telefono = txttelefono.Text;
-                                            objUsuario.TipoUsuario = cbxtypeuser.SelectedItem.ToString();
-                                            objUsuario.SaveUserInDB();
-                                            MessageBox.Show("Se supone que ya guardo");
+                                            if (cbxtypeuser.SelectedIndex > -1)
+                                            {
+                                                Usuario objUsuario = new Usuario();
+                                                objUsuario.Nombre = txtnombre.Text;
+                                                objUsuario.Apellido = txtApellido.Text;
+                                                objUsuario.User = txtusuario.Text;
+                                                objUsuario.Contrasena = txtcontrasena.Text;
+                                                objUsuario.Email = txtemail.Text;
+                                                objUsuario.Telefono = txttelefono.Text;
+                                                objUsuario.IdtypeUser = "1";
+                                                objUsuario.FechaNacimiento = "2000-10-3";
+                                                objUsuario.SaveUserInDB();
+                                                MessageBox.Show("Se supone que ya guardo");
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Debe de seleccionar tipo de usuario", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Debe de seleccionar tipo de usuario", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            MessageBox.Show("Debe de ingresar teléfono", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Debe de ingresar teléfono", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        MessageBox.Show("Debe de ingresar correo", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Debe de ingresar correo", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Las contraseñas no coinciden", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Las contraseñas no coinciden", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Debe de ingresar verificaciónd de contraseña", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Debe de ingresar verificaciónd de contraseña", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Debe de ingresar contraseña", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Debe de ingresar contraseña", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Debe de ingresar usuario", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Debe de ingresar usuario", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    MessageBox.Show("Debe de ingresar apellido", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }                   
             }
             else
             {
