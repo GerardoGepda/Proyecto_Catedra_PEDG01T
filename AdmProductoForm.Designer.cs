@@ -91,11 +91,11 @@
             // 
             this.lblselecproduct.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblselecproduct.AutoSize = true;
-            this.lblselecproduct.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblselecproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblselecproduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.lblselecproduct.Location = new System.Drawing.Point(41, 119);
             this.lblselecproduct.Name = "lblselecproduct";
-            this.lblselecproduct.Size = new System.Drawing.Size(144, 15);
+            this.lblselecproduct.Size = new System.Drawing.Size(152, 16);
             this.lblselecproduct.TabIndex = 3;
             this.lblselecproduct.Text = "Selecciona un producto:";
             // 
@@ -105,7 +105,7 @@
             this.btneditproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
             this.btneditproduct.FlatAppearance.BorderSize = 0;
             this.btneditproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btneditproduct.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneditproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneditproduct.ForeColor = System.Drawing.Color.White;
             this.btneditproduct.Location = new System.Drawing.Point(44, 200);
             this.btneditproduct.Name = "btneditproduct";
@@ -121,7 +121,7 @@
             this.btndeleteproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(71)))), ((int)(((byte)(61)))));
             this.btndeleteproduct.FlatAppearance.BorderSize = 0;
             this.btndeleteproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btndeleteproduct.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndeleteproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndeleteproduct.ForeColor = System.Drawing.Color.White;
             this.btndeleteproduct.Location = new System.Drawing.Point(181, 200);
             this.btndeleteproduct.Name = "btndeleteproduct";
@@ -137,7 +137,7 @@
             this.btncancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.btncancel.FlatAppearance.BorderSize = 0;
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancel.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.Color.White;
             this.btncancel.Location = new System.Drawing.Point(317, 200);
             this.btncancel.Name = "btncancel";
@@ -151,11 +151,11 @@
             // 
             this.lblproductos.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblproductos.AutoSize = true;
-            this.lblproductos.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblproductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblproductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.lblproductos.Location = new System.Drawing.Point(41, 290);
             this.lblproductos.Name = "lblproductos";
-            this.lblproductos.Size = new System.Drawing.Size(69, 15);
+            this.lblproductos.Size = new System.Drawing.Size(72, 16);
             this.lblproductos.TabIndex = 8;
             this.lblproductos.Text = "Productos:";
             // 
@@ -236,7 +236,7 @@
             this.btncancelupdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(71)))), ((int)(((byte)(61)))));
             this.btncancelupdate.FlatAppearance.BorderSize = 0;
             this.btncancelupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancelupdate.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelupdate.ForeColor = System.Drawing.Color.White;
             this.btncancelupdate.Location = new System.Drawing.Point(223, 419);
             this.btncancelupdate.Name = "btncancelupdate";
@@ -251,7 +251,7 @@
             this.btnupdateproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
             this.btnupdateproduct.FlatAppearance.BorderSize = 0;
             this.btnupdateproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnupdateproduct.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnupdateproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdateproduct.ForeColor = System.Drawing.Color.White;
             this.btnupdateproduct.Location = new System.Drawing.Point(46, 419);
             this.btnupdateproduct.Name = "btnupdateproduct";
@@ -265,7 +265,7 @@
             // 
             this.txtdescrproduct.BackColor = System.Drawing.Color.White;
             this.txtdescrproduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtdescrproduct.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdescrproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdescrproduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.txtdescrproduct.Location = new System.Drawing.Point(28, 351);
             this.txtdescrproduct.Multiline = true;
@@ -299,7 +299,7 @@
             // 
             this.txtpriceproduct.BackColor = System.Drawing.Color.White;
             this.txtpriceproduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtpriceproduct.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpriceproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpriceproduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.txtpriceproduct.Location = new System.Drawing.Point(28, 276);
             this.txtpriceproduct.Multiline = true;
@@ -334,13 +334,14 @@
             // 
             this.txtnameproduct.BackColor = System.Drawing.Color.White;
             this.txtnameproduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtnameproduct.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnameproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnameproduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.txtnameproduct.Location = new System.Drawing.Point(28, 204);
             this.txtnameproduct.Multiline = true;
             this.txtnameproduct.Name = "txtnameproduct";
             this.txtnameproduct.Size = new System.Drawing.Size(302, 20);
             this.txtnameproduct.TabIndex = 32;
+            this.txtnameproduct.TextChanged += new System.EventHandler(this.txtnameproduct_TextChanged);
             // 
             // lblnameline
             // 
@@ -395,7 +396,7 @@
             this.btnupdateData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
             this.btnupdateData.FlatAppearance.BorderSize = 0;
             this.btnupdateData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnupdateData.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnupdateData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdateData.ForeColor = System.Drawing.Color.White;
             this.btnupdateData.Location = new System.Drawing.Point(366, 290);
             this.btnupdateData.Name = "btnupdateData";

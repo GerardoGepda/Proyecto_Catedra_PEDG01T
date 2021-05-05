@@ -261,5 +261,10 @@ namespace Proyecto_Catedra_PEDG01T
         }
 
         #endregion Fin eventos del formulario
+
+        private void txtnameproduct_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

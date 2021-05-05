@@ -57,23 +57,23 @@ namespace Proyecto_Catedra_PEDG01T
         }
 
 
-        //metodo para desencolar elementos de la cola
-        public void Mostrar()
-        {
-            if (primero == null)
-            {
-                MessageBox.Show("La cola se encuentra vacía", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                Nodo puntero;
-                puntero = primero;
-                do
-                {
+        ////metodo para desencolar elementos de la cola
+        //public void Mostrar()
+        //{
+        //    if (primero == null)
+        //    {
+        //        MessageBox.Show("La cola se encuentra vacía", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //    else
+        //    {
+        //        Nodo puntero;
+        //        puntero = primero;
+        //        do
+        //        {
 
-                }
-                while (puntero != null);
-            }
-        }
+        //        }
+        //        while (puntero != null);
+        //    }
+        //}
     }
 }

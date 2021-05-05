@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace Proyecto_Catedra_PEDG01T
 {
@@ -115,6 +116,119 @@ namespace Proyecto_Catedra_PEDG01T
             }
 
             return "0";
+        }
+       
+
+        
+        
+        private void txtnombre_KeyPress(object sender, KeyPressEventArgs ex)
+        {
+            if (char.IsLetter(ex.KeyChar))
+            {
+                ex.Handled = false;
+            }
+            else if (char.IsControl(ex.KeyChar))
+            {
+                ex.Handled = false;
+            }
+            else if (char.IsSeparator(ex.KeyChar))
+            {
+                ex.Handled = false;
+            }
+            else
+            {
+                ex.Handled = true;
+                MessageBox.Show("Solo se admiten letras en el campo de Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs ex)
+        {
+            if (char.IsLetter(ex.KeyChar))
+            {
+                ex.Handled = false;
+            }
+            else if (char.IsControl(ex.KeyChar))
+            {
+                ex.Handled = false;
+            }
+            else if (char.IsSeparator(ex.KeyChar))
+            {
+                ex.Handled = false;
+            }
+            else
+            {
+                ex.Handled = true;
+                MessageBox.Show("Solo se admiten letras en este campo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+        //Función para validar el formato del correo
+        public static bool ValidarcorreoE(string correo)
+        {
+            string ex = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$";
+            if (Regex.IsMatch(correo, ex))
+            {
+                if (Regex.Replace(correo, ex, string.Empty).Length == 0) 
+                { 
+                    return false; 
+                
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        //Función para validar el formato del correo
+        public static bool Validartelefono(string tel)
+        {
+            string ex = "[0-9]{8}";
+            if (Regex.IsMatch(tel, ex))
+            {
+                if (Regex.Replace(tel, ex, string.Empty).Length == 0)
+                {
+                    return false;
+
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private void txtemail_Leave(object sender, EventArgs e)
+        {
+            if (ValidarcorreoE(txtemail.Text)==false)
+            {
+            }
+            else
+            {
+               
+                MessageBox.Show("El formato del correo electrónico no es correcto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtemail.Focus();
+            }
+
+        }
+
+        private void txttelefono_Leave(object sender, EventArgs e)
+        {
+            if (ValidarcorreoE(txttelefono.Text)==false) { }
+            else
+            {
+                MessageBox.Show("El formato del teléfono no es correcto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txttelefono.Focus();
+
+            }
+
         }
     }
 }
