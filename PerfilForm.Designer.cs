@@ -81,6 +81,7 @@
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(257, 20);
             this.txtnombre.TabIndex = 3;
+            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombre_KeyPress);
             // 
             // lbluser
             // 
@@ -119,6 +120,7 @@
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(257, 20);
             this.txtemail.TabIndex = 7;
+            this.txtemail.Leave += new System.EventHandler(this.txtemail_Leave);
             // 
             // lbltelefono
             // 

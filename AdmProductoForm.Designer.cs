@@ -341,7 +341,6 @@
             this.txtnameproduct.Name = "txtnameproduct";
             this.txtnameproduct.Size = new System.Drawing.Size(302, 20);
             this.txtnameproduct.TabIndex = 32;
-            this.txtnameproduct.TextChanged += new System.EventHandler(this.txtnameproduct_TextChanged);
             // 
             // lblnameline
             // 
