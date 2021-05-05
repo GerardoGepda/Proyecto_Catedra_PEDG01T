@@ -78,3 +78,10 @@ INSERT INTO Productos (nombreProducto, codigoProducto, precioProducto, Descripci
 
 --Consulta para obtener pedidos
 SELECT idPedido,fechaPedido,estadoPedido from Pedido
+
+INSERT INTO Pedido (idUsuario,fechaPedido,estadoPedido,totalPedido) VALUES 
+(2,'2021-02-12',1,125),
+(2,'2021-02-12',1,12),
+(2,'2021-02-12',1,1525),
+(2,'2021-02-12',1,1261.25),
+(2,'2021-02-12',1,125.75)
