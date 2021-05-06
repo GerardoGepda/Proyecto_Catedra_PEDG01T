@@ -30,7 +30,7 @@ namespace Proyecto_Catedra_PEDG01T
             }
             else
             {
-                OpenForm<MenuForm>();
+                OpenFormMenu();
             }
         }
 
@@ -67,7 +67,7 @@ namespace Proyecto_Catedra_PEDG01T
 
         private void btnmenu_Click(object sender, EventArgs e)
         {
-            OpenForm<MenuForm>();
+            OpenFormMenu();
         }
 
         private void btnpedidos_Click(object sender, EventArgs e)
@@ -122,6 +122,59 @@ namespace Proyecto_Catedra_PEDG01T
             else
             {
                 form.BringToFront();
+            }
+        }
+
+        //sobrecarga para OpenForm
+        private void OpenFormMenu()
+        {
+            MenuForm form;
+            form = pnlcontent.Controls.OfType<MenuForm>().FirstOrDefault();
+
+            if (form == null)
+            {
+                form = new MenuForm(usuario);
+                form.TopLevel = false;
+                pnlcontent.Controls.Add(form);
+                pnlcontent.Tag = form;
+                form.ConfirmPedido += new MenuForm.showFacturaPedido(ShowFactura);
+                form.Show();
+                form.BringToFront();
+                //tamaño del form igual al tamaño del panel
+                form.Size = pnlcontent.Size;
+            }
+            else
+            {
+                form.BringToFront();
+            }
+        }
+
+        private void ShowFactura(Pedido pedido)
+        {
+            OpenFormFactura(pedido);
+        }
+
+        //sobrecarga para OpenForm
+        private void OpenFormFactura(Pedido pedido)
+        {
+            FacturaForm form;
+            form = pnlcontent.Controls.OfType<FacturaForm>().FirstOrDefault();
+
+            if (form == null)
+            {
+                form = new FacturaForm(pedido);
+                form.TopLevel = false;
+                pnlcontent.Controls.Add(form);
+                pnlcontent.Tag = form;
+                form.Show();
+                form.BringToFront();
+                //tamaño del form igual al tamaño del panel
+                form.Size = pnlcontent.Size;
+            }
+            else
+            {
+                form.Close();
+                OpenFormFactura(pedido);
             }
         }
 

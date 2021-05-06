@@ -12,7 +12,7 @@ namespace Proyecto_Catedra_PEDG01T
 {
     public partial class FacturaForm : Form
     {
-        public FacturaForm()
+        public FacturaForm(Pedido pedido)
         {
             InitializeComponent();
         }

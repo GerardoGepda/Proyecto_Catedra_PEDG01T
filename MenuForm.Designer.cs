@@ -85,6 +85,7 @@
             this.btncrearpedido.TabIndex = 8;
             this.btncrearpedido.Text = "Generar pedido y factura";
             this.btncrearpedido.UseVisualStyleBackColor = false;
+            this.btncrearpedido.Click += new System.EventHandler(this.btncrearpedido_Click);
             // 
             // btnlimpiar
             // 
@@ -118,6 +119,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnlProductos
             // 

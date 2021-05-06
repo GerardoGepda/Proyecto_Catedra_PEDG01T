@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Proyecto_Catedra_PEDG01T
 {
-    class Pedido
+    public class Pedido
     {
         //herramientas para la clase
         private Conexion conexion = new Conexion();
@@ -38,12 +38,12 @@ namespace Proyecto_Catedra_PEDG01T
         public void calcularTotal()
         {
             double total = 0;
-            DetallePedido[] dPedido = (DetallePedido[])DetallePed.ListToArray();
 
-            foreach (DetallePedido item in dPedido)
+            for (int i = 0; i < DetallePed.Count(); i++)
             {
-                total += item.PrecioTotalDetalle;
+                total += ((DetallePedido)DetallePed.ElementAtIndex(i)).PrecioTotalDetalle;
             }
+
             Total = total;
         }
 

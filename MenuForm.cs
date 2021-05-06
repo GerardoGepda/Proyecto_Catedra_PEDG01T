@@ -17,12 +17,17 @@ namespace Proyecto_Catedra_PEDG01T
         Lista listPrdt;
         Producto[] productos;
         MemoryStream img;
+        private Usuario user;
 
-        public MenuForm()
+        //delegado para comunicar con el form Inicio
+        public delegate void showFacturaPedido(Pedido pedido);
+        public event showFacturaPedido ConfirmPedido;
+
+        public MenuForm(Usuario user)
         {
             InitializeComponent();
+            this.user = user;
             CreateCuadrosPrdt();
-            
         }
 
         //--- MÉTODOS DEL FORMULARIO ---//
@@ -241,6 +246,26 @@ namespace Proyecto_Catedra_PEDG01T
             {
                 MessageBox.Show("Debe selecionar productos para poder crear el pedido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else
+            {
+                CreatePedido(prdtDetails);
+            }
+        }
+
+        //Método que crea el objeto pedido
+        private void CreatePedido(Lista detallesPedido)
+        {
+            Pedido pedido = new Pedido
+            {
+                EstadoPedido = 0,
+                IdUsuario = user.IdUsuario,
+                DetallePed = detallesPedido
+            };
+            pedido.calcularTotal();
+
+            //ejecutamos el evento ConfirmPedido para pasar el pedido al Form inicio y despues al Form Factura
+            ConfirmPedido(pedido);
+            this.Close();
         }
 
         //Método que extrae la cantidad seleccionada de un producto, el parametro es el panel del producto y el id
@@ -257,28 +282,18 @@ namespace Proyecto_Catedra_PEDG01T
         //evento que limpia el formulario
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        //evento para botones +
-        private void btninsrtproduct_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            //accedemos al panel (btn.parent) y buscamos el label con la cantidad, lo buscamos por nombrelabel + codigoProducto
-            Label lblcant = (Label)btn.Parent.Controls.Find("lblcantproduct" + btn.Tag.ToString(), false)[0];
-            lblcant.Text = (Convert.ToInt32(lblcant.Text) + 1).ToString();
-        }
-
-        //evento para botones -
-        private void btnsuprProducto_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            //accedemos al panel (btn.parent) y buscamos el label con la cantidad, lo buscamos por nombrelabel + codigoProducto
-            Label lblcant = (Label)btn.Parent.Controls.Find("lblcantproduct" + btn.Tag.ToString(), false)[0];
-            //validamos para que la cantidad no sea menor que 1
-            if (Convert.ToInt32(lblcant.Text) > 1)
+            //recorremos los paneles de los productos
+            foreach (Panel pnlproducto in pnlProductos.Controls)
             {
-                lblcant.Text = (Convert.ToInt32(lblcant.Text) - 1).ToString();
+                foreach (Producto producto in productos)
+                {
+                    if (producto.Id == Convert.ToInt32(pnlproducto.Tag))
+                    {
+                        ((Button)pnlproducto.Controls.Find("btncancelproduct" + producto.Id, false)[0]).PerformClick();
+                        break;
+                    }
+                }
+                pnlproducto.Tag = 0;
             }
         }
 
@@ -307,6 +322,50 @@ namespace Proyecto_Catedra_PEDG01T
             //ponemos la cantidad en 0
             Label lblcant = (Label)btnCancel.Parent.Controls.Find("lblcantproduct" + btnCancel.Tag.ToString(), false)[0];
             lblcant.Text = "0";
+        }
+
+        //evento para botones +
+        private void btninsrtproduct_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            //accedemos al panel (btn.parent) y buscamos el label con la cantidad, lo buscamos por nombrelabel + codigoProducto
+            Label lblcant = (Label)btn.Parent.Controls.Find("lblcantproduct" + btn.Tag.ToString(), false)[0];
+            lblcant.Text = (Convert.ToInt32(lblcant.Text) + 1).ToString();
+        }
+
+        //evento para botones -
+        private void btnsuprProducto_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            //accedemos al panel (btn.parent) y buscamos el label con la cantidad, lo buscamos por nombrelabel + codigoProducto
+            Label lblcant = (Label)btn.Parent.Controls.Find("lblcantproduct" + btn.Tag.ToString(), false)[0];
+            //validamos para que la cantidad no sea menor que 1
+            if (Convert.ToInt32(lblcant.Text) > 1)
+            {
+                lblcant.Text = (Convert.ToInt32(lblcant.Text) - 1).ToString();
+            }
+        }
+
+        private void btncrearpedido_Click(object sender, EventArgs e)
+        {
+            GetSelectedProducts();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //recorremos los paneles de los productos
+            foreach (Panel pnlproducto in pnlProductos.Controls)
+            {
+                foreach (Producto producto in productos)
+                {
+                    if (producto.Id == Convert.ToInt32(pnlproducto.Tag))
+                    {
+                        ((Button)pnlproducto.Controls.Find("btncancelproduct" + producto.Id, false)[0]).PerformClick();
+                        break;
+                    }
+                }
+                pnlproducto.Tag = 0;
+            }
         }
 
         //--- FIN EVENTOS DEL FORMULARIO ---//
