@@ -185,8 +185,10 @@
     <None Include="Properties\DataSources\Inicio.datasource" />
     <None Include="Properties\DataSources\Login.datasource" />
     <None Include="Properties\DataSources\MenuForm.datasource" />
+    <None Include="Properties\DataSources\Pedido.datasource" />
     <None Include="Properties\DataSources\PedidosForm.datasource" />
     <None Include="Properties\DataSources\PerfilForm.datasource" />
+    <None Include="Properties\DataSources\Producto.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\DataSources\Proyecto_Catedra_PEDG01T.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\Proyecto_Catedra_PEDG01T.Properties.Settings.datasource" />

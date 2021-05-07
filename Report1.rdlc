@@ -312,6 +312,80 @@
         <rd:ObjectDataSourceType>Proyecto_Catedra_PEDG01T.Usuario, Proyecto_Catedra_PEDG01T, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="FacturaPedido">
+      <Query>
+        <DataSourceName>Proyecto_Catedra_PEDG01T</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DetallePed">
+          <DataField>DetallePed</DataField>
+          <rd:TypeName>Proyecto_Catedra_PEDG01T.Lista</rd:TypeName>
+        </Field>
+        <Field Name="EstadoPedido">
+          <DataField>EstadoPedido</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FechaPedido">
+          <DataField>FechaPedido</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IdPedido">
+          <DataField>IdPedido</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="IdUsuario">
+          <DataField>IdUsuario</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Proyecto_Catedra_PEDG01T</rd:DataSetName>
+        <rd:TableName>Pedido</rd:TableName>
+        <rd:ObjectDataSourceType>Proyecto_Catedra_PEDG01T.Pedido, Proyecto_Catedra_PEDG01T, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="FacturaProductos">
+      <Query>
+        <DataSourceName>Proyecto_Catedra_PEDG01T</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Codigo">
+          <DataField>Codigo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Descripcion">
+          <DataField>Descripcion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PhotoProducto">
+          <DataField>PhotoProducto</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="Precio">
+          <DataField>Precio</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Proyecto_Catedra_PEDG01T</rd:DataSetName>
+        <rd:TableName>Producto</rd:TableName>
+        <rd:ObjectDataSourceType>Proyecto_Catedra_PEDG01T.Producto, Proyecto_Catedra_PEDG01T, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>79d97c31-869c-4c16-b89d-4f65cb1ac9fe</rd:ReportID>
