@@ -151,18 +151,18 @@ namespace Proyecto_Catedra_PEDG01T
 
         private void ShowFactura(Pedido pedido)
         {
-            OpenFormFactura(pedido);
+            OpenFormFactura(pedido, usuario);
         }
 
         //sobrecarga para OpenForm
-        private void OpenFormFactura(Pedido pedido)
+        private void OpenFormFactura(Pedido pedido, Usuario usuario)
         {
             FacturaForm form;
             form = pnlcontent.Controls.OfType<FacturaForm>().FirstOrDefault();
 
             if (form == null)
             {
-                form = new FacturaForm(pedido);
+                form = new FacturaForm(pedido, usuario);
                 form.TopLevel = false;
                 pnlcontent.Controls.Add(form);
                 pnlcontent.Tag = form;
@@ -174,7 +174,7 @@ namespace Proyecto_Catedra_PEDG01T
             else
             {
                 form.Close();
-                OpenFormFactura(pedido);
+                OpenFormFactura(pedido, usuario);
             }
         }
 
