@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,12 @@ namespace Proyecto_Catedra_PEDG01T
 {
     public partial class FacturaForm : Form
     {
-        public FacturaForm(Pedido pedido)
+        public FacturaForm(Pedido pedido,Usuario usua)
         {
             InitializeComponent();
+            this.usua = usua;
         }
+        Usuario usua;
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -25,20 +28,7 @@ namespace Proyecto_Catedra_PEDG01T
         private List<Factura> fact = new List<Factura>();
         private int edit_indice = -1;
 
-        private void actualizarGrid()
-        {
-            dgv.DataSource = null;
-            dgv.DataSource = fact;
-        }
-
-        private void limpiar()
-        {
-            txtnomesa.Clear();
-            txtnofactura.Clear();
-            txtmonto.Clear();
-            txtfecha.Clear();
-            txtcantidad.Clear();
-        }
+       
 
 
         private void btnimprimir_Click(object sender, EventArgs e)
@@ -80,8 +70,12 @@ namespace Proyecto_Catedra_PEDG01T
 
         private void FacturaForm_Load(object sender, EventArgs e)
         {
+            this.report1.LocalReport.ReportPath = "Report1.rdlc";
+            ReportDataSource datos = new ReportDataSource("FacturaUsuario",usua);
+            this.report1.LocalReport.DataSources.Clear();
+            this.report1.LocalReport.DataSources.Add(datos);
 
-          
+            this.report1.RefreshReport();
         }
     }
 }
