@@ -230,6 +230,8 @@ namespace Proyecto_Catedra_PEDG01T
                             detallePedido = new DetallePedido
                             {
                                 IdProducto = producto.Id,
+                                CodigoProducto = producto.Codigo,
+                                NombreProducto = producto.Nombre,
                                 PrecioProducto = producto.Precio,
                                 Cantidad = CantProducto(pnlproducto, producto.Id)
                             };

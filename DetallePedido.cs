@@ -18,6 +18,8 @@ namespace Proyecto_Catedra_PEDG01T
 
         //campos de la clase
         private int idProducto;
+        private string codigoProducto;
+        private string nombreProducto;
         private int cantidad;
         private double precioProducto;
         private double precioTotalDetalle;
@@ -27,6 +29,8 @@ namespace Proyecto_Catedra_PEDG01T
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public double PrecioProducto { get => precioProducto; set => precioProducto = value; }
         public double PrecioTotalDetalle { get => precioTotalDetalle; set => precioTotalDetalle = value; }
+        public string CodigoProducto { get => codigoProducto; set => codigoProducto = value; }
+        public string NombreProducto { get => nombreProducto; set => nombreProducto = value; }
 
         //--- Métodos de la clase ---//
 
