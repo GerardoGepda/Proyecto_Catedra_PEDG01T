@@ -13,12 +13,22 @@ namespace Proyecto_Catedra_PEDG01T
 {
     public partial class FacturaForm : Form
     {
-        public FacturaForm(Pedido pedido,Usuario usua)
+        Usuario usua;
+        Pedido pedido;
+        Producto[] productos;
+        public FacturaForm(Pedido pedido, Usuario usua)
         {
             InitializeComponent();
             this.usua = usua;
+            this.pedido = pedido;
+
+            productos = new Producto[pedido.DetallePed.Count()];
+            for (int i = 0; i < pedido.DetallePed.Count(); i++)
+            {
+                productos[i] = (Producto)pedido.DetallePed.ElementAtIndex(i);
+            }
         }
-        Usuario usua;
+        
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -70,9 +80,12 @@ namespace Proyecto_Catedra_PEDG01T
 
         private void FacturaForm_Load(object sender, EventArgs e)
         {
-            this.report1.LocalReport.ReportPath = "Report1.rdlc";
-            ReportDataSource datos = new ReportDataSource("FacturaUsuario",usua);
+            Usuario[] usuarios = new Usuario[1];
+            usuarios[0] = usua;
+
+            this.report1.LocalReport.ReportEmbeddedResource = "Proyecto_Catedra_PEDG01T.Report1.rdlc";
             this.report1.LocalReport.DataSources.Clear();
+            ReportDataSource datos = new ReportDataSource("FacturaUsuario", usuarios);
             this.report1.LocalReport.DataSources.Add(datos);
 
             this.report1.RefreshReport();
