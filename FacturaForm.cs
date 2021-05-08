@@ -84,14 +84,19 @@ namespace Proyecto_Catedra_PEDG01T
             usuarios[0] = usua;
             Pedido[] pedidos = new Pedido[1];
             pedidos[0] = pedido;
+            
+
 
             this.report1.LocalReport.ReportEmbeddedResource = "Proyecto_Catedra_PEDG01T.Report1.rdlc";
             this.report1.LocalReport.DataSources.Clear();
             ReportDataSource fpedido = new ReportDataSource("FacturaPedido", pedidos);
             ReportDataSource datos = new ReportDataSource("FacturaUsuario", usuarios);
+            ReportDataSource fdetalle = new ReportDataSource("FacturaDetalle", Dproductos);
             this.report1.LocalReport.DataSources.Add(datos);
-            this.report1.LocalReport.DataSources.Add(fpedido);            
+            this.report1.LocalReport.DataSources.Add(fpedido);
 
+            this.report1.LocalReport.ReportEmbeddedResource = "Proyecto_Catedra_PEDG01T.Report1.rdlc";
+           
             this.report1.RefreshReport();
         }
     }
