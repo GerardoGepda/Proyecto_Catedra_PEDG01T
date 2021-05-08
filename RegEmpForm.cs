@@ -209,19 +209,14 @@ namespace Proyecto_Catedra_PEDG01T
         {
             if (ValidarcorreoE(txtemail.Text)==false)
             {
-            }
-            else
-            {
-               
                 MessageBox.Show("El formato del correo electrónico no es correcto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtemail.Focus();
             }
-
         }
 
         private void txttelefono_Leave(object sender, EventArgs e)
         {
-            if (ValidarcorreoE(txttelefono.Text)==false) { }
+            if (Validartelefono(txttelefono.Text)==false) { }
             else
             {
                 MessageBox.Show("El formato del teléfono no es correcto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
