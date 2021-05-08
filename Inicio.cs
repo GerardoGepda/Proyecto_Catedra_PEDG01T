@@ -125,6 +125,30 @@ namespace Proyecto_Catedra_PEDG01T
             }
         }
 
+        //Sobrecarga del método OpenForm
+        private void OpenFormPedidos()
+        {
+            PedidosForm form;
+            form = pnlcontent.Controls.OfType<PedidosForm>().FirstOrDefault();
+
+            if (form == null)
+            {
+                form = new PedidosForm();
+                form.TopLevel = false;
+                pnlcontent.Controls.Add(form);
+                pnlcontent.Tag = form;
+                form.Show();
+                form.BringToFront();
+                //tamaño del form igual al tamaño del panel
+                form.Size = pnlcontent.Size;
+            }
+            else
+            {
+                form.Close();
+                OpenFormPedidos();
+            }
+        }
+
         //sobrecarga para OpenForm
         private void OpenFormMenu()
         {
@@ -166,8 +190,10 @@ namespace Proyecto_Catedra_PEDG01T
                 form.TopLevel = false;
                 pnlcontent.Controls.Add(form);
                 pnlcontent.Tag = form;
+                form.Accion += new FacturaForm.actionFactura(AccionFactura);
                 form.Show();
                 form.BringToFront();
+                pnlmenu.Enabled = false;
                 //tamaño del form igual al tamaño del panel
                 form.Size = pnlcontent.Size;
             }
@@ -178,6 +204,19 @@ namespace Proyecto_Catedra_PEDG01T
             }
         }
 
+        public void AccionFactura(bool actn)
+        {
+            if (actn)
+            {
+                pnlmenu.Enabled = true;
+                OpenForm<PedidosForm>();
+            }
+            else
+            {
+                pnlmenu.Enabled = true;
+                OpenFormMenu();
+            }
+        }
 
         #endregion
 

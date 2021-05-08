@@ -16,6 +16,11 @@ namespace Proyecto_Catedra_PEDG01T
         Usuario usua;
         Pedido pedido;
         DetallePedido[] Dproductos;
+
+        //delegado para comunicar con el form Inicio
+        public delegate void actionFactura(bool actn);
+        public event actionFactura Accion;
+
         public FacturaForm(Pedido pedido, Usuario usua)
         {
             InitializeComponent();
@@ -28,55 +33,6 @@ namespace Proyecto_Catedra_PEDG01T
                 Dproductos[i] = (DetallePedido)pedido.DetallePed.ElementAtIndex(i);
             }
         }
-        
-
-        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private List<Factura> fact = new List<Factura>();
-        private int edit_indice = -1;
-
-       
-
-
-        private void btnimprimir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnagregar_Click(object sender, EventArgs e)
-        {
-
-            MessageBox.Show("Se agregara el producto al pedido");
-            PedidosForm n = new PedidosForm();
-            n.Show();
-        }
-
-        private void btncancelar_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seguro que quiere cancelar ", "Clic para continuar", MessageBoxButtons.OK);
-        }
-
-        private void btnclose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnWState_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void btnminimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void dgv_DoubleClick(object sender, EventArgs e)
-        {
-        }
 
         private void FacturaForm_Load(object sender, EventArgs e)
         {
@@ -84,8 +40,6 @@ namespace Proyecto_Catedra_PEDG01T
             usuarios[0] = usua;
             Pedido[] pedidos = new Pedido[1];
             pedidos[0] = pedido;
-            
-
 
             this.report1.LocalReport.ReportEmbeddedResource = "Proyecto_Catedra_PEDG01T.Report1.rdlc";
             this.report1.LocalReport.DataSources.Clear();
@@ -94,10 +48,39 @@ namespace Proyecto_Catedra_PEDG01T
             ReportDataSource fdetalle = new ReportDataSource("FacturaDetalle", Dproductos);
             this.report1.LocalReport.DataSources.Add(datos);
             this.report1.LocalReport.DataSources.Add(fpedido);
+            this.report1.LocalReport.DataSources.Add(fdetalle);
 
-            this.report1.LocalReport.ReportEmbeddedResource = "Proyecto_Catedra_PEDG01T.Report1.rdlc";
-           
             this.report1.RefreshReport();
+        }
+
+        private void btnimprimir_Click_1(object sender, EventArgs e)
+        {
+            this.report1.PrintDialog();
+        }
+
+        private void btnagregar_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result;
+            result = MessageBox.Show("¿Desea ingresar este pedido?", "Información", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                //true significa que el pedido se aprobo y se ingreso
+                pedido.CreatePedido();
+                Accion(true);
+                this.Close();
+            }
+        }
+
+        private void btncancelar_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result;
+            result = MessageBox.Show("¿Realmente desea cancelar la creación de este pedido?", "Advertencia", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                //Indica que se cancelo la creación de este pedido
+                Accion(false);
+                this.Close();
+            }
         }
     }
 }

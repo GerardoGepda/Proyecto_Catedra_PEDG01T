@@ -257,11 +257,14 @@ namespace Proyecto_Catedra_PEDG01T
         //Método que crea el objeto pedido
         private void CreatePedido(Lista detallesPedido)
         {
+            DateTime date = DateTime.Now;
+
             Pedido pedido = new Pedido
             {
                 EstadoPedido = 0,
                 IdUsuario = user.IdUsuario,
-                DetallePed = detallesPedido
+                DetallePed = detallesPedido,
+                FechaPedido = date.Date.ToShortDateString()
             };
             pedido.calcularTotal();
 

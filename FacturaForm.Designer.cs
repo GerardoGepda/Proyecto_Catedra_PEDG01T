@@ -31,8 +31,8 @@
             this.btncancelar = new System.Windows.Forms.Button();
             this.btnagregar = new System.Windows.Forms.Button();
             this.btnimprimir = new System.Windows.Forms.Button();
-            this.lbfactura = new System.Windows.Forms.Label();
             this.report1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.lblmenu = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btncancelar
@@ -43,13 +43,13 @@
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.ForeColor = System.Drawing.Color.White;
-            this.btncancelar.Location = new System.Drawing.Point(799, 599);
-            this.btncancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btncancelar.Location = new System.Drawing.Point(599, 487);
             this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(187, 44);
+            this.btncancelar.Size = new System.Drawing.Size(140, 36);
             this.btncancelar.TabIndex = 37;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = false;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click_1);
             // 
             // btnagregar
             // 
@@ -59,13 +59,13 @@
             this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnagregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnagregar.ForeColor = System.Drawing.Color.White;
-            this.btnagregar.Location = new System.Drawing.Point(511, 599);
-            this.btnagregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnagregar.Location = new System.Drawing.Point(383, 487);
             this.btnagregar.Name = "btnagregar";
-            this.btnagregar.Size = new System.Drawing.Size(187, 44);
+            this.btnagregar.Size = new System.Drawing.Size(140, 36);
             this.btnagregar.TabIndex = 36;
             this.btnagregar.Text = "Agregar el pedido";
             this.btnagregar.UseVisualStyleBackColor = false;
+            this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click_1);
             // 
             // btnimprimir
             // 
@@ -75,46 +75,49 @@
             this.btnimprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnimprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnimprimir.ForeColor = System.Drawing.Color.White;
-            this.btnimprimir.Location = new System.Drawing.Point(225, 599);
-            this.btnimprimir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnimprimir.Location = new System.Drawing.Point(169, 487);
             this.btnimprimir.Name = "btnimprimir";
-            this.btnimprimir.Size = new System.Drawing.Size(187, 44);
+            this.btnimprimir.Size = new System.Drawing.Size(140, 36);
             this.btnimprimir.TabIndex = 35;
             this.btnimprimir.Text = "Imprimir";
             this.btnimprimir.UseVisualStyleBackColor = false;
-            // 
-            // lbfactura
-            // 
-            this.lbfactura.AutoSize = true;
-            this.lbfactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbfactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lbfactura.Location = new System.Drawing.Point(52, 39);
-            this.lbfactura.Name = "lbfactura";
-            this.lbfactura.Size = new System.Drawing.Size(107, 31);
-            this.lbfactura.TabIndex = 22;
-            this.lbfactura.Text = "Factura";
+            this.btnimprimir.Click += new System.EventHandler(this.btnimprimir_Click_1);
             // 
             // report1
             // 
-            this.report1.Location = new System.Drawing.Point(36, 91);
+            this.report1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.report1.Location = new System.Drawing.Point(34, 92);
+            this.report1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.report1.Name = "report1";
             this.report1.ServerReport.BearerToken = null;
-            this.report1.Size = new System.Drawing.Size(1109, 428);
+            this.report1.Size = new System.Drawing.Size(832, 348);
             this.report1.TabIndex = 38;
+            // 
+            // lblmenu
+            // 
+            this.lblmenu.AutoSize = true;
+            this.lblmenu.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.lblmenu.Location = new System.Drawing.Point(44, 34);
+            this.lblmenu.Name = "lblmenu";
+            this.lblmenu.Size = new System.Drawing.Size(93, 29);
+            this.lblmenu.TabIndex = 39;
+            this.lblmenu.Text = "Factura";
             // 
             // FacturaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1200, 714);
+            this.ClientSize = new System.Drawing.Size(900, 580);
+            this.Controls.Add(this.lblmenu);
             this.Controls.Add(this.report1);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnagregar);
             this.Controls.Add(this.btnimprimir);
-            this.Controls.Add(this.lbfactura);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FacturaForm";
             this.Text = "FacturaForm";
             this.Load += new System.EventHandler(this.FacturaForm_Load);
@@ -128,7 +131,7 @@
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Button btnagregar;
         private System.Windows.Forms.Button btnimprimir;
-        private System.Windows.Forms.Label lbfactura;
         private Microsoft.Reporting.WinForms.ReportViewer report1;
+        private System.Windows.Forms.Label lblmenu;
     }
 }

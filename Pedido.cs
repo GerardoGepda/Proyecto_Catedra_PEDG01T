@@ -51,7 +51,7 @@ namespace Proyecto_Catedra_PEDG01T
         public bool CreatePedido()
         {
             bool creado = false;
-            string sql = "INSERT INTO Pedido (idUsuario, totalPedido) VALUE (@idUser, @total)";
+            string sql = "INSERT INTO Pedido (idUsuario, estadoPedido, totalPedido) VALUES (@idUser, @estdP, @total)";
 
             try
             {
@@ -59,6 +59,7 @@ namespace Proyecto_Catedra_PEDG01T
                 command = new SqlCommand(sql, conexion.Conn);
                 command.Parameters.AddWithValue("@idUser", IdUsuario);
                 command.Parameters.AddWithValue("@total", Total);
+                command.Parameters.AddWithValue("@estdP", EstadoPedido);
                 creado = command.ExecuteNonQuery() > 0 ? true : false;
             }
             catch (Exception err)
@@ -80,9 +81,9 @@ namespace Proyecto_Catedra_PEDG01T
         private bool SaveDetails()
         {
             bool guardado = false;
-            int idpedido;
+            int idped;
             string sql = "INSERT INTO Detalle_pedido (idProducto, cantidadProducto, precioDetalle, idPedido) " +
-                "VALUES (@idPrdt, @cantidad, @precio, @idPed)";
+                "VALUES (@idPrdt, @cantidad, @precio, @idPd)";
             string sql2 = "SELECT TOP 1 idPedido FROM Pedido ORDER BY idPedido DESC";
             
             try
@@ -94,20 +95,26 @@ namespace Proyecto_Catedra_PEDG01T
                 dataReader = dataAdapter.SelectCommand.ExecuteReader();
                 if (!dataReader.HasRows)
                     throw new Exception("Error al extraer id del pedido");
-
-                idpedido = Convert.ToInt32(dataReader[0].ToString());
+                dataReader.Read();
+                idped = Convert.ToInt32(dataReader[0]);
+                dataReader.Close();
 
                 //Insertamos los detalles del pedido con ayuda de un bucle
                 command = new SqlCommand(sql, conexion.Conn);
-                command.Parameters.AddWithValue("@idPed", idPedido);
-
-                DetallePedido[] detalles = (DetallePedido[])DetallePed.ListToArray();
-                foreach (DetallePedido detalle in detalles)
+                command.Parameters.AddWithValue("@idPd", idped);
+                command.Parameters.Add("@idPrdt", System.Data.SqlDbType.Int);
+                command.Parameters.Add("@cantidad", System.Data.SqlDbType.Int);
+                command.Parameters.Add("@precio", System.Data.SqlDbType.Float);
+                ///
+                DetallePedido detallePedido;
+                for (int i = 0; i < DetallePed.Count(); i++)
                 {
-                    command.Parameters.AddWithValue("@idPrdt", detalle.IdProducto);
-                    command.Parameters.AddWithValue("@cantidad", detalle.IdProducto);
-                    command.Parameters.AddWithValue("@precio", detalle.IdProducto);
+                    detallePedido = (DetallePedido)DetallePed.ElementAtIndex(i);
+                    command.Parameters["@idPrdt"].Value = detallePedido.IdProducto;
+                    command.Parameters["@cantidad"].Value = detallePedido.Cantidad;
+                    command.Parameters["@precio"].Value = detallePedido.PrecioTotalDetalle;
                     guardado = command.ExecuteNonQuery() > 0 ? true : false;
+                    detallePedido = null;
                 }
             }
             catch (Exception err)
