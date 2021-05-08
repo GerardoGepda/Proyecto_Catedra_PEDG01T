@@ -14,7 +14,6 @@ namespace Proyecto_Catedra_PEDG01T
         private static Conexion conexion = new Conexion();
         private static SqlDataAdapter dataAdapter;
         private static SqlDataReader dataReader;
-        private static SqlCommand command;
 
         //campos de la clase
         private int idProducto;
@@ -26,11 +25,11 @@ namespace Proyecto_Catedra_PEDG01T
 
         //propiedades de la clase
         public int IdProducto { get => idProducto; set => idProducto = value; }
+        public string CodigoProducto { get => codigoProducto; set => codigoProducto = value; }
+        public string NombreProducto { get => nombreProducto; set => nombreProducto = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public double PrecioProducto { get => precioProducto; set => precioProducto = value; }
         public double PrecioTotalDetalle { get => precioTotalDetalle; set => precioTotalDetalle = value; }
-        public string CodigoProducto { get => codigoProducto; set => codigoProducto = value; }
-        public string NombreProducto { get => nombreProducto; set => nombreProducto = value; }
 
         //--- Métodos de la clase ---//
 

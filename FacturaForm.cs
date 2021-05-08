@@ -15,17 +15,17 @@ namespace Proyecto_Catedra_PEDG01T
     {
         Usuario usua;
         Pedido pedido;
-        Producto[] productos;
+        DetallePedido[] Dproductos;
         public FacturaForm(Pedido pedido, Usuario usua)
         {
             InitializeComponent();
             this.usua = usua;
             this.pedido = pedido;
 
-            productos = new Producto[pedido.DetallePed.Count()];
+            Dproductos = new DetallePedido[pedido.DetallePed.Count()];
             for (int i = 0; i < pedido.DetallePed.Count(); i++)
             {
-                productos[i] = (Producto)pedido.DetallePed.ElementAtIndex(i);
+                Dproductos[i] = (DetallePedido)pedido.DetallePed.ElementAtIndex(i);
             }
         }
         
@@ -82,21 +82,15 @@ namespace Proyecto_Catedra_PEDG01T
         {
             Usuario[] usuarios = new Usuario[1];
             usuarios[0] = usua;
-            Pedido[] pedid = new Pedido[1];
-            pedid[0] = pedido;
-
+            Pedido[] pedidos = new Pedido[1];
+            pedidos[0] = pedido;
 
             this.report1.LocalReport.ReportEmbeddedResource = "Proyecto_Catedra_PEDG01T.Report1.rdlc";
             this.report1.LocalReport.DataSources.Clear();
-            ReportDataSource fpedido = new ReportDataSource("FacturaPedido", pedido);
+            ReportDataSource fpedido = new ReportDataSource("FacturaPedido", pedidos);
             ReportDataSource datos = new ReportDataSource("FacturaUsuario", usuarios);
             this.report1.LocalReport.DataSources.Add(datos);
-            this.report1.LocalReport.DataSources.Add(fpedido);
-
-
-           
-          
-            
+            this.report1.LocalReport.DataSources.Add(fpedido);            
 
             this.report1.RefreshReport();
         }

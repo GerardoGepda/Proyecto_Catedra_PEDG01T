@@ -180,6 +180,7 @@
     <EmbeddedResource Include="Report1.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Conexion.datasource" />
+    <None Include="Properties\DataSources\DetallePedido.datasource" />
     <None Include="Properties\DataSources\Factura.datasource" />
     <None Include="Properties\DataSources\FacturaForm.datasource" />
     <None Include="Properties\DataSources\Inicio.datasource" />
