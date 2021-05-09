@@ -165,22 +165,22 @@ namespace Proyecto_Catedra_PEDG01T
         //Función para validar el formato del correo
         public static bool ValidarcorreoE(string correo)
         {
-            string ex = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$";
+            string ex = "^([da-z_.-]+)@([da-z.-]+).([a-z.]{2,6})$";
             if (Regex.IsMatch(correo, ex))
             {
                 if (Regex.Replace(correo, ex, string.Empty).Length == 0) 
                 { 
-                    return false; 
+                    return true; 
                 
                 }
                 else
                 {
-                    return true;
+                    return false;
                 }
             }
             else
             {
-                return true;
+                return false;
             }
         }
 
