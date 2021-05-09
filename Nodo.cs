@@ -10,6 +10,10 @@ namespace Proyecto_Catedra_PEDG01T
     {
         private Pedido info;
         private Nodo siguiete;
+        /*private int idPedido;
+        private string fechaPedidio;
+        private int estadoPedido;*/
+
 
         public Pedido Info
         {
@@ -23,5 +27,9 @@ namespace Proyecto_Catedra_PEDG01T
             get { return siguiete; }
             set { siguiete = value; }
         }
+
+        //public int IdPedido { get => idPedido; set => idPedido = value; }
+        //public string FechaPedidio { get => fechaPedidio; set => fechaPedidio = value; }
+        //public int EstadoPedido { get => estadoPedido; set => estadoPedido = value; }
     }
 }

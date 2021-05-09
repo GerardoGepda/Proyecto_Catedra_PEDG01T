@@ -16,5 +16,15 @@ namespace Proyecto_Catedra_PEDG01T
         {
             InitializeComponent();
         }
+
+        private void PedidosForm_Load(object sender, EventArgs e)
+        {
+            Cola objCola = new Cola();
+            Pedido objPedido = new Pedido();
+            objPedido.MostrarPedidio();
+            List<Nodo> listaD = new List<Nodo>();
+            listaD = objCola.Mostrar();
+            dgvpedidos.DataSource = listaD;
+        }
     }
 }

@@ -21,6 +21,8 @@ namespace Proyecto_Catedra_PEDG01T
         private string fechaPedido;
         private int estadoPedido;
         private string idUsuario;
+        private string NombreProducto;
+        private int Cantidad;
         private double total;
         private Lista detallePed = new Lista();
 
@@ -31,9 +33,11 @@ namespace Proyecto_Catedra_PEDG01T
         public string IdUsuario { get => idUsuario; set => idUsuario = value; }
         public double Total { get => total; set => total = value; }
         public Lista DetallePed { get => detallePed; set => detallePed = value; }
+        public string NombreProducto1 { get => NombreProducto; set => NombreProducto = value; }
+        public int Cantidad1 { get => Cantidad; set => Cantidad = value; }
 
         //--- Métodos de clase ---//
-       
+
         //total de todos los productos
         public void calcularTotal()
         {
@@ -133,8 +137,9 @@ namespace Proyecto_Catedra_PEDG01T
 
         public void MostrarPedidio()
         {
+            conexion.Conectar();
             Cola pedido = new Cola();
-            String sql = "SELECT idPedido,fechaPedido,estadoPedido from Pedido";
+            String sql = "SELECT P.idPedido as Id,nombreProducto as Producto, cantidadProducto as Cantidad from Pedido as P inner join Detalle_pedido as DP on P.idPedido = DP.idPedido inner join Productos as PR on DP.idProducto = PR.idProducto  WHERE estadoPedido = 0";
             try
             {
                 dataAdapter = new SqlDataAdapter(sql, conexion.Conn);
@@ -146,12 +151,13 @@ namespace Proyecto_Catedra_PEDG01T
                     {
                         //Pedido ped = new Pedido
                         //{
-                        IdPedido = int.Parse(dataReader["idPedido"].ToString());
-                        FechaPedido = dataReader["fechaPedido"].ToString();
-                        EstadoPedido = int.Parse(dataReader["estadoPedido"].ToString());
-                    //};
+                        MessageBox.Show("Ciclando");
+                        IdPedido = int.Parse(dataReader["Id"].ToString());
+                        NombreProducto = dataReader["Producto"].ToString();
+                        Cantidad = int.Parse(dataReader["Cantidad"].ToString());                      
+                        //};
                         pedido.Encolar(IdPedido,FechaPedido,EstadoPedido);
-                        pedido = null;
+                      //  pedido = null;
                     }
                     
 

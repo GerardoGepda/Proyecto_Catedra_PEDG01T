@@ -144,6 +144,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PedidosForm";
             this.Text = "PedidosForm";
+            this.Load += new System.EventHandler(this.PedidosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvpedidos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
