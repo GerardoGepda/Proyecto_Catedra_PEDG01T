@@ -121,10 +121,12 @@
             // 
             // dgvpedidos
             // 
+            this.dgvpedidos.AllowUserToResizeColumns = false;
             this.dgvpedidos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dgvpedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvpedidos.Location = new System.Drawing.Point(57, 172);
             this.dgvpedidos.Name = "dgvpedidos";
+            this.dgvpedidos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvpedidos.Size = new System.Drawing.Size(766, 340);
             this.dgvpedidos.TabIndex = 9;
             // 

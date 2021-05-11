@@ -79,9 +79,22 @@ INSERT INTO Productos (nombreProducto, codigoProducto, precioProducto, Descripci
 --Consulta para obtener pedidos
 SELECT idPedido,fechaPedido,estadoPedido from Pedido
 
+
+--Datos de testeo de pedidos
 INSERT INTO Pedido (idUsuario,fechaPedido,estadoPedido,totalPedido) VALUES 
-(2,'2021-02-12',1,125),
-(2,'2021-02-12',1,12),
-(2,'2021-02-12',1,1525),
-(2,'2021-02-12',1,1261.25),
-(2,'2021-02-12',1,125.75)
+(2,'2021-02-25',0,125),
+(2,'2021-02-17',0,12),
+(2,'2021-02-12',0,1525),
+(2,'2021-02-01',0,1261.25),
+(2,'2021-02-18',0,125.75),
+(2,'2021-02-19',0,125.75)
+
+INSERT INTO Detalle_pedido(idProducto, cantidadProducto,precioDetalle,idPedido) VALUES (2,3,123,24)
+, (4,4,23,19), (5,4,23,21), (6,4,23,22), (2,4,23,23)
+SELECT P.idPedido as Id,nombreProducto as Producto, cantidadProducto as Cantidad, fechaPedido from Pedido as P inner join Detalle_pedido as DP on P.idPedido = DP.idPedido 
+inner join Productos as PR on DP.idProducto= PR.idProducto  WHERE estadoPedido=0 order by fechaPedido ASC
+
+DELETE from Pedido where idPedido=12
+
+SELECT P.idPedido as Id,nombreProducto as Producto, cantidadProducto as Cantidad, fechaPedido from Pedido as P inner join Detalle_pedido as DP on P.idPedido = DP.idPedido 
+inner join Productos as PR on DP.idProducto= PR.idProducto  WHERE estadoPedido=0 AND P.idPedido=22

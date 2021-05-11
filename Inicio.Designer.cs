@@ -425,6 +425,7 @@
             this.pnlcontent.Name = "pnlcontent";
             this.pnlcontent.Size = new System.Drawing.Size(900, 580);
             this.pnlcontent.TabIndex = 2;
+            this.pnlcontent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlcontent_Paint);
             this.pnlcontent.Resize += new System.EventHandler(this.pnlcontent_Resize);
             // 
             // Inicio

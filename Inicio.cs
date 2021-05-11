@@ -227,5 +227,10 @@ namespace Proyecto_Catedra_PEDG01T
                 control.Size = pnlcontent.Size;
             }
         }
+
+        private void pnlcontent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

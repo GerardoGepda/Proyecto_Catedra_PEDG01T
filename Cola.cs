@@ -10,8 +10,8 @@ namespace Proyecto_Catedra_PEDG01T
     //Clase Cola 
     class Cola
     {
-        private Nodo primero;// { get; set; }
-        private Nodo ultimo; //{ get; set; }
+        private Nodo primero { get; set; }
+        private Nodo ultimo { get; set; }
 
         public Cola()
         {
@@ -19,27 +19,15 @@ namespace Proyecto_Catedra_PEDG01T
         }
 
         //Metodo para ingresar elementos a la Cola
-        public void Encolar(int idPedido, string fechaPedido, int estadoPedido)
+        public void Encolar(int idPedido)
         {
-            MessageBox.Show("entro a encolar");
             Nodo entrada = new Nodo();
             Pedido pedido = new Pedido();
-
-            pedido.IdPedido = idPedido;
-            pedido.FechaPedido = fechaPedido;
-            pedido.EstadoPedido = estadoPedido;
-
-            entrada.Info = pedido;
-            //entrada.IdPedido = idPedido;
-            //entrada.EstadoPedido = estadoPedido;
-            //entrada.FechaPedidio = fechaPedido;
-            MessageBox.Show("test"+entrada.Info.IdPedido);
-            MessageBox.Show("test" + entrada.Info.FechaPedido);
-            MessageBox.Show("test" + entrada.Info.EstadoPedido);
+            entrada.IdP = idPedido;
+           
 
             if (primero == null)
-            {
-                MessageBox.Show("Hola");
+            {               
                 primero = ultimo = entrada;
                 entrada.Siquiente = null;               
             }
@@ -51,7 +39,7 @@ namespace Proyecto_Catedra_PEDG01T
                 //entrada.IdPedido = idPedido;
                 //entrada.EstadoPedido = estadoPedido;
                 //entrada.FechaPedidio = fechaPedido;
-            }
+             }
          }
         
             //Metodo para desencolar elementos de la Cola
@@ -68,10 +56,13 @@ namespace Proyecto_Catedra_PEDG01T
         }
 
 
-        //metodo para desencolar elementos de la cola
-        List<Nodo> datos = new List<Nodo>();
-        public List<Nodo> Mostrar()
+
+        //metodo para mostrar elementos de la cola
+        List<int> datos = new List<int>();
+        int contador = 0;
+        public List<int> Mostrar()
         {
+           
             if (primero == null)
             {
                 MessageBox.Show("La cola se encuentra vacía", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -83,17 +74,21 @@ namespace Proyecto_Catedra_PEDG01T
                 puntero = primero;
                 Nodo pt = new Nodo();
                 do
-                {
+                {                  
                     /* pt.IdPedido = puntero.IdPedido;
                      pt.EstadoPedido = puntero.EstadoPedido;
                      pt.FechaPedidio = puntero.FechaPedidio;
                      datos.Add(pt);*/
-                    pt.Info.IdPedido = puntero.Info.IdPedido;
-                    pt.Info.EstadoPedido = puntero.Info.EstadoPedido;
-                    pt.Info.FechaPedido = puntero.Info.FechaPedido;
-                    datos.Add(pt); 
+                    /*   pt.Info.IdPedido = puntero.Info.IdPedido;
+                       pt.Info.EstadoPedido = puntero.Info.EstadoPedido;
+                       pt.Info.FechaPedido = puntero.Info.FechaPedido;
+                       //datos.Add(pt);*/
+
+                    datos.Add(puntero.IdP);                   
+                    puntero = puntero.Siquiente; 
+                   
                 }
-            while (puntero != null);
+                while (puntero != null);
                 return datos;
             }
         }

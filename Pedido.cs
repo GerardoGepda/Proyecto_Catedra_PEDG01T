@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+
 
 namespace Proyecto_Catedra_PEDG01T
 {
@@ -25,7 +27,7 @@ namespace Proyecto_Catedra_PEDG01T
         private int Cantidad;
         private double total;
         private Lista detallePed = new Lista();
-
+        List<Pedido> listaPedido = new List<Pedido>();
         //propiedades de la clase
         public int IdPedido { get => idPedido; set => idPedido = value; }
         public string FechaPedido { get => fechaPedido; set => fechaPedido = value; }
@@ -68,7 +70,7 @@ namespace Proyecto_Catedra_PEDG01T
             }
             catch (Exception err)
             {
-                MessageBox.Show("Error al crear pedido en la DB: " + err.Message, "Error", 
+                MessageBox.Show("Error al crear pedido en la DB: " + err.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
@@ -89,7 +91,7 @@ namespace Proyecto_Catedra_PEDG01T
             string sql = "INSERT INTO Detalle_pedido (idProducto, cantidadProducto, precioDetalle, idPedido) " +
                 "VALUES (@idPrdt, @cantidad, @precio, @idPd)";
             string sql2 = "SELECT TOP 1 idPedido FROM Pedido ORDER BY idPedido DESC";
-            
+
             try
             {
                 conexion.Conectar();
@@ -123,7 +125,7 @@ namespace Proyecto_Catedra_PEDG01T
             }
             catch (Exception err)
             {
-                MessageBox.Show("Error al guardar los detalles del pedido en la DB: " + err.Message, 
+                MessageBox.Show("Error al guardar los detalles del pedido en la DB: " + err.Message,
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
@@ -135,49 +137,118 @@ namespace Proyecto_Catedra_PEDG01T
             return guardado;
         }
 
-        public void MostrarPedidio()
+        List<int> encontrados = new List<int>();
+        public List<int> MostrarPedidio()
         {
             conexion.Conectar();
             Cola pedido = new Cola();
-            String sql = "SELECT P.idPedido as Id,nombreProducto as Producto, cantidadProducto as Cantidad from Pedido as P inner join Detalle_pedido as DP on P.idPedido = DP.idPedido inner join Productos as PR on DP.idProducto = PR.idProducto  WHERE estadoPedido = 0";
+            String sql = "SELECT P.idPedido as Id,nombreProducto as Producto, cantidadProducto as Cantidad from Pedido as P inner join Detalle_pedido as DP on P.idPedido = DP.idPedido inner join Productos as PR on DP.idProducto = PR.idProducto  WHERE estadoPedido = 0 order by fechaPedido ASC";
             try
             {
                 dataAdapter = new SqlDataAdapter(sql, conexion.Conn);
                 dataReader = dataAdapter.SelectCommand.ExecuteReader();
-                if(dataReader.HasRows)
+                if (dataReader.HasRows)
                 {
 
                     while (dataReader.Read())
                     {
-                        //Pedido ped = new Pedido
-                        //{
-                        MessageBox.Show("Ciclando");
+                                             
                         IdPedido = int.Parse(dataReader["Id"].ToString());
                         NombreProducto = dataReader["Producto"].ToString();
-                        Cantidad = int.Parse(dataReader["Cantidad"].ToString());                      
-                        //};
-                        pedido.Encolar(IdPedido,FechaPedido,EstadoPedido);
-                      //  pedido = null;
+                        Cantidad = int.Parse(dataReader["Cantidad"].ToString());
+                         
+                        encontrados.Add(idPedido);
                     }
-                    
+                    return encontrados;
 
                 }
                 else
                 {
+
                     MessageBox.Show("No hay pedidos que mostrar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dataReader.Close();
+                    return null;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al mostrar los pedidos " +
                     ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
             }
             finally
             {
                 //cerramos la conexión
                 conexion.Cerrar();
             }
+        }
+
+        public void buscarPedidos(int idPedido)
+        {
+
+            conexion.Conectar();
+            try
+            {
+                
+                int id = idPedido;
+                String sql = "SELECT P.idPedido as Id,nombreProducto as Producto, cantidadProducto as Cantidad, fechaPedido from Pedido as P inner join Detalle_pedido as DP on P.idPedido = DP.idPedido inner join Productos as PR on DP.idProducto = PR.idProducto  WHERE estadoPedido = 0 AND P.idPedido = @idPedido";
+                dataAdapter = new SqlDataAdapter(sql, conexion.Conn);
+                SqlParameter prm = new SqlParameter("@idPedido", SqlDbType.Int);
+                prm.Value = id;
+                dataAdapter.SelectCommand.Parameters.Add(prm);
+                dataReader = dataAdapter.SelectCommand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                   
+                }
+                conexion.Cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex + "");
+            } 
+            if (dataReader != null)
+            {
+                dataReader.Close();
+            }
+        }
+
+        public List<Pedido> buscarPedidosPorId(int idPedido)
+        {
+            conexion.Conectar();
+            try
+            {
+
+                int id = idPedido;
+                String sql = "SELECT P.idPedido as Id,nombreProducto as Producto, cantidadProducto as Cantidad, fechaPedido from Pedido as P inner join Detalle_pedido as DP on P.idPedido = DP.idPedido inner join Productos as PR on DP.idProducto = PR.idProducto  WHERE estadoPedido = 0 AND P.idPedido = @idPedido ORDER BY fechaPedido ASC";
+                dataAdapter = new SqlDataAdapter(sql, conexion.Conn);
+                SqlParameter prm = new SqlParameter("@idPedido", SqlDbType.Int);
+                prm.Value = id;
+                dataAdapter.SelectCommand.Parameters.Add(prm);
+                dataReader = dataAdapter.SelectCommand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    listaPedido.Add(new Pedido
+                    {
+
+                        IdPedido = (int)dataReader["Id"],
+                        NombreProducto = dataReader["Producto"].ToString(),
+                        Cantidad = (int)dataReader["Cantidad"],
+                        fechaPedido = dataReader["fechaPedido"].ToString()
+                    });
+
+                }
+                conexion.Cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex + "");
+            }
+            if (dataReader != null)
+            {
+                dataReader.Close();
+            }
+            return listaPedido;
         }
     }
 }
