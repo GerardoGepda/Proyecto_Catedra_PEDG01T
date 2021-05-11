@@ -13,6 +13,7 @@ namespace Proyecto_Catedra_PEDG01T
 {
     public partial class PedidosForm : Form
     {
+        string idObtenido;
         public PedidosForm()
         {
             InitializeComponent();
@@ -59,9 +60,20 @@ namespace Proyecto_Catedra_PEDG01T
         }
 
         private void btnentregar_Click(object sender, EventArgs e)
+        {  //Aqui nos quemd
+            int i = dgvpedidos.SelectedCells[0].RowIndex;
+            objPedido.UpdateEstado(int.Parse(idObtenido));
+            //dgvpedidos.Rows.RemoveAt(dgvpedidos.SelectedRows[i].Index);
+
+        }
+
+        private void dgvpedidos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idPedido;
-            //idPedido = dgvpedidos.CurrentCell.ro;
+           
+            idObtenido = dgvpedidos.Rows[e.RowIndex].Cells[0].Value.ToString();
+            lblIdPedidoObtenido.Text = idObtenido;
+            lblIndexdgv.Text = dgvpedidos.Rows[e.RowIndex].Cells[0].RowIndex.ToString();
+
         }
     }
 }

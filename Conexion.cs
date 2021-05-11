@@ -10,7 +10,7 @@ namespace Proyecto_Catedra_PEDG01T
     class Conexion
     {
         //private static string cadenaCon = "server=Localhost\\SQLEXPRESS; database=Proyecto; Integrated Security=yes";
-        private static string cadenaCon = "server=LAPTOP-GP00HFB3; database=Proyecto; Integrated Security=yes";
+        private static string cadenaCon = "server=FABIOLA\\SQLEXPRESS; database=Proyecto; Integrated Security=yes";
 
         private SqlConnection conn = new SqlConnection(cadenaCon);
 

@@ -35,7 +35,8 @@
             this.btneditar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.dgvpedidos = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblIdPedidoObtenido = new System.Windows.Forms.Label();
+            this.lblIndexdgv = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,15 +133,26 @@
             this.dgvpedidos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvpedidos.Size = new System.Drawing.Size(766, 340);
             this.dgvpedidos.TabIndex = 9;
+            this.dgvpedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpedidos_CellClick);
             // 
-            // label1
+            // lblIdPedidoObtenido
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(153, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "label1";
+            this.lblIdPedidoObtenido.AutoSize = true;
+            this.lblIdPedidoObtenido.ForeColor = System.Drawing.Color.White;
+            this.lblIdPedidoObtenido.Location = new System.Drawing.Point(153, 110);
+            this.lblIdPedidoObtenido.Name = "lblIdPedidoObtenido";
+            this.lblIdPedidoObtenido.Size = new System.Drawing.Size(35, 13);
+            this.lblIdPedidoObtenido.TabIndex = 10;
+            this.lblIdPedidoObtenido.Text = "label1";
+            // 
+            // lblIndexdgv
+            // 
+            this.lblIndexdgv.AutoSize = true;
+            this.lblIndexdgv.Location = new System.Drawing.Point(359, 146);
+            this.lblIndexdgv.Name = "lblIndexdgv";
+            this.lblIndexdgv.Size = new System.Drawing.Size(35, 13);
+            this.lblIndexdgv.TabIndex = 11;
+            this.lblIndexdgv.Text = "label1";
             // 
             // PedidosForm
             // 
@@ -148,7 +160,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 580);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblIndexdgv);
+            this.Controls.Add(this.lblIdPedidoObtenido);
             this.Controls.Add(this.dgvpedidos);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btneditar);
@@ -175,6 +188,7 @@
         private System.Windows.Forms.Button btneditar;
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.DataGridView dgvpedidos;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblIdPedidoObtenido;
+        private System.Windows.Forms.Label lblIndexdgv;
     }
 }

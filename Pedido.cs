@@ -250,17 +250,15 @@ namespace Proyecto_Catedra_PEDG01T
             }
             return listaPedido;
         }
-        private void UpdateEstado(int idPedido)
+        public void UpdateEstado(int idPedido)
         {
-            int id=idPedido;
-            string sql = "UPDATE  Pedido set estadoPedido = 1 where idPedido = @idPedido";
-            dataAdapter = new SqlDataAdapter(sql, conexion.Conn);
-            SqlParameter prm = new SqlParameter("@idPedido", SqlDbType.Int);
-            prm.Value = id;
-            dataAdapter.SelectCommand.Parameters.Add(prm);
-            dataReader = dataAdapter.SelectCommand.ExecuteReader();
-
-
+            int id = idPedido;
+            conexion.Conectar();
+            command = new SqlCommand("UPDATE  Pedido set estadoPedido = 1 where idPedido = @idPedido", conexion.Conn);
+            command.Parameters.Add("@idPedido", id);
+            command.ExecuteNonQuery();
+            conexion.Cerrar();
+            MessageBox.Show("Se ha entregado un pedidio con éxito");
         }
 
     }
