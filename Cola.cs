@@ -43,7 +43,7 @@ namespace Proyecto_Catedra_PEDG01T
          }
         
             //Metodo para desencolar elementos de la Cola
-            public void Desencolar()
+            public void Desencolar(int idPedido)
         {
             if(primero == null)
             {
@@ -75,14 +75,6 @@ namespace Proyecto_Catedra_PEDG01T
                 Nodo pt = new Nodo();
                 do
                 {                  
-                    /* pt.IdPedido = puntero.IdPedido;
-                     pt.EstadoPedido = puntero.EstadoPedido;
-                     pt.FechaPedidio = puntero.FechaPedidio;
-                     datos.Add(pt);*/
-                    /*   pt.Info.IdPedido = puntero.Info.IdPedido;
-                       pt.Info.EstadoPedido = puntero.Info.EstadoPedido;
-                       pt.Info.FechaPedido = puntero.Info.FechaPedido;
-                       //datos.Add(pt);*/
 
                     datos.Add(puntero.IdP);                   
                     puntero = puntero.Siquiente; 
