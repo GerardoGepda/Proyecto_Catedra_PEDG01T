@@ -44,7 +44,7 @@ namespace Proyecto_Catedra_PEDG01T
             }
 
             dgvpedidos.DataSource = listaPedidos;
-            dgvpedidos.Columns[0].Visible = false;
+            dgvpedidos.Columns[0].HeaderText="Número de orden";
             dgvpedidos.Columns[1].HeaderText = "Fecha de pedido";
             dgvpedidos.Columns[2].Visible = false;
             dgvpedidos.Columns[3].Visible = false;
@@ -56,6 +56,12 @@ namespace Proyecto_Catedra_PEDG01T
         private void PedidosForm_Load(object sender, EventArgs e)
         {           
             
+        }
+
+        private void btnentregar_Click(object sender, EventArgs e)
+        {
+            int idPedido;
+            //idPedido = dgvpedidos.CurrentCell.ro;
         }
     }
 }

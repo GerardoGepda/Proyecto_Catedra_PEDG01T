@@ -35,6 +35,7 @@
             this.btneditar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.dgvpedidos = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             this.btnentregar.TabIndex = 0;
             this.btnentregar.Text = "Entregar pedido";
             this.btnentregar.UseVisualStyleBackColor = false;
+            this.btnentregar.Click += new System.EventHandler(this.btnentregar_Click);
             // 
             // lblpedidos
             // 
@@ -121,6 +123,7 @@
             // 
             // dgvpedidos
             // 
+            this.dgvpedidos.AllowUserToDeleteRows = false;
             this.dgvpedidos.AllowUserToResizeColumns = false;
             this.dgvpedidos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dgvpedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -130,12 +133,22 @@
             this.dgvpedidos.Size = new System.Drawing.Size(766, 340);
             this.dgvpedidos.TabIndex = 9;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(153, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "label1";
+            // 
             // PedidosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 580);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvpedidos);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btneditar);
@@ -162,5 +175,6 @@
         private System.Windows.Forms.Button btneditar;
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.DataGridView dgvpedidos;
+        private System.Windows.Forms.Label label1;
     }
 }
