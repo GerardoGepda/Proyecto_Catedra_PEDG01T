@@ -32,7 +32,6 @@
             this.lblpedidos = new System.Windows.Forms.Label();
             this.lblencola = new System.Windows.Forms.Label();
             this.btnfactura = new System.Windows.Forms.Button();
-            this.btneditar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.dgvpedidos = new System.Windows.Forms.DataGridView();
             this.lblIdPedidoObtenido = new System.Windows.Forms.Label();
@@ -48,7 +47,7 @@
             this.btnentregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnentregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnentregar.ForeColor = System.Drawing.Color.White;
-            this.btnentregar.Location = new System.Drawing.Point(333, 77);
+            this.btnentregar.Location = new System.Drawing.Point(459, 77);
             this.btnentregar.Name = "btnentregar";
             this.btnentregar.Size = new System.Drawing.Size(107, 33);
             this.btnentregar.TabIndex = 0;
@@ -85,27 +84,12 @@
             this.btnfactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfactura.ForeColor = System.Drawing.Color.White;
-            this.btnfactura.Location = new System.Drawing.Point(460, 77);
+            this.btnfactura.Location = new System.Drawing.Point(589, 77);
             this.btnfactura.Name = "btnfactura";
             this.btnfactura.Size = new System.Drawing.Size(107, 33);
             this.btnfactura.TabIndex = 6;
             this.btnfactura.Text = "Mostrar factura";
             this.btnfactura.UseVisualStyleBackColor = false;
-            // 
-            // btneditar
-            // 
-            this.btneditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btneditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btneditar.FlatAppearance.BorderSize = 0;
-            this.btneditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btneditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneditar.ForeColor = System.Drawing.Color.White;
-            this.btneditar.Location = new System.Drawing.Point(589, 77);
-            this.btneditar.Name = "btneditar";
-            this.btneditar.Size = new System.Drawing.Size(107, 33);
-            this.btneditar.TabIndex = 7;
-            this.btneditar.Text = "Editar";
-            this.btneditar.UseVisualStyleBackColor = false;
             // 
             // btncancelar
             // 
@@ -164,7 +148,6 @@
             this.Controls.Add(this.lblIdPedidoObtenido);
             this.Controls.Add(this.dgvpedidos);
             this.Controls.Add(this.btncancelar);
-            this.Controls.Add(this.btneditar);
             this.Controls.Add(this.btnfactura);
             this.Controls.Add(this.lblencola);
             this.Controls.Add(this.lblpedidos);
@@ -185,7 +168,6 @@
         private System.Windows.Forms.Label lblpedidos;
         private System.Windows.Forms.Label lblencola;
         private System.Windows.Forms.Button btnfactura;
-        private System.Windows.Forms.Button btneditar;
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.DataGridView dgvpedidos;
         private System.Windows.Forms.Label lblIdPedidoObtenido;
