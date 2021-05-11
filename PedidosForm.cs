@@ -64,6 +64,7 @@ namespace Proyecto_Catedra_PEDG01T
             int i = dgvpedidos.SelectedCells[0].RowIndex;
             objPedido.UpdateEstado(int.Parse(idObtenido));
             //dgvpedidos.Rows.RemoveAt(dgvpedidos.SelectedRows[i].Index);
+            llenarDataGrid();
 
         }
 
