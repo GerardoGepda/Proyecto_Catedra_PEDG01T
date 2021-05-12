@@ -14,6 +14,11 @@ namespace Proyecto_Catedra_PEDG01T
     public partial class PedidosForm : Form
     {
         string idObtenido;
+
+        //delegado para comunicar con el form Inicio para abrir la factura
+        public delegate void showFactura(Pedido pedido);
+        public event showFactura VerFactura;
+
         public PedidosForm()
         {
             InitializeComponent();
@@ -22,7 +27,7 @@ namespace Proyecto_Catedra_PEDG01T
        
         List<int> listaDatos1 = new List<int>();
         List<int> listaDatos2 = new List<int>();
-        List<Pedido> listaPedidos;
+        public List<Pedido> listaPedidos;
         Cola objCola;
         Pedido objPedido;
         private void llenarDataGrid()
@@ -75,6 +80,23 @@ namespace Proyecto_Catedra_PEDG01T
             lblIdPedidoObtenido.Text = idObtenido;
             lblIndexdgv.Text = dgvpedidos.Rows[e.RowIndex].Cells[0].RowIndex.ToString();
 
+        }
+
+        private void btnfactura_Click(object sender, EventArgs e)
+        {
+            facutar();
+        }
+
+        public void facutar()
+        {
+            Console.WriteLine(listaPedidos[0].NombreProducto1);
+            Pedido ped = new Pedido();
+            ped.NombreProducto1 = "dsadfdsf";
+            ped.IdUsuario = "1";
+            ped.IdPedido = 1;
+            ped.EstadoPedido = 0;
+            ped.FechaPedido = "2021-04-12";
+            VerFactura(listaPedidos[0]);
         }
     }
 }

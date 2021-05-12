@@ -29,17 +29,17 @@ namespace Proyecto_Catedra_PEDG01T
 
             if (onlyView)
             {
-                btnagregar.Visible = true;
-                btnimprimir.Visible = true;
-                btncancelar.Visible = true;
-                btnpedidos.Visible = false;
-            }
-            else
-            {
                 btnagregar.Visible = false;
                 btnimprimir.Visible = false;
                 btncancelar.Visible = false;
                 btnpedidos.Visible = true;
+            }
+            else
+            {
+                btnagregar.Visible = true;
+                btnimprimir.Visible = true;
+                btncancelar.Visible = true;
+                btnpedidos.Visible = false;
             }
 
             Dproductos = new DetallePedido[pedido.DetallePed.Count()];

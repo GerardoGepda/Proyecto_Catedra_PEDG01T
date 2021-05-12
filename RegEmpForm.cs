@@ -53,9 +53,9 @@ namespace Proyecto_Catedra_PEDG01T
                                                 objUsuario.Email = txtemail.Text;
                                                 objUsuario.Telefono = txttelefono.Text;
                                                 objUsuario.IdtypeUser = obtenerId();
-                                                objUsuario.FechaNacimiento = dtpFechaNacimiento.Value.ToString();
+                                                objUsuario.FechaNacimiento = dtpFechaNacimiento.Value;
                                                 objUsuario.SaveUserInDB();
-                                                MessageBox.Show("Se supone que ya guardo");
+                                                Limpiar();
                                             }
                                             else
                                             {
@@ -117,8 +117,19 @@ namespace Proyecto_Catedra_PEDG01T
 
             return "0";
         }
-       
 
+        public void Limpiar()
+        {
+            txtnombre.Clear();
+            txtApellido.Clear();
+            txtusuario.Clear();
+            txtcontrasena.Clear();
+            txtemail.Clear();
+            txtverificar.Clear();
+            txttelefono.Clear();
+            dtpFechaNacimiento.Value = DateTime.Now;
+            cbxtypeuser.SelectedIndex = -1;
+        }
         
         
         private void txtnombre_KeyPress(object sender, KeyPressEventArgs ex)
@@ -184,7 +195,7 @@ namespace Proyecto_Catedra_PEDG01T
             }
         }
 
-        //Función para validar el formato del correo
+        //Función para validar el formato del telefono
         public static bool Validartelefono(string tel)
         {
             string ex = "[0-9]{8}";

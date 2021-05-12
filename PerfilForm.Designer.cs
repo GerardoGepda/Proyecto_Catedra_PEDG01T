@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.lblperfil = new System.Windows.Forms.Label();
-            this.pbxperfil = new System.Windows.Forms.PictureBox();
             this.lblnombre = new System.Windows.Forms.Label();
-            this.txtnombre = new System.Windows.Forms.TextBox();
             this.lbluser = new System.Windows.Forms.Label();
-            this.txtuser = new System.Windows.Forms.TextBox();
             this.lblemail = new System.Windows.Forms.Label();
-            this.txtemail = new System.Windows.Forms.TextBox();
             this.lbltelefono = new System.Windows.Forms.Label();
-            this.txttelefono = new System.Windows.Forms.TextBox();
             this.btneditar = new System.Windows.Forms.Button();
+            this.lblfnacimiento = new System.Windows.Forms.Label();
+            this.lblmostrarnombre = new System.Windows.Forms.Label();
+            this.lblmostrarusuario = new System.Windows.Forms.Label();
+            this.lblmostrarfnaci = new System.Windows.Forms.Label();
+            this.lblmostrarcorreo = new System.Windows.Forms.Label();
+            this.lblmostrartel = new System.Windows.Forms.Label();
+            this.pbxperfil = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxperfil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,94 +54,53 @@
             this.lblperfil.TabIndex = 1;
             this.lblperfil.Text = "Perfil";
             // 
-            // pbxperfil
-            // 
-            this.pbxperfil.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbxperfil.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.profile_person;
-            this.pbxperfil.Location = new System.Drawing.Point(401, 88);
-            this.pbxperfil.Name = "pbxperfil";
-            this.pbxperfil.Size = new System.Drawing.Size(100, 100);
-            this.pbxperfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxperfil.TabIndex = 0;
-            this.pbxperfil.TabStop = false;
-            // 
             // lblnombre
             // 
             this.lblnombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblnombre.AutoSize = true;
-            this.lblnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombre.Location = new System.Drawing.Point(420, 225);
+            this.lblnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
+            this.lblnombre.Location = new System.Drawing.Point(423, 195);
             this.lblnombre.Name = "lblnombre";
-            this.lblnombre.Size = new System.Drawing.Size(57, 16);
+            this.lblnombre.Size = new System.Drawing.Size(71, 20);
             this.lblnombre.TabIndex = 2;
             this.lblnombre.Text = "Nombre";
-            // 
-            // txtnombre
-            // 
-            this.txtnombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtnombre.Location = new System.Drawing.Point(321, 244);
-            this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(257, 20);
-            this.txtnombre.TabIndex = 3;
-            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombre_KeyPress);
             // 
             // lbluser
             // 
             this.lbluser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbluser.AutoSize = true;
-            this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbluser.Location = new System.Drawing.Point(420, 301);
+            this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
+            this.lbluser.Location = new System.Drawing.Point(423, 261);
             this.lbluser.Name = "lbluser";
-            this.lbluser.Size = new System.Drawing.Size(55, 16);
+            this.lbluser.Size = new System.Drawing.Size(71, 20);
             this.lbluser.TabIndex = 4;
             this.lbluser.Text = "Usuario";
-            // 
-            // txtuser
-            // 
-            this.txtuser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtuser.Location = new System.Drawing.Point(321, 320);
-            this.txtuser.Name = "txtuser";
-            this.txtuser.Size = new System.Drawing.Size(257, 20);
-            this.txtuser.TabIndex = 5;
             // 
             // lblemail
             // 
             this.lblemail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblemail.AutoSize = true;
-            this.lblemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblemail.Location = new System.Drawing.Point(420, 379);
+            this.lblemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblemail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
+            this.lblemail.Location = new System.Drawing.Point(427, 390);
             this.lblemail.Name = "lblemail";
-            this.lblemail.Size = new System.Drawing.Size(49, 16);
+            this.lblemail.Size = new System.Drawing.Size(63, 20);
             this.lblemail.TabIndex = 6;
             this.lblemail.Text = "Correo";
-            // 
-            // txtemail
-            // 
-            this.txtemail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtemail.Location = new System.Drawing.Point(321, 398);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(257, 20);
-            this.txtemail.TabIndex = 7;
-            this.txtemail.Leave += new System.EventHandler(this.txtemail_Leave);
             // 
             // lbltelefono
             // 
             this.lbltelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltelefono.AutoSize = true;
-            this.lbltelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltelefono.Location = new System.Drawing.Point(415, 462);
+            this.lbltelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
+            this.lbltelefono.Location = new System.Drawing.Point(419, 456);
             this.lbltelefono.Name = "lbltelefono";
-            this.lbltelefono.Size = new System.Drawing.Size(62, 16);
+            this.lbltelefono.Size = new System.Drawing.Size(79, 20);
             this.lbltelefono.TabIndex = 8;
             this.lbltelefono.Text = "Teléfono";
-            // 
-            // txttelefono
-            // 
-            this.txttelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txttelefono.Location = new System.Drawing.Point(321, 481);
-            this.txttelefono.Name = "txttelefono";
-            this.txttelefono.Size = new System.Drawing.Size(257, 20);
-            this.txttelefono.TabIndex = 9;
             // 
             // btneditar
             // 
@@ -155,6 +116,85 @@
             this.btneditar.TabIndex = 10;
             this.btneditar.Text = "Editar perfil";
             this.btneditar.UseVisualStyleBackColor = false;
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
+            // 
+            // lblfnacimiento
+            // 
+            this.lblfnacimiento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblfnacimiento.AutoSize = true;
+            this.lblfnacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfnacimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
+            this.lblfnacimiento.Location = new System.Drawing.Point(368, 327);
+            this.lblfnacimiento.Name = "lblfnacimiento";
+            this.lblfnacimiento.Size = new System.Drawing.Size(181, 20);
+            this.lblfnacimiento.TabIndex = 11;
+            this.lblfnacimiento.Text = "Fecha de nacimiento:";
+            // 
+            // lblmostrarnombre
+            // 
+            this.lblmostrarnombre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblmostrarnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmostrarnombre.Location = new System.Drawing.Point(360, 226);
+            this.lblmostrarnombre.Name = "lblmostrarnombre";
+            this.lblmostrarnombre.Size = new System.Drawing.Size(197, 16);
+            this.lblmostrarnombre.TabIndex = 12;
+            this.lblmostrarnombre.Text = "label1";
+            this.lblmostrarnombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblmostrarusuario
+            // 
+            this.lblmostrarusuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblmostrarusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmostrarusuario.Location = new System.Drawing.Point(360, 293);
+            this.lblmostrarusuario.Name = "lblmostrarusuario";
+            this.lblmostrarusuario.Size = new System.Drawing.Size(197, 16);
+            this.lblmostrarusuario.TabIndex = 13;
+            this.lblmostrarusuario.Text = "label1";
+            this.lblmostrarusuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblmostrarfnaci
+            // 
+            this.lblmostrarfnaci.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblmostrarfnaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmostrarfnaci.Location = new System.Drawing.Point(360, 358);
+            this.lblmostrarfnaci.Name = "lblmostrarfnaci";
+            this.lblmostrarfnaci.Size = new System.Drawing.Size(197, 16);
+            this.lblmostrarfnaci.TabIndex = 14;
+            this.lblmostrarfnaci.Text = "label1";
+            this.lblmostrarfnaci.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblmostrarcorreo
+            // 
+            this.lblmostrarcorreo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblmostrarcorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmostrarcorreo.Location = new System.Drawing.Point(272, 422);
+            this.lblmostrarcorreo.Name = "lblmostrarcorreo";
+            this.lblmostrarcorreo.Size = new System.Drawing.Size(373, 16);
+            this.lblmostrarcorreo.TabIndex = 15;
+            this.lblmostrarcorreo.Text = "label1";
+            this.lblmostrarcorreo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblmostrartel
+            // 
+            this.lblmostrartel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblmostrartel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmostrartel.Location = new System.Drawing.Point(367, 488);
+            this.lblmostrartel.Name = "lblmostrartel";
+            this.lblmostrartel.Size = new System.Drawing.Size(183, 16);
+            this.lblmostrartel.TabIndex = 16;
+            this.lblmostrartel.Text = "label1";
+            this.lblmostrartel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbxperfil
+            // 
+            this.pbxperfil.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbxperfil.Image = global::Proyecto_Catedra_PEDG01T.Properties.Resources.profile_person;
+            this.pbxperfil.Location = new System.Drawing.Point(401, 64);
+            this.pbxperfil.Name = "pbxperfil";
+            this.pbxperfil.Size = new System.Drawing.Size(100, 100);
+            this.pbxperfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxperfil.TabIndex = 0;
+            this.pbxperfil.TabStop = false;
             // 
             // PerfilForm
             // 
@@ -162,14 +202,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 580);
+            this.Controls.Add(this.lblmostrartel);
+            this.Controls.Add(this.lblmostrarcorreo);
+            this.Controls.Add(this.lblmostrarfnaci);
+            this.Controls.Add(this.lblmostrarusuario);
+            this.Controls.Add(this.lblmostrarnombre);
+            this.Controls.Add(this.lblfnacimiento);
             this.Controls.Add(this.btneditar);
-            this.Controls.Add(this.txttelefono);
             this.Controls.Add(this.lbltelefono);
-            this.Controls.Add(this.txtemail);
             this.Controls.Add(this.lblemail);
-            this.Controls.Add(this.txtuser);
             this.Controls.Add(this.lbluser);
-            this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.lblnombre);
             this.Controls.Add(this.lblperfil);
             this.Controls.Add(this.pbxperfil);
@@ -187,13 +229,15 @@
         private System.Windows.Forms.PictureBox pbxperfil;
         private System.Windows.Forms.Label lblperfil;
         private System.Windows.Forms.Label lblnombre;
-        private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label lbluser;
-        private System.Windows.Forms.TextBox txtuser;
         private System.Windows.Forms.Label lblemail;
-        private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.Label lbltelefono;
-        private System.Windows.Forms.TextBox txttelefono;
         private System.Windows.Forms.Button btneditar;
+        private System.Windows.Forms.Label lblfnacimiento;
+        private System.Windows.Forms.Label lblmostrarnombre;
+        private System.Windows.Forms.Label lblmostrarusuario;
+        private System.Windows.Forms.Label lblmostrarfnaci;
+        private System.Windows.Forms.Label lblmostrarcorreo;
+        private System.Windows.Forms.Label lblmostrartel;
     }
 }

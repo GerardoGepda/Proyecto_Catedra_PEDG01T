@@ -43,7 +43,11 @@ namespace Proyecto_Catedra_PEDG01T
         public static Lista GetDetails(int idPedido)
         {
             Lista detalles = new Lista();
-            string sql = "SELECT * FROM Detalle_pedido WHERE idPedido = @idpd";
+            string sql = "SELECT dtp.idProducto, codigoProducto, nombreProducto, cantidadProducto, precioProducto, precioDetalle " +
+            "FROM Detalle_pedido dtp " +
+            "INNER JOIN Productos prd " +
+            "ON dtp.idProducto = prd.idProducto "+
+            "WHERE idPedido = @idpd";
 
             try
             {
@@ -58,7 +62,10 @@ namespace Proyecto_Catedra_PEDG01T
                     {
                         DetallePedido detalle = new DetallePedido
                         {
-                            IdProducto = Convert.ToInt32(dataReader["idProducto"].ToString()),
+                            IdProducto = Convert.ToInt32(dataReader[0].ToString()),
+                            CodigoProducto = dataReader["codigoProducto"].ToString(),
+                            NombreProducto = dataReader["nombreProducto"].ToString(),
+                            PrecioProducto = float.Parse(dataReader["precioProducto"].ToString()),
                             Cantidad = Convert.ToInt32(dataReader["cantidadProducto"].ToString()),
                             PrecioTotalDetalle = float.Parse(dataReader["precioDetalle"].ToString())
                         };

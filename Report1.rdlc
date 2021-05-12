@@ -198,10 +198,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.10069in</Width>
+              <Width>1.6059in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.10069in</Width>
+              <Width>1.1059in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -372,9 +372,9 @@
         </TablixRowHierarchy>
         <DataSetName>FacturaPedido</DataSetName>
         <Top>1.51125in</Top>
-        <Left>5.55957in</Left>
+        <Left>5.04917in</Left>
         <Height>0.5in</Height>
-        <Width>2.20138in</Width>
+        <Width>2.7118in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

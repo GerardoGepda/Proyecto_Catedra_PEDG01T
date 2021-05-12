@@ -50,8 +50,8 @@
             this.lblnombreline = new System.Windows.Forms.Label();
             this.lbnombre = new System.Windows.Forms.Label();
             this.pnltypeuser = new System.Windows.Forms.Panel();
-            this.cbxtypeuser = new System.Windows.Forms.ComboBox();
             this.btntypeuser = new System.Windows.Forms.Button();
+            this.cbxtypeuser = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -342,6 +342,19 @@
             this.pnltypeuser.Size = new System.Drawing.Size(309, 27);
             this.pnltypeuser.TabIndex = 48;
             // 
+            // btntypeuser
+            // 
+            this.btntypeuser.FlatAppearance.BorderSize = 0;
+            this.btntypeuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btntypeuser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
+            this.btntypeuser.Location = new System.Drawing.Point(265, -1);
+            this.btntypeuser.Name = "btntypeuser";
+            this.btntypeuser.Size = new System.Drawing.Size(33, 23);
+            this.btntypeuser.TabIndex = 12;
+            this.btntypeuser.Text = "▼";
+            this.btntypeuser.UseVisualStyleBackColor = true;
+            this.btntypeuser.Click += new System.EventHandler(this.btntypeuser_Click);
+            // 
             // cbxtypeuser
             // 
             this.cbxtypeuser.BackColor = System.Drawing.Color.White;
@@ -358,19 +371,6 @@
             this.cbxtypeuser.Name = "cbxtypeuser";
             this.cbxtypeuser.Size = new System.Drawing.Size(292, 24);
             this.cbxtypeuser.TabIndex = 9;
-            // 
-            // btntypeuser
-            // 
-            this.btntypeuser.FlatAppearance.BorderSize = 0;
-            this.btntypeuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btntypeuser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.btntypeuser.Location = new System.Drawing.Point(265, -1);
-            this.btntypeuser.Name = "btntypeuser";
-            this.btntypeuser.Size = new System.Drawing.Size(33, 23);
-            this.btntypeuser.TabIndex = 12;
-            this.btntypeuser.Text = "▼";
-            this.btntypeuser.UseVisualStyleBackColor = true;
-            this.btntypeuser.Click += new System.EventHandler(this.btntypeuser_Click);
             // 
             // label1
             // 
@@ -461,6 +461,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 580);
+            this.Controls.Add(this.pnltypeuser);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label2);
@@ -489,7 +490,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbnombre);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pnltypeuser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegEmpForm";
             this.Text = "RegEmpForm";

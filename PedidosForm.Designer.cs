@@ -90,6 +90,7 @@
             this.btnfactura.TabIndex = 6;
             this.btnfactura.Text = "Mostrar factura";
             this.btnfactura.UseVisualStyleBackColor = false;
+            this.btnfactura.Click += new System.EventHandler(this.btnfactura_Click);
             // 
             // btncancelar
             // 

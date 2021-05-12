@@ -72,12 +72,12 @@ namespace Proyecto_Catedra_PEDG01T
 
         private void btnpedidos_Click(object sender, EventArgs e)
         {
-            OpenForm<PedidosForm>();
+            OpenFormPedidos();
         }
 
         private void btnperfil_Click(object sender, EventArgs e)
         {
-            OpenForm<PerfilForm>();
+            OpenFormPerfil();
         }
 
         private void btnaddproduct_Click(object sender, EventArgs e)
@@ -126,6 +126,36 @@ namespace Proyecto_Catedra_PEDG01T
         }
 
         //Sobrecarga del método OpenForm
+        private void OpenFormPerfil()
+        {
+            PerfilForm form;
+            form = pnlcontent.Controls.OfType<PerfilForm>().FirstOrDefault();
+
+            if (form == null)
+            {
+                form = new PerfilForm(usuario);
+                form.TopLevel = false;
+                pnlcontent.Controls.Add(form);
+                pnlcontent.Tag = form;
+                form.CerrarSesion += new PerfilForm.logOut(CloseSession);
+                form.Show();
+                form.BringToFront();
+                //tamaño del form igual al tamaño del panel
+                form.Size = pnlcontent.Size;
+            }
+            else
+            {
+                form.Close();
+                OpenFormPedidos();
+            }
+        }
+
+        public void CloseSession()
+        {
+            this.Close();
+        }
+
+        //Sobrecarga del método OpenForm
         private void OpenFormPedidos()
         {
             PedidosForm form;
@@ -137,6 +167,7 @@ namespace Proyecto_Catedra_PEDG01T
                 form.TopLevel = false;
                 pnlcontent.Controls.Add(form);
                 pnlcontent.Tag = form;
+                form.VerFactura += new PedidosForm.showFactura(MostrarFactura);
                 form.Show();
                 form.BringToFront();
                 //tamaño del form igual al tamaño del panel
@@ -147,6 +178,11 @@ namespace Proyecto_Catedra_PEDG01T
                 form.Close();
                 OpenFormPedidos();
             }
+        }
+
+        private void MostrarFactura(Pedido pedido)
+        {
+            OpenFormFactura(pedido, usuario, true);
         }
 
         //sobrecarga para OpenForm
@@ -179,14 +215,14 @@ namespace Proyecto_Catedra_PEDG01T
         }
 
         //sobrecarga para OpenForm
-        private void OpenFormFactura(Pedido pedido, Usuario usuario)
+        private void OpenFormFactura(Pedido pedido, Usuario usuario, bool onlyView = false)
         {
             FacturaForm form;
             form = pnlcontent.Controls.OfType<FacturaForm>().FirstOrDefault();
 
             if (form == null)
             {
-                form = new FacturaForm(pedido, usuario);
+                form = new FacturaForm(pedido, usuario, onlyView);
                 form.TopLevel = false;
                 pnlcontent.Controls.Add(form);
                 pnlcontent.Tag = form;
@@ -226,11 +262,6 @@ namespace Proyecto_Catedra_PEDG01T
             {
                 control.Size = pnlcontent.Size;
             }
-        }
-
-        private void pnlcontent_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

@@ -13,66 +13,31 @@ namespace Proyecto_Catedra_PEDG01T
 {
     public partial class PerfilForm : Form
     {
-        public PerfilForm()
+        private Usuario usuario;
+
+        //delegado para comunicar con el form Inicio
+        public delegate void logOut();
+        public event logOut CerrarSesion;
+
+        public PerfilForm(Usuario usuario)
         {
             InitializeComponent();
-        }
-        //Método que nos ayuda a controlar campos de solo letras
-        private void Validarletras(KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-                MessageBox.Show("Solo se admiten letras en el campo de Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-        private void txtnombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Validarletras(e);
-        }
-        //Función para validar el formato del correo
-        public static bool ValidarcorreoE(string correo)
-        {
-            string ex = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$";
-            if (Regex.IsMatch(correo, ex))
-            {
-                if (Regex.Replace(correo, ex, string.Empty).Length == 0)
-                {
-                    return false;
 
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            else
-            {
-                return true;
-            }
+            this.usuario = usuario;
+            lblmostrarnombre.Text = usuario.Nombre + " " + usuario.Apellido;
+            lblmostrarusuario.Text = usuario.User;
+            lblmostrarfnaci.Text = usuario.FechaNacimiento.ToShortDateString();
+            lblmostrarcorreo.Text = usuario.Email;
+            lblmostrartel.Text = usuario.Telefono;
         }
-        private void txtemail_Leave(object sender, EventArgs e)
-        {
-            if (ValidarcorreoE(txtemail.Text) == false)
-            {
-            }
-            else
-            {
 
-                MessageBox.Show("El formato del correo electrónico no es correcto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtemail.Focus();
+        private void btneditar_Click(object sender, EventArgs e)
+        {
+            EditPerfilForm edit = new EditPerfilForm(usuario);
+            DialogResult result = edit.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                CerrarSesion();
             }
         }
     }

@@ -40,10 +40,10 @@ namespace Proyecto_Catedra_PEDG01T
                 //entrada.EstadoPedido = estadoPedido;
                 //entrada.FechaPedidio = fechaPedido;
              }
-         }
+        }
         
-            //Metodo para desencolar elementos de la Cola
-            public void Desencolar(int idPedido)
+        //Metodo para desencolar elementos de la Cola
+        public void Desencolar(int idPedido)
         {
             if(primero == null)
             {
@@ -83,6 +83,50 @@ namespace Proyecto_Catedra_PEDG01T
                 while (puntero != null);
                 return datos;
             }
+        }
+
+        public Pedido[] QueueToArray()
+        {
+            Pedido[] items = new Pedido[Count()];
+
+            if (primero != null)
+            {
+                Nodo puntero;
+                puntero = primero;
+
+                items[0] = puntero.Info;
+                int contador = 0;
+                while (puntero.Siquiente != null)
+                {
+                    contador++;
+                    puntero = puntero.Siquiente;
+                    items[contador] = puntero.Info;
+                }
+            }
+            return items;
+        }
+
+        //metodo para conocer la cantidad de elemtos
+        public int Count()
+        {
+            int count = 0;
+            if (primero != null)
+            {
+                Nodo puntero;
+                puntero = primero;
+
+                count = 1;
+                while (puntero.Siquiente != null)
+                {
+                    count++;
+                    puntero = puntero.Siquiente;
+                }
+            }else
+            {
+                MessageBox.Show("La cola se encuentra vacía", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            return count;
         }
     }
 }

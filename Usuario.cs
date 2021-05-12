@@ -18,7 +18,7 @@ namespace Proyecto_Catedra_PEDG01T
         private string idUsuario;
         private string nombre;
         private string apellido;
-        private string fechanacimiento;
+        private DateTime fechanacimiento;
         private string user;
         private string contrasena;
         private string email;
@@ -69,16 +69,12 @@ namespace Proyecto_Catedra_PEDG01T
             }
         }
 
-        public string FechaNacimiento
+        public DateTime FechaNacimiento
         {
             get { return fechanacimiento; }
             set
             {
                 fechanacimiento = value;
-                if (string.IsNullOrEmpty(FechaNacimiento))
-                {
-                    throw new Exception("El campo Fecha de Nacimiento no puede estar vació.");
-                }
             }
         }
 
@@ -247,7 +243,7 @@ namespace Proyecto_Catedra_PEDG01T
                     IdUsuario = dataReader["idUsuario"].ToString();
                     Nombre = dataReader["nombre"].ToString();
                     Apellido = dataReader["apellido"].ToString();
-                    FechaNacimiento = dataReader["fechaNacimiento"].ToString();
+                    FechaNacimiento = Convert.ToDateTime(dataReader["fechaNacimiento"].ToString());
                     User = dataReader["usuario"].ToString();
                     Contrasena = dataReader["contrasena"].ToString();
                     Email = dataReader["email"].ToString();

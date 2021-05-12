@@ -85,7 +85,12 @@
     <Compile Include="Cola.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="DetallePedido.cs" />
-    <Compile Include="Factura.cs" />
+    <Compile Include="EditPerfilForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPerfilForm.Designer.cs">
+      <DependentUpon>EditPerfilForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacturaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdmProductoForm.resx">
       <DependentUpon>AdmProductoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPerfilForm.resx">
+      <DependentUpon>EditPerfilForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaForm.resx">
       <DependentUpon>FacturaForm.cs</DependentUpon>
