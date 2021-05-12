@@ -33,6 +33,7 @@
             this.btnimprimir = new System.Windows.Forms.Button();
             this.report1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.lblmenu = new System.Windows.Forms.Label();
+            this.btnpedidos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btncancelar
@@ -89,7 +90,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.report1.Location = new System.Drawing.Point(34, 92);
-            this.report1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.report1.Margin = new System.Windows.Forms.Padding(2);
             this.report1.Name = "report1";
             this.report1.ServerReport.BearerToken = null;
             this.report1.Size = new System.Drawing.Size(832, 348);
@@ -106,12 +107,29 @@
             this.lblmenu.TabIndex = 39;
             this.lblmenu.Text = "Factura";
             // 
+            // btnpedidos
+            // 
+            this.btnpedidos.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnpedidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
+            this.btnpedidos.FlatAppearance.BorderSize = 0;
+            this.btnpedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnpedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpedidos.ForeColor = System.Drawing.Color.White;
+            this.btnpedidos.Location = new System.Drawing.Point(383, 485);
+            this.btnpedidos.Name = "btnpedidos";
+            this.btnpedidos.Size = new System.Drawing.Size(140, 36);
+            this.btnpedidos.TabIndex = 40;
+            this.btnpedidos.Text = "Regresar";
+            this.btnpedidos.UseVisualStyleBackColor = false;
+            this.btnpedidos.Click += new System.EventHandler(this.btnpedidos_Click);
+            // 
             // FacturaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 580);
+            this.Controls.Add(this.btnpedidos);
             this.Controls.Add(this.lblmenu);
             this.Controls.Add(this.report1);
             this.Controls.Add(this.btncancelar);
@@ -133,5 +151,6 @@
         private System.Windows.Forms.Button btnimprimir;
         private Microsoft.Reporting.WinForms.ReportViewer report1;
         private System.Windows.Forms.Label lblmenu;
+        private System.Windows.Forms.Button btnpedidos;
     }
 }

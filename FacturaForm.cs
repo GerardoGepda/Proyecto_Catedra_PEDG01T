@@ -21,11 +21,26 @@ namespace Proyecto_Catedra_PEDG01T
         public delegate void actionFactura(bool actn);
         public event actionFactura Accion;
 
-        public FacturaForm(Pedido pedido, Usuario usua)
+        public FacturaForm(Pedido pedido, Usuario usua, bool onlyView = false)
         {
             InitializeComponent();
             this.usua = usua;
             this.pedido = pedido;
+
+            if (onlyView)
+            {
+                btnagregar.Visible = true;
+                btnimprimir.Visible = true;
+                btncancelar.Visible = true;
+                btnpedidos.Visible = false;
+            }
+            else
+            {
+                btnagregar.Visible = false;
+                btnimprimir.Visible = false;
+                btncancelar.Visible = false;
+                btnpedidos.Visible = true;
+            }
 
             Dproductos = new DetallePedido[pedido.DetallePed.Count()];
             for (int i = 0; i < pedido.DetallePed.Count(); i++)
@@ -81,6 +96,12 @@ namespace Proyecto_Catedra_PEDG01T
                 Accion(false);
                 this.Close();
             }
+        }
+
+        private void btnpedidos_Click(object sender, EventArgs e)
+        {
+            Accion(true);
+            this.Close();
         }
     }
 }
