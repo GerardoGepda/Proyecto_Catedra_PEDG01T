@@ -19,72 +19,42 @@ namespace Proyecto_Catedra_PEDG01T
         }
 
         //Metodo para ingresar elementos a la Cola
-        public void Encolar(int idPedido)
+        public void Encolar(Pedido pedido)
         {
             Nodo entrada = new Nodo();
-            Pedido pedido = new Pedido();
-            entrada.IdP = idPedido;
-           
+            entrada.Info = pedido;
 
             if (primero == null)
             {               
                 primero = ultimo = entrada;
                 entrada.Siquiente = null;               
             }
-             else
-             {
-                 ultimo.Siquiente = entrada;
-                 entrada.Siquiente = null;
-                 ultimo = entrada;
-                //entrada.IdPedido = idPedido;
-                //entrada.EstadoPedido = estadoPedido;
-                //entrada.FechaPedidio = fechaPedido;
-             }
+            else
+            {
+                ultimo.Siquiente = entrada;
+                entrada.Siquiente = null;
+                ultimo = entrada;
+            }
         }
         
         //Metodo para desencolar elementos de la Cola
-        public void Desencolar(int idPedido)
+        public Pedido Desencolar()
         {
+            Pedido pedido;
             if(primero == null)
-            {
-                MessageBox.Show("La cola se encuentra vacía", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                primero = primero.Siquiente;
-            }
-        }
-
-
-
-        //metodo para mostrar elementos de la cola
-        List<int> datos = new List<int>();
-        int contador = 0;
-        public List<int> Mostrar()
-        {
-           
-            if (primero == null)
             {
                 MessageBox.Show("La cola se encuentra vacía", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return null;
             }
             else
             {
-                Nodo puntero;
-                puntero = primero;
-                Nodo pt = new Nodo();
-                do
-                {                  
-
-                    datos.Add(puntero.IdP);                   
-                    puntero = puntero.Siquiente; 
-                   
-                }
-                while (puntero != null);
-                return datos;
+                pedido = primero.Info;
+                primero = primero.Siquiente;
+                return pedido;
             }
         }
 
+        //convierte la cola a un array
         public Pedido[] QueueToArray()
         {
             Pedido[] items = new Pedido[Count()];

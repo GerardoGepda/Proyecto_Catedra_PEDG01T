@@ -118,7 +118,6 @@
             this.dgvpedidos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvpedidos.Size = new System.Drawing.Size(766, 340);
             this.dgvpedidos.TabIndex = 9;
-            this.dgvpedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpedidos_CellClick);
             // 
             // lblIdPedidoObtenido
             // 
@@ -135,9 +134,8 @@
             this.lblIndexdgv.AutoSize = true;
             this.lblIndexdgv.Location = new System.Drawing.Point(359, 146);
             this.lblIndexdgv.Name = "lblIndexdgv";
-            this.lblIndexdgv.Size = new System.Drawing.Size(35, 13);
+            this.lblIndexdgv.Size = new System.Drawing.Size(0, 13);
             this.lblIndexdgv.TabIndex = 11;
-            this.lblIndexdgv.Text = "label1";
             // 
             // PedidosForm
             // 

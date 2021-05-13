@@ -13,21 +13,19 @@ namespace Proyecto_Catedra_PEDG01T
     public class Pedido
     {
         //herramientas para la clase
-        private Conexion conexion = new Conexion();
-        private SqlDataAdapter dataAdapter;
-        private SqlDataReader dataReader;
-        private SqlCommand command;
+        private static Conexion conexion = new Conexion();
+        private static SqlDataAdapter dataAdapter;
+        private static SqlDataReader dataReader;
+        private static SqlCommand command;
 
         //campos de la clase
         private int idPedido;
         private string fechaPedido;
         private int estadoPedido;
         private string idUsuario;
-        private string NombreProducto;
-        private int Cantidad;
         private double total;
         private Lista detallePed = new Lista();
-        List<Pedido> listaPedido = new List<Pedido>();
+
         //propiedades de la clase
         public int IdPedido { get => idPedido; set => idPedido = value; }
         public string FechaPedido { get => fechaPedido; set => fechaPedido = value; }
@@ -35,8 +33,6 @@ namespace Proyecto_Catedra_PEDG01T
         public string IdUsuario { get => idUsuario; set => idUsuario = value; }
         public double Total { get => total; set => total = value; }
         public Lista DetallePed { get => detallePed; set => detallePed = value; }
-        public string NombreProducto1 { get => NombreProducto; set => NombreProducto = value; }
-        public int Cantidad1 { get => Cantidad; set => Cantidad = value; }
 
         //--- Métodos de clase ---//
 
@@ -137,30 +133,33 @@ namespace Proyecto_Catedra_PEDG01T
             return guardado;
         }
 
-        List<int> encontrados = new List<int>();
-        public List<int> MostrarPedidio()
+        public static Lista MostrarPedidio()
         {
-            conexion.Conectar();
-            Cola pedido = new Cola();
-            String sql = "SELECT P.idPedido as Id,nombreProducto as Producto, cantidadProducto as Cantidad from Pedido as P inner join Detalle_pedido as DP on P.idPedido = DP.idPedido inner join Productos as PR on DP.idProducto = PR.idProducto  WHERE estadoPedido = 0 order by fechaPedido ASC";
+            Lista listPedidos = new Lista();
+            string sql = "SELECT * FROM Pedido WHERE estadoPedido = 0 ORDER BY fechaPedido ASC;";
             try
             {
+                conexion.Conectar();
                 dataAdapter = new SqlDataAdapter(sql, conexion.Conn);
                 dataReader = dataAdapter.SelectCommand.ExecuteReader();
                 if (dataReader.HasRows)
                 {
-
                     while (dataReader.Read())
                     {
-                                             
-                        IdPedido = int.Parse(dataReader["Id"].ToString());
-                        NombreProducto = dataReader["Producto"].ToString();
-                        Cantidad = int.Parse(dataReader["Cantidad"].ToString());
-                         
-                        encontrados.Add(idPedido);
-                    }
-                    return encontrados;
+                        //creamos el objeto pedido
+                        Pedido pedido = new Pedido();
+                        pedido.IdPedido = Convert.ToInt32(dataReader["idPedido"].ToString());
+                        pedido.idUsuario = dataReader["idUsuario"].ToString();
+                        pedido.fechaPedido = dataReader["fechaPedido"].ToString();
+                        pedido.EstadoPedido = Convert.ToInt32(dataReader["estadoPedido"].ToString());
+                        pedido.Total = Convert.ToDouble(dataReader["totalPedido"].ToString());
 
+                        //lo añadimos a la lista
+                        listPedidos.Add(pedido);
+                        //reseteamos el objeto pedido
+                        pedido = null;
+                    }
+                    dataReader.Close();
                 }
                 else
                 {
@@ -181,6 +180,8 @@ namespace Proyecto_Catedra_PEDG01T
                 //cerramos la conexión
                 conexion.Cerrar();
             }
+
+            return listPedidos;
         }
 
         public void buscarPedidos(int idPedido)
@@ -213,52 +214,29 @@ namespace Proyecto_Catedra_PEDG01T
             }
         }
 
-        public List<Pedido> buscarPedidosPorId(int idPedido)
+        public void UpdateEstado()
         {
-            conexion.Conectar();
+            int rowsAffected = 0;
             try
             {
-
-                int id = idPedido;
-                String sql = "SELECT P.idPedido as Id,nombreProducto as Producto, cantidadProducto as Cantidad, fechaPedido from Pedido as P inner join Detalle_pedido as DP on P.idPedido = DP.idPedido inner join Productos as PR on DP.idProducto = PR.idProducto  WHERE estadoPedido = 0 AND P.idPedido = @idPedido ORDER BY fechaPedido ASC";
-                dataAdapter = new SqlDataAdapter(sql, conexion.Conn);
-                SqlParameter prm = new SqlParameter("@idPedido", SqlDbType.Int);
-                prm.Value = id;
-                dataAdapter.SelectCommand.Parameters.Add(prm);
-                dataReader = dataAdapter.SelectCommand.ExecuteReader();
-                while (dataReader.Read())
-                {
-                    listaPedido.Add(new Pedido
-                    {
-
-                        IdPedido = (int)dataReader["Id"],
-                        NombreProducto = dataReader["Producto"].ToString(),
-                        Cantidad = (int)dataReader["Cantidad"],
-                        fechaPedido = dataReader["fechaPedido"].ToString()
-                    });
-
-                }
+                conexion.Conectar();
+                command = new SqlCommand("UPDATE  Pedido set estadoPedido = 1 where idPedido = @idPedido", conexion.Conn);
+                command.Parameters.AddWithValue("@idPedido", IdPedido);
+                rowsAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Error al actualizar el estado del pedido en la DB: " + err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
                 conexion.Cerrar();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex + "");
-            }
-            if (dataReader != null)
-            {
-                dataReader.Close();
-            }
-            return listaPedido;
-        }
-        public void UpdateEstado(int idPedido)
-        {
-            int id = idPedido;
-            conexion.Conectar();
-            command = new SqlCommand("UPDATE  Pedido set estadoPedido = 1 where idPedido = @idPedido", conexion.Conn);
-            command.Parameters.Add("@idPedido", id);
-            command.ExecuteNonQuery();
-            conexion.Cerrar();
-            MessageBox.Show("Se ha entregado un pedidio con éxito");
+
+            if (rowsAffected != 0)
+                MessageBox.Show("Se ha entregado el pedido con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Hubo un inconveniente al cambiar estado entregado a este pedido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
     }

@@ -245,7 +245,7 @@ namespace Proyecto_Catedra_PEDG01T
             if (actn)
             {
                 pnlmenu.Enabled = true;
-                OpenForm<PedidosForm>();
+                OpenFormPedidos();
             }
             else
             {

@@ -13,8 +13,6 @@ namespace Proyecto_Catedra_PEDG01T
 {
     public partial class PedidosForm : Form
     {
-        string idObtenido;
-
         //delegado para comunicar con el form Inicio para abrir la factura
         public delegate void showFactura(Pedido pedido);
         public event showFactura VerFactura;
@@ -22,64 +20,56 @@ namespace Proyecto_Catedra_PEDG01T
         public PedidosForm()
         {
             InitializeComponent();
-            llenarDataGrid();
+            //se crean las columnas del dgv
+            dgvpedidos.Columns.Add("idPedido", "ID Pedido");
+            dgvpedidos.Columns.Add("fecha", "Fecha");
+            dgvpedidos.Columns.Add("estado", "Estado");
+            dgvpedidos.Columns.Add("cantidad", "Cantidad");
+            dgvpedidos.Columns.Add("totalPedido", "Monto Total");
+            dgvpedidos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-       
-        List<int> listaDatos1 = new List<int>();
-        List<int> listaDatos2 = new List<int>();
-        public List<Pedido> listaPedidos;
-        Cola objCola;
-        Pedido objPedido;
+
+        private Lista listaPedidos;
+        private Cola objCola = new Cola();
+        private Pedido[] arrPedidos;
+        private Pedido objPedido;
+
         private void llenarDataGrid()
         {
-            listaPedidos = new List<Pedido>();
-            objPedido = new Pedido();
-            objCola = new Cola();
-            listaDatos1 = objPedido.MostrarPedidio();
-            for (int i = 0; i < listaDatos1.Count; i++)
+            //se convierte la cola a un array para ser mostrado y manipulado
+            arrPedidos = objCola.QueueToArray();
+            foreach (Pedido pedido in arrPedidos)
             {
-                objCola.Encolar(listaDatos1[i]);
-
+                if (pedido.EstadoPedido == 0)
+                {
+                    dgvpedidos.Rows.Add(pedido.IdPedido, pedido.FechaPedido, "Pendiente", pedido.DetallePed.Count(), pedido.Total);
+                }
             }
-
-            listaDatos2 = objCola.Mostrar();
-            dgvpedidos.DataSource = null;
-            for (int i = 0; i < listaDatos2.Count; i++)
-            {
-                listaPedidos = objPedido.buscarPedidosPorId(listaDatos2[i]);
-            }
-
-            dgvpedidos.DataSource = listaPedidos;
-            dgvpedidos.Columns[0].HeaderText="Número de orden";
-            dgvpedidos.Columns[1].HeaderText = "Fecha de pedido";
-            dgvpedidos.Columns[2].Visible = false;
-            dgvpedidos.Columns[3].Visible = false;
-            dgvpedidos.Columns[4].Visible = false;
-            dgvpedidos.Columns[5].Visible = false;
-            dgvpedidos.Columns[6].HeaderText = "Nombre de producto";
-            dgvpedidos.Columns[7].HeaderText = "Cantidad";
         }
+
         private void PedidosForm_Load(object sender, EventArgs e)
-        {           
-            
+        {
+            //extraemos los pedidos y los almacenamos en una lista
+            listaPedidos = Pedido.MostrarPedidio();
+            Pedido pedidoTemp;
+            //recorremos los pedidos para extraer sus detalles y guardarlos en la cola
+            for (int i = 0; i < listaPedidos.Count(); i++)
+            {
+                pedidoTemp = (Pedido)listaPedidos.ElementAtIndex(i);
+                pedidoTemp.DetallePed = DetallePedido.GetDetails(pedidoTemp.IdPedido);
+                objCola.Encolar(pedidoTemp);
+                pedidoTemp = null;
+            }
+
+            llenarDataGrid();
         }
 
         private void btnentregar_Click(object sender, EventArgs e)
-        {  //Aqui nos quemd
-            int i = dgvpedidos.SelectedCells[0].RowIndex;
-            objPedido.UpdateEstado(int.Parse(idObtenido));
-            //dgvpedidos.Rows.RemoveAt(dgvpedidos.SelectedRows[i].Index);
-            llenarDataGrid();
-
-        }
-
-        private void dgvpedidos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-            idObtenido = dgvpedidos.Rows[e.RowIndex].Cells[0].Value.ToString();
-            lblIdPedidoObtenido.Text = idObtenido;
-            lblIndexdgv.Text = dgvpedidos.Rows[e.RowIndex].Cells[0].RowIndex.ToString();
-
+            objPedido = objCola.Desencolar();
+            objPedido.UpdateEstado();
+            dgvpedidos.Rows.Clear();
+            llenarDataGrid();
         }
 
         private void btnfactura_Click(object sender, EventArgs e)
@@ -89,14 +79,7 @@ namespace Proyecto_Catedra_PEDG01T
 
         public void facutar()
         {
-            Console.WriteLine(listaPedidos[0].NombreProducto1);
-            Pedido ped = new Pedido();
-            ped.NombreProducto1 = "dsadfdsf";
-            ped.IdUsuario = "1";
-            ped.IdPedido = 1;
-            ped.EstadoPedido = 0;
-            ped.FechaPedido = "2021-04-12";
-            VerFactura(listaPedidos[0]);
+            VerFactura(arrPedidos[0]);
         }
     }
 }
