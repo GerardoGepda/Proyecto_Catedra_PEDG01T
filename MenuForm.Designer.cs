@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.lblmenu = new System.Windows.Forms.Label();
-            this.lblseleccion = new System.Windows.Forms.Label();
-            this.cbxnmesas = new System.Windows.Forms.ComboBox();
             this.btncrearpedido = new System.Windows.Forms.Button();
             this.btnlimpiar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -47,28 +45,6 @@
             this.lblmenu.Size = new System.Drawing.Size(74, 29);
             this.lblmenu.TabIndex = 0;
             this.lblmenu.Text = "Menú";
-            // 
-            // lblseleccion
-            // 
-            this.lblseleccion.AutoSize = true;
-            this.lblseleccion.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblseleccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lblseleccion.Location = new System.Drawing.Point(521, 45);
-            this.lblseleccion.Name = "lblseleccion";
-            this.lblseleccion.Size = new System.Drawing.Size(172, 15);
-            this.lblseleccion.TabIndex = 1;
-            this.lblseleccion.Text = "Selecciona número de mesa:";
-            // 
-            // cbxnmesas
-            // 
-            this.cbxnmesas.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbxnmesas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxnmesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxnmesas.FormattingEnabled = true;
-            this.cbxnmesas.Location = new System.Drawing.Point(694, 42);
-            this.cbxnmesas.Name = "cbxnmesas";
-            this.cbxnmesas.Size = new System.Drawing.Size(167, 21);
-            this.cbxnmesas.TabIndex = 2;
             // 
             // btncrearpedido
             // 
@@ -142,8 +118,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pnlProductos);
             this.Controls.Add(this.btnlimpiar);
-            this.Controls.Add(this.cbxnmesas);
-            this.Controls.Add(this.lblseleccion);
             this.Controls.Add(this.lblmenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuForm";
@@ -156,8 +130,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblmenu;
-        private System.Windows.Forms.Label lblseleccion;
-        private System.Windows.Forms.ComboBox cbxnmesas;
         private System.Windows.Forms.Button btncrearpedido;
         private System.Windows.Forms.Button btnlimpiar;
         private System.Windows.Forms.Button button1;

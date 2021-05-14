@@ -81,5 +81,13 @@ namespace Proyecto_Catedra_PEDG01T
         {
             VerFactura(arrPedidos[0]);
         }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            objPedido = objCola.Desencolar();
+            objPedido.DeletePedido();
+            dgvpedidos.Rows.Clear();
+            llenarDataGrid();
+        }
     }
 }

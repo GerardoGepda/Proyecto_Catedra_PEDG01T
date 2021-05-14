@@ -239,5 +239,27 @@ namespace Proyecto_Catedra_PEDG01T
                 MessageBox.Show("Hubo un inconveniente al cambiar estado entregado a este pedido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        public void DeletePedido()
+        {
+            int rowsAffected = 0;
+            try
+            {
+                conexion.Conectar();
+                command = new SqlCommand("DELETE FROM Pedido WHERE idPedido = @id");
+                command.Parameters.AddWithValue("@id", IdPedido);
+                rowsAffected = command.ExecuteNonQuery();
+            }catch (Exception err)
+            {
+                MessageBox.Show("Error al eliminar el pedido en la DB: " + err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (rowsAffected != 0)
+                    MessageBox.Show("Se ha eliminado el pedido con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Hubo un inconveniente al eliminar este pedido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
     }
 }

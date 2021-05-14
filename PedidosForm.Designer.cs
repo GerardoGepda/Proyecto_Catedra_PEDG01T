@@ -106,6 +106,7 @@
             this.btncancelar.TabIndex = 8;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = false;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // dgvpedidos
             // 
